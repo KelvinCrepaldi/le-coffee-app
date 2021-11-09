@@ -3,6 +3,7 @@ import GlobalStyles from "../Styles/GlobalStyles";
 
 import Home from "../Pages/Home";
 import Register from "../Pages/Register";
+import LoginPage from "../Pages/Login";
 
 const RoutesPatchs = () => {
   return (
@@ -17,7 +18,7 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/login">
         <GlobalStyles />
-        <Register />
+        <LoginPage />
       </Route>
       <Route path="/register">
         <GlobalStyles />
