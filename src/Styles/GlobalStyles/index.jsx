@@ -25,6 +25,32 @@ const GlobalStyles = createGlobalStyle`
         --font-w-normal: 400;
         --font-w-bold: 600;
 
+        --brown-primary: #AA6655;
+        --white-primary: #fefefe;
+        --gray-100: #E0E0E0;
+        --gray-300: #828282;
+        --gray-600: #333333;
+
+    }
+
+    body {
+        font-family: 'Nova Round', cursive;
+        background: var(--EletromagneticColor);
+    }
+    
+    body, input, button {
+        font-family: 'Nova Round', cursive;
+        font-size: 1rem;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Nova Round', cursive;
+        font-weight: bold;
+    }
+    button {
+        cursor: pointer;
+    }
+    a {
+        text-decoration: none;
     }
 
 `;
