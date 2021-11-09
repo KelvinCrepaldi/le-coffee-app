@@ -7,7 +7,6 @@ const LoginPage = () => {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
     <div>
       <h1>Bem vindo</h1>
-        
     </div>
     </Page>
   );
