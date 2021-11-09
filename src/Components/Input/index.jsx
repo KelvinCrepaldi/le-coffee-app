@@ -1,9 +1,20 @@
-export const Input = ({ label, error, icon, resgister, name, ...rest }) => {
-    return(
-        <div>
-            <label></label>
-            <p>{icon}</p>
-            <input {...rest}/>
-        </div>
-    )
-}
+export const Input = ({
+  labelText,
+  error,
+  icon: Icon,
+  register,
+  name,
+  ...rest
+}) => {
+    
+  return (
+    <div>
+      {labelText && <label>{labelText}</label>}
+      <div>
+        {Icon && <p>{Icon}</p>}
+        <input {...register(name)} {...rest} />
+        {error && <p>{error}</p>}
+      </div>
+    </div>
+  );
+};
