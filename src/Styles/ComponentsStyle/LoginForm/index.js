@@ -27,15 +27,5 @@ export const LoginFormContainer = styled.form`
       border-radius: 17px;
       margin-bottom: 20px;
     }
-
-    .bttnRegister {
-      height: 40px;
-      width: 78%;
-
-      background-color: #ffffff;
-      color: #808080;
-      border: none;
-      border-radius: 17px;
-    }
   }
 `;
