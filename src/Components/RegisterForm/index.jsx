@@ -1,5 +1,6 @@
 import { RegisterFormContainer } from "../../Styles/ComponentsStyle/RegisterForm";
 import { ButtonComponent } from "../../Components/Button";
+
 import { RegisterContext } from "../../Providers/registerProvider/index";
 import { useContext } from "react";
 import { useHistory } from "react-router";
