@@ -6,7 +6,7 @@ export const LoginFormContainer = styled.form`
   align-items: center;
   justify-content: flex-start;
   line-height: 40px;
-
+  margin-top: 36px;
   .bttnContainer {
     display: flex;
     flex-direction: column;
