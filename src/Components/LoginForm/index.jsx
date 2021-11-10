@@ -7,7 +7,7 @@ import { LoginFormContainer } from "../../Styles/ComponentsStyle/LoginForm";
 export const LoginForm = () => {
   const loginSchema = yup.object({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
-    password: yup.string().required().min(6, "mínimo de 6 caracteres"),
+    password: yup.string().required("Campo obrigatório").min(6, "mínimo de 6 caracteres"),
   });
 
   const {
