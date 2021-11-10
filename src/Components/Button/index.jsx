@@ -10,7 +10,9 @@ const ButtonComponent = ({ variant, text, ...rest }) => {
       )}
 
       {variant === "white" && (
-        <ButtonContainer variant="white" {...rest}></ButtonContainer>
+        <ButtonContainer variant="white" {...rest}>
+          {text}
+        </ButtonContainer>
       )}
     </>
   );
