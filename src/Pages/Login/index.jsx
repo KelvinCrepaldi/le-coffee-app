@@ -7,6 +7,7 @@ import bgImageLeft from "../../assets/cover-rodape.png";
 import bgImageRight from "../../assets/about-us-cover-2.png";
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { ButtonComponent } from "../../Components/Button";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -30,6 +31,9 @@ const LoginPage = () => {
       <div className="formContent">
         <h1>Bem vindo(a)!</h1>
         <LoginForm />
+        <ButtonComponent variant="white"
+        text="Registrar-se" className="bttnRegister"
+        onClick={()=> history.push("/register")}/>
       </div>
     </Page>
   );

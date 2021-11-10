@@ -1,6 +1,6 @@
 import { ButtonContainer } from "../../Styles/ComponentsStyle/Button";
 
-const ButtonComponent = ({ variant, text, ...rest }) => {
+export const ButtonComponent = ({ variant, text, ...rest }) => {
   return (
     <>
       {variant === "brown" && (
@@ -17,5 +17,3 @@ const ButtonComponent = ({ variant, text, ...rest }) => {
     </>
   );
 };
-
-export default ButtonComponent;
