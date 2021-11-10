@@ -8,13 +8,15 @@ export const RegisterFormContainer = styled.form`
 
   h1 {
     font-size: var(--font-size-medium);
-    color: #401309;
     font-weight: var(--font-w-normal);
     width: 100%;
+
+    color: #401309;
   }
   span {
     width: 100%;
     font-size: var(--font-size-small);
+
     color: #212621;
   }
   form {
@@ -24,8 +26,9 @@ export const RegisterFormContainer = styled.form`
   }
 
   .title {
-    width: 176px;
     text-align: center;
+
+    width: 176px;
     margin: 22px auto 19px;
   }
 
@@ -33,8 +36,8 @@ export const RegisterFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+
     width: 100%;
-    height: 135px;
     margin-bottom: 30px;
   }
 
@@ -45,5 +48,9 @@ export const RegisterFormContainer = styled.form`
     font-size: var(--font-size-xsmall);
     font-weight: var(--font-w-normal);
     height: 29px;
+  }
+
+  .center-mobile {
+    margin: 0 auto;
   }
 `;

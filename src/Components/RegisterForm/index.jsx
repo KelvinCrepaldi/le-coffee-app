@@ -16,7 +16,7 @@ const RegisterForm = () => {
   const registerSchema = yup.object({
     name: yup
       .string()
-      .max(50, "Campo obrigatório. Máximo de 50 dígitos.")
+      .max(48, "Campo obrigatório. Máximo de 48 dígitos.")
       .required("Campo obrigatório"),
     email: yup.string().required("Campo obrigatório").email("E-mail inválido"),
     password: yup
@@ -39,6 +39,7 @@ const RegisterForm = () => {
 
   const handleRegisterSubmit = (e) => {
     handleRegister(e);
+    history.push("/login");
   };
 
   const handleBackToLogin = () => {
@@ -47,7 +48,7 @@ const RegisterForm = () => {
 
   return (
     <RegisterFormContainer onSubmit={handleSubmit(handleRegisterSubmit)}>
-      <div>
+      <div className="center-mobile">
         <div className="title">
           <h1>Registre-se</h1>
           <span>
@@ -83,15 +84,15 @@ const RegisterForm = () => {
             error={errors.secondPassword?.message}
           ></Input>
         </div>
-        <div className="button-container">
-          <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
-          <label className="text-register">Já possui uma conta?</label>
-          <ButtonComponent
-            variant="white"
-            text="Fazer login"
-            onClick={handleBackToLogin}
-          />
-        </div>
+      </div>
+      <div className="button-container">
+        <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
+        <label className="text-register">Já possui uma conta?</label>
+        <ButtonComponent
+          variant="white"
+          text="Fazer login"
+          onClick={handleBackToLogin}
+        />
       </div>
     </RegisterFormContainer>
   );

@@ -5,10 +5,8 @@ export const Page = styled.div`
   flex-direction: column;
   align-items: center;
 
+  width: 100%;
   height: 100vh;
-  padding-top: 5vh;
-
-  background-color: #504a59;
 
   .bgContent,
   .toLogin {
@@ -23,11 +21,10 @@ export const Page = styled.div`
   .formContent {
     display: flex;
     justify-content: center;
-    width: 90%;
-    padding: 16px 0;
+    width: 100%;
+    min-height: 100vh;
     text-align: center;
     background-color: #f5f5f5;
-    border-radius: 20px 20px 0 0;
 
     h1 {
       font-size: 26px;
@@ -86,7 +83,9 @@ export const Page = styled.div`
       right: 22%;
       top: 50%;
       transform: translateY(-50%);
+      min-height: auto;
 
+      padding: 0;
       width: 360px;
       border-radius: 18px;
       box-shadow: 3px 2px 12px var(--gray-600);
