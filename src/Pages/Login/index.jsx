@@ -1,15 +1,16 @@
-import { LoginForm } from '../../Components/LoginForm';
-import { Page } from '../../Styles/PagesStyles/Login';
-import logo from './Logo-main-black-4.png';
+import { LoginForm } from "../../Components/LoginForm";
+import { Page } from "../../Styles/PagesStyles/Login";
+import logo from "./Logo-main-black-4.png";
 const LoginPage = () => {
   return (
     <Page>
-    <img src={logo} alt="Mug logo" />
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-    <div>
-      <h1>Bem vindo</h1>
-      <LoginForm/>
-    </div>
+      <div className="topContent">
+        <img src={logo} alt="Mug logo" />
+      </div>
+      <div className="formContent">
+        <h1>Bem vindo(a)!</h1>
+        <LoginForm />
+      </div>
     </Page>
   );
 };
