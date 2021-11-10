@@ -24,7 +24,7 @@ const Register = () => {
         <button onClick={handleBackToLogin}>
           <AiOutlineArrowLeft className="icon" />
         </button>
-        <p>Login</p>
+        <p>Ir para Login</p>
       </div>
       <div className="topContent">
         <img src={logo} alt="Mug logo" />

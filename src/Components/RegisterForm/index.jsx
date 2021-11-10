@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Input } from "../Input";
 
 const RegisterForm = () => {
   const { handleRegister } = useContext(RegisterContext);
@@ -54,34 +55,32 @@ const RegisterForm = () => {
           </span>
         </div>
         <div>
-          <input
+          <Input
             placeholder="Nome"
-            type="text"
-            {...register("name")}
-            label="nome"
+            register={register}
+            name="name"
             error={errors.name?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="E-mail"
-            type="text"
-            {...register("email")}
-            label="E-mail"
+            register={register}
+            name="email"
             error={errors.email?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="Senha"
             type="password"
-            {...register("password")}
-            label="Senha"
+            register={register}
+            name="password"
             error={errors.password?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="Confirmar senha"
             type="password"
-            {...register("secondPassword")}
-            label="Confirmar senha"
+            register={register}
+            name="secondPassword"
             error={errors.secondPassword?.message}
-          ></input>
+          ></Input>
         </div>
         <div className="button-container">
           <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
