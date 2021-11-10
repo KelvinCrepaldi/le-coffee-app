@@ -8,14 +8,16 @@ export const InputContainer = styled.form`
     flex-direction: row;
 
     height: 46px;
-    
+    width: 64vw;
+    max-width: 315px;
     border: 2px solid var(--brown-primary);
     border-radius: 10px;
 
     input{
-      width: inherit;
+      width: 99%;
+      padding: 0 10px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       outline: none;
       caret-color: var(--brown-primary);
     }
