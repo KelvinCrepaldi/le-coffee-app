@@ -1,27 +1,16 @@
 import { ButtonContainer } from "../../Styles/ComponentsStyle/Button";
 
-const ButtonComponent = ({ buttonFunction }, { ...rest }) => {
+const ButtonComponent = ({ variant, text, ...rest }) => {
   return (
     <>
-      {buttonFunction === "login" && (
+      {variant === "brown" && (
         <ButtonContainer variant="brown" {...rest}>
-          Entrar
+          {text}
         </ButtonContainer>
       )}
-      {buttonFunction === "signup" && (
-        <ButtonContainer variant="brown" {...rest}>
-          Cadastrar
-        </ButtonContainer>
-      )}
-      {buttonFunction === "gotoLogin" && (
-        <ButtonContainer variant="white" {...rest}>
-          Fazer login
-        </ButtonContainer>
-      )}
-      {buttonFunction === "gotoRegister" && (
-        <ButtonContainer variant="white" {...rest}>
-          Registrar-se
-        </ButtonContainer>
+
+      {variant === "white" && (
+        <ButtonContainer variant="white" {...rest}></ButtonContainer>
       )}
     </>
   );
