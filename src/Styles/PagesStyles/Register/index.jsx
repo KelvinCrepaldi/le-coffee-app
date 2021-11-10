@@ -90,5 +90,9 @@ export const Page = styled.div`
       border-radius: 18px;
       box-shadow: 3px 2px 12px var(--gray-600);
     }
+
+    .text-register {
+      display: none;
+    }
   }
 `;
