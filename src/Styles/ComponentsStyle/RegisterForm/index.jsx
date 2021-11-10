@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RegisterFormContainer = styled.main`
+export const RegisterFormContainer = styled.form`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
