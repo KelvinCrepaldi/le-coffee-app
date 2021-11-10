@@ -13,8 +13,10 @@ export const LoginFormContainer = styled.form`
     align-items: center;
     justify-content: flex-start;
     
-    width: 78%;
+    width: 80%;
+    max-width: 340px;
     margin-top: 60px;
+
     .bttnLogin {
       height: 50px;
       width: 78%;
