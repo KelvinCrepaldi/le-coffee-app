@@ -1,9 +1,12 @@
 import { LoginForm } from "../../Components/LoginForm";
 import { Page } from "../../Styles/PagesStyles/Login";
-import logo from "./Logo-main-black-4.png";
-import bgImageLeft from "./cover-rodape.png";
-import bgImageRight from "./about-us-cover-2.png";
+
+import logo from "../../assets/Logo-main-black-4.png";
+import bgImageLeft from "../../assets/cover-rodape.png";
+import bgImageRight from "../../assets/about-us-cover-2.png";
+
 import { AiOutlineArrowLeft } from "react-icons/ai";
+
 const LoginPage = () => {
   return (
     <Page>
