@@ -1,3 +1,5 @@
+import { InputContainer } from "../../Styles/ComponentsStyle/Input";
+
 export const Input = ({
   labelText,
   error,
@@ -6,15 +8,14 @@ export const Input = ({
   name,
   ...rest
 }) => {
-    
   return (
-    <div>
+    <InputContainer>
       {labelText && <label>{labelText}</label>}
-      <div>
+      <div className="inputBox">
         {Icon && <p>{Icon}</p>}
         <input {...register(name)} {...rest} />
         {error && <p>{error}</p>}
       </div>
-    </div>
+    </InputContainer>
   );
 };
