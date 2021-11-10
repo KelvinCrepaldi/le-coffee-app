@@ -1,4 +1,5 @@
 import { Input } from "../Input";
+import { ButtonComponent } from "../Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -7,7 +8,10 @@ import { LoginFormContainer } from "../../Styles/ComponentsStyle/LoginForm";
 export const LoginForm = () => {
   const loginSchema = yup.object({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
-    password: yup.string().required().min(6, "mínimo de 6 caracteres"),
+    password: yup
+      .string()
+      .required("Campo obrigatório")
+      .min(6, "mínimo de 6 caracteres"),
   });
 
   const {
@@ -37,16 +41,13 @@ export const LoginForm = () => {
         name="password"
         error={errors.password?.message}
       />
-      
-      <div className="bttnContainer">
-        <button className="bttnLogin" type="submit">
-          Entrar
-        </button>
-        <button className="bttnRegister">
-          Registrar-se
-        </button>
-      </div>
 
+      <div className="bttnContainer">
+        {/* <button className="bttnLogin" type="submit">
+          Entrar
+        </button> */}
+        <ButtonComponent type="submit" variant="brown" text="Entrar" />
+      </div>
     </LoginFormContainer>
   );
 };

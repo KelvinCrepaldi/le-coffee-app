@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.form`
- 
- margin-bottom: 25px;
- .inputBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 25px;
+
+  .inputBox {
     display: flex;
     flex-direction: row;
 
@@ -13,7 +16,7 @@ export const InputContainer = styled.form`
     border: 2px solid var(--brown-primary);
     border-radius: 10px;
 
-    input{
+    input {
       width: 99%;
       padding: 0 10px;
       border: none;
@@ -21,5 +24,11 @@ export const InputContainer = styled.form`
       outline: none;
       caret-color: var(--brown-primary);
     }
+  }
+  .inputError {
+    margin-top: 5px;
+    padding-left: 10px;
+    line-height: 20px;
+    color: tomato;
   }
 `;
