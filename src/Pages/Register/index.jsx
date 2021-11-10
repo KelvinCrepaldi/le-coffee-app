@@ -22,9 +22,9 @@ const Register = () => {
         </div>
 
         <div className="button-container">
-          <ButtonComponent buttonFunction="signup" />
+          <ButtonComponent variant="brown" text="Cadastrar" />
           <label className="text-register">Já possui uma conta?</label>
-          <ButtonComponent buttonFunction="gotoLogin" />
+          <ButtonComponent variant="white" text="Fazer login" />
         </div>
       </PageContent>
     </Page>
