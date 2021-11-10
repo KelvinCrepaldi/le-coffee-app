@@ -43,10 +43,7 @@ export const LoginForm = () => {
       />
 
       <div className="bttnContainer">
-        {/* <button className="bttnLogin" type="submit">
-          Entrar
-        </button> */}
-        <ButtonComponent type="submit" variant="brown" text="Entrar" />
+        <ButtonComponent className="bttnLogin"  type="submit" variant="brown" text="Entrar" />
       </div>
     </LoginFormContainer>
   );
