@@ -1,11 +1,13 @@
 import { RegisterFormContainer } from "../../Styles/ComponentsStyle/RegisterForm";
 import { ButtonComponent } from "../../Components/Button";
+
 import { RegisterContext } from "../../Providers/registerProvider/index";
 import { useContext } from "react";
 import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Input } from "../Input";
 
 const RegisterForm = () => {
   const { handleRegister } = useContext(RegisterContext);
@@ -14,7 +16,7 @@ const RegisterForm = () => {
   const registerSchema = yup.object({
     name: yup
       .string()
-      .max(50, "Campo obrigatório. Máximo de 50 dígitos.")
+      .max(48, "Campo obrigatório. Máximo de 48 dígitos.")
       .required("Campo obrigatório"),
     email: yup.string().required("Campo obrigatório").email("E-mail inválido"),
     password: yup
@@ -37,6 +39,7 @@ const RegisterForm = () => {
 
   const handleRegisterSubmit = (e) => {
     handleRegister(e);
+    history.push("/login");
   };
 
   const handleBackToLogin = () => {
@@ -45,7 +48,7 @@ const RegisterForm = () => {
 
   return (
     <RegisterFormContainer onSubmit={handleSubmit(handleRegisterSubmit)}>
-      <div>
+      <div className="center-mobile">
         <div className="title">
           <h1>Registre-se</h1>
           <span>
@@ -54,44 +57,42 @@ const RegisterForm = () => {
           </span>
         </div>
         <div>
-          <input
+          <Input
             placeholder="Nome"
-            type="text"
-            {...register("name")}
-            label="nome"
+            register={register}
+            name="name"
             error={errors.name?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="E-mail"
-            type="text"
-            {...register("email")}
-            label="E-mail"
+            register={register}
+            name="email"
             error={errors.email?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="Senha"
             type="password"
-            {...register("password")}
-            label="Senha"
+            register={register}
+            name="password"
             error={errors.password?.message}
-          ></input>
-          <input
+          ></Input>
+          <Input
             placeholder="Confirmar senha"
             type="password"
-            {...register("secondPassword")}
-            label="Confirmar senha"
+            register={register}
+            name="secondPassword"
             error={errors.secondPassword?.message}
-          ></input>
+          ></Input>
         </div>
-        <div className="button-container">
-          <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
-          <label className="text-register">Já possui uma conta?</label>
-          <ButtonComponent
-            variant="white"
-            text="Fazer login"
-            onClick={handleBackToLogin}
-          />
-        </div>
+      </div>
+      <div className="button-container">
+        <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
+        <label className="text-register">Já possui uma conta?</label>
+        <ButtonComponent
+          variant="white"
+          text="Fazer login"
+          onClick={handleBackToLogin}
+        />
       </div>
     </RegisterFormContainer>
   );
