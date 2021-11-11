@@ -31,6 +31,12 @@ const GlobalStyles = createGlobalStyle`
         --gray-300: #828282;
         --gray-600: #333333;
 
+        --pink-primary: #D9CCCF;
+        --gray-primary: #504A59;
+        --brown-secondary: #732F16;
+        --brown-terciary: #401309;
+        --brown-light: #A65341;
+
     }
 
     body {
