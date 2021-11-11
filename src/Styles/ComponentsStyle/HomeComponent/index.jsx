@@ -32,7 +32,7 @@ export const Sections = styled(Link)`
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -58,13 +58,16 @@ export const Sections = styled(Link)`
       transform: translateY(-5px);
     }
   }
+  @media(min-width: 768px){
+    width: 48vw;
+  }
 `;
 export const SectionsMod = styled(Link)`
   background: url(${backgroundAboutUs});
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -89,6 +92,9 @@ export const SectionsMod = styled(Link)`
       transform: translateY(-5px);
     }
   }
+  @media(min-width: 768px){
+    width: 48vw;
+  }
 `;
 
 export const SectionMap = styled(Link)`
@@ -96,7 +102,7 @@ export const SectionMap = styled(Link)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 96vw;
+  width: 96.5vw;
   height: 450px;
   margin: 0 auto;
   display: flex;
