@@ -8,6 +8,7 @@ import {
   SectionProducts,
   SectionAboutUs,
   SectionMap,
+  NavLink
 } from "../../Styles/ComponentsStyle/HomeComponent";
 import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { Link } from "react-router-dom";
@@ -21,32 +22,30 @@ const HomeComponent = () => {
 
       <Content>
           
-        <Link to="#">
-          <Sections>
+          <Sections to = "catalogue">
+      
             <h3>
               PRODUTOS <br /> <span>Ver mais</span>
             </h3>
+    
           </Sections>
-        </Link>
 
-        <Link>
-          <SectionsMod>
+          <SectionsMod to = "aboutUs">
             <h3>
               SOBRE NÓS
               <br /> <span>Ver mais</span>
             </h3>
           </SectionsMod>
-        </Link>
+   
 
       </Content>
 
-      <Link>
-        <SectionMap>
+        <SectionMap to = "region">
           <h3>
             MAPA <br /> <span>Ver mais</span>
           </h3>
         </SectionMap>
-      </Link>
+
 
       <Footer>
         <img src={logoNavbar}></img>

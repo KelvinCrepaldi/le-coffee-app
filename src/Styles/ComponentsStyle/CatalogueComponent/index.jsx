@@ -12,9 +12,11 @@ export const BoxCard = styled.div`
     border: 2px solid var(--gray-100);
     box-shadow: 2px 3px 3px  rgba(0,0,0,0.05);
     button {
+        width: 100%;
+        height: 45px;
         margin-left: -3px;
         margin-top: 5px;
-        background: var(--gray-100);
+        background: var(--gray-300);
     }
     :hover{
         transition: 0.3s;

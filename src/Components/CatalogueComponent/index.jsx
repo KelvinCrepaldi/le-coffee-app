@@ -25,7 +25,7 @@ const CatalogueComponent = () => {
               <h3>{product.name}</h3>
               <span>{product.category}</span>
               <p>{product.price}</p>
-              <ButtonComponent variant="brown" text = "Vizualizar"></ButtonComponent>
+              <ButtonComponent variant="white" text = "Vizualizar"></ButtonComponent>
             </div>
           </BoxCard>
         ))}
