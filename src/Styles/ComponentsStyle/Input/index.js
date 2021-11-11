@@ -13,16 +13,16 @@ export const InputContainer = styled.form`
     height: 46px;
     width: 64vw;
     max-width: 315px;
-    border: 2px solid var(--brown-primary);
+    border: 2px solid var(--brown-light);
     border-radius: 10px;
 
     input {
-      width: 99%;
+      width: 100%;
       padding: 0 10px;
       border: none;
-      border-radius: 12px;
+      background-color: transparent;
       outline: none;
-      caret-color: var(--brown-primary);
+      caret-color: var(--brown-details);
     }
   }
   .inputError {

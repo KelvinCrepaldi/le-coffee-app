@@ -45,6 +45,7 @@ export const LoginForm = () => {
 
       <Input
         placeholder="Senha"
+        type="password"
         register={register}
         name="password"
         error={errors.password?.message}

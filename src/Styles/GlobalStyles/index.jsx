@@ -34,18 +34,16 @@ const GlobalStyles = createGlobalStyle`
 
         --pink-primary: #D9CCCF;
         --gray-primary: #504A59;
-        --brown-secondary: #732F16;
-        --brown-terciary: #401309;
-        --brown-light: #A65341;
-
+        
         --alert-success: #61db61;
-        --alert-error: #df6752;
-
+        --alert-error: #e9563c;
+        
         //First Palette
         --gray-light:#D9CCCF; 
         --gray-medium:#504A59; 
-        --brown-xlight:#A65341; 
-        --brown-light:#AA6655;
+        --brown-details:#d47f69;
+        --brown-xlight:#AA6655;
+        --brown-light:#A65341; 
         --brown-medium:#732F16; 
         --brown-dark:#401309; 
         
