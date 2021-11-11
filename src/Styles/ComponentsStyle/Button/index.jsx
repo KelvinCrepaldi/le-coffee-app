@@ -5,11 +5,11 @@ export const ButtonContainer = styled.button`
   font-weight: var(--font-w-normal);
   box-sizing: border-box;
   border: none;
-  border-radius: 17px;
+  border-radius: 7px;
 
   &.white {
-    background-color: #fff;
-    color: #808080;
+    background-color: #dcdcdc;
+    color: #fff;
   }
 
   &.brown {
