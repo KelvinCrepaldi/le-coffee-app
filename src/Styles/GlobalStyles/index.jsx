@@ -25,12 +25,30 @@ const GlobalStyles = createGlobalStyle`
         --font-w-normal: 400;
         --font-w-bold: 600;
 
-        --brown-primary: #AA6655;
-        --white-primary: #fefefe;
+        --white-primary: #f5f5f5;
+        --black-primary:#0f0f0f; 
+
         --gray-100: #E0E0E0;
-        --gray-300: #828282;
+        --gray-300: #271d1d;
         --gray-600: #333333;
 
+        --alert-success: #61db61;
+        --alert-error: #df6752;
+
+        //First Palette
+        --gray-light:#D9CCCF; 
+        --gray-medium:#504A59; 
+        --brown-xlight:#A65341; 
+        --brown-light:#AA6655;
+        --brown-medium:#732F16; 
+        --brown-dark:#401309; 
+        
+        //Second Palette
+        --caramel-xlight:#F2D5C4;
+        --caramel-light:#D9B79A;
+        --caramel-medium:#A68160;
+        --caramel-dark:#73563D;
+        --caramel-xdark:#212621;
     }
 
     body {
