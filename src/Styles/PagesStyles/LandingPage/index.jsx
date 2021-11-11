@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import main from "../../../assets/main-desktop.png";
 
 /**
 {
@@ -28,22 +29,12 @@ export const SectionOne = styled.section`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 90vh;
+  position: relative;
+  overflow-x: hidden;
 
-  .Logo {
-    margin-top: 25px;
-    height: 175px;
-  }
 
-  .Cover {
-    position: absolute;
-    z-index: -1;
-    height: 100vh;
 
-    @media (min-width: 1024px) {
-      height: 100%;
-    }
-  }
+  height: 800px;
 
   p {
     padding: 0 40px 0 40px;
@@ -51,6 +42,19 @@ export const SectionOne = styled.section`
     color: var(--white-primary);
     font-size: var(--font-size-medium);
     text-align: center;
+  }
+
+  .Cover {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Logo {
+    margin-top: 25px;
+    height: 175px;
   }
 
   .GroupButtons {
@@ -67,6 +71,14 @@ export const SectionOne = styled.section`
     @media (min-width: 1024px) {
       flex-direction: row;
       justify-content: center;
+
+      .Cover {
+        height: 100%;
+      }
+
+      p {
+
+      }
     }
   }
 
@@ -75,7 +87,7 @@ export const SectionOne = styled.section`
     width: 100%;
 
     p {
-      padding: 0 300px;
+      padding: 0 30px;
       font-size: var(--font-size-xlarge);
     }
 
@@ -91,7 +103,7 @@ export const SectionTwo = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   height: 600px;
 
   background-color: var(--gray-primary);
@@ -99,18 +111,28 @@ export const SectionTwo = styled.section`
 
   p {
     padding: 0 35px 0 35px;
-    color: var(--white-primary)
+    color: var(--white-primary);
   }
 
   img {
     width: 45px;
     margin-right: 10px;
-  } 
+  }
 
   .S2 {
     margin-top: 25px;
     font-size: var(--font-size-large);
-    align: center;  
+    align: center;
+  }
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 625px;
+    }
   }
 
   .TextS2 {
@@ -128,7 +150,14 @@ export const SectionTwo = styled.section`
 
   @media (min-width: 1024px) {
     .S2 {
-      font-size: var(--font-size-xlarge);  
+      font-size: var(--font-size-xlarge);
+    }
+
+    .Container {
+      display: flex;
+      flex-direction: row;
+      flex-start: center;
+      align-items: space-between;
     }
 
     .TextS2 {
@@ -141,7 +170,7 @@ export const SectionThree = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   height: 600px;
 
   p {
@@ -169,15 +198,11 @@ export const SectionFour = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   height: 950px;
 
   background-color: var(--gray-primary);
-  border-radius: 25px;
-
-  img {
-    width: 320px;
-  }
+  border-radius: 25px 25px 0 0;
 
   .TitleS4 {
     margin-top: 25px;
@@ -185,14 +210,22 @@ export const SectionFour = styled.section`
     color: var(--white-primary);
   }
 
+  .Team {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   @media (min-width: 1024px) {
     align-items: center;
 
-    height: 400px;
+    height: 550px;
 
     .Team {
       display: flex;
       flex-direction: row;
+      justify-content: space-evenly;;
     }
   }
 `;
@@ -202,11 +235,10 @@ export const Footer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   height: 500px;
 
-  background-color: black;
-  border-radius: 25px;
+  background-color: var(--black-primary);
 
   img {
     width: 150px;
@@ -243,19 +275,26 @@ export const Logo = styled.div`
 
 export const Member = styled.div`
   img {
-    width: 195px;
+    width: 175px;
   }
 
   p {
     position: relative;
-    top: -20%;
+    top: -17%;
+    font-size: var(--font-size-large);
     text-align: center;
     color: var(--white-primary);
   }
 
   @media (min-width: 1024px) {
+    margin-top: 35px;
+
     img {
-      width: 320px;
+      width: 375px;
+    }
+
+    p {
+      font-size: var(--font-size-large);
     }
   }
 `;
