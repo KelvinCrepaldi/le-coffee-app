@@ -12,4 +12,8 @@ export const ButtonContainer = styled.button`
     props.variant === "white" ? "#FFFF" : "var(--brown-primary)"};
   color: ${(props) =>
     props.variant === "white" ? "var(--gray-300)" : "var(--white-primary)"};
+
+  @media (min-width: 1024px) {
+    display: ${(props) => props.variant === "white" && "none"};
+  }
 `;

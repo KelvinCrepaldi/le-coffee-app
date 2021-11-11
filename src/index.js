@@ -6,9 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ProvidersGathered>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ProvidersGathered>
   </React.StrictMode>,
   document.getElementById("root")
 );

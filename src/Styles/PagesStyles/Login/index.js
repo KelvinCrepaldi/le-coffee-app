@@ -5,8 +5,10 @@ export const Page = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
   height: 100vh;
+  padding-top: 5vh;
+
+  background-color: #504a59;
 
   .bgContent,
   .toLogin {
@@ -19,16 +21,28 @@ export const Page = styled.div`
   }
 
   .formContent {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
+    width: 90%;
+    height: 70vh;
+    max-height: 500px;
+    padding: 16px 0;
     text-align: center;
+
     background-color: #f5f5f5;
+    border-radius: 20px 20px 0 0;
 
     h1 {
       font-size: 26px;
       color: #401309;
+    }
+
+    .bttnRegister {
+      height: 40px;
+      width: 78%;
+      margin-top: 22px;
+      background-color: #ffffff;
+      color: #808080;
+      border: none;
+      border-radius: 17px;
     }
   }
 
@@ -58,7 +72,7 @@ export const Page = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      width: 170px;
+      width: 146px;
 
       button {
         width: 60px;
@@ -83,16 +97,14 @@ export const Page = styled.div`
       right: 22%;
       top: 50%;
       transform: translateY(-50%);
-      min-height: auto;
 
-      padding: 0;
       width: 360px;
       border-radius: 18px;
       box-shadow: 3px 2px 12px var(--gray-600);
+      .bttnRegister {
+        display: none;
+      }
     }
 
-    .text-register {
-      display: none;
-    }
   }
 `;
