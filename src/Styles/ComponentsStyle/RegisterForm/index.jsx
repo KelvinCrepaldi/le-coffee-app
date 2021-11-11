@@ -39,6 +39,11 @@ export const RegisterFormContainer = styled.form`
 
     width: 100%;
     margin-bottom: 30px;
+
+    button {
+      width: 265px;
+      height: 54px;
+    }
   }
 
   .text-register {
@@ -52,5 +57,11 @@ export const RegisterFormContainer = styled.form`
 
   .center-mobile {
     margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    .display-desktop {
+      display: none;
+    }
   }
 `;

@@ -87,8 +87,11 @@ const RegisterForm = () => {
       </div>
       <div className="button-container">
         <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
-        <label className="text-register">Já possui uma conta?</label>
+        <label className="text-register display-desktop">
+          Já possui uma conta?
+        </label>
         <ButtonComponent
+          className="display-desktop white"
           variant="white"
           text="Fazer login"
           onClick={handleBackToLogin}
