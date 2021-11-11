@@ -4,13 +4,19 @@ export const ButtonComponent = ({ variant, text, ...rest }) => {
   return (
     <>
       {variant === "brown" && (
-        <ButtonContainer variant="brown" {...rest}>
+        <ButtonContainer className="brown" {...rest}>
           {text}
         </ButtonContainer>
       )}
 
       {variant === "white" && (
-        <ButtonContainer variant="white" {...rest}>
+        <ButtonContainer className="white" variant="white" {...rest}>
+          {text}
+        </ButtonContainer>
+      )}
+
+      {variant === "unfill" && (
+        <ButtonContainer className="unfill" {...rest}>
           {text}
         </ButtonContainer>
       )}
