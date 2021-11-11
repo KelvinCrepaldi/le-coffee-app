@@ -57,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Nova Round', cursive;
-        background: var(--EletromagneticColor);
+        background: #ecf0f1;
     }
     
     body, input, button {
