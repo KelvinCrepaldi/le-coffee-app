@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import Register from "../Pages/Register";
 import LandingPage from "../Pages/LandingPage";
 import LoginPage from "../Pages/Login";
+import Catalogue from "../Pages/Catalogue/"
 
 const RoutesPatchs = () => {
   return (
@@ -31,7 +32,7 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/catalogue">
         <GlobalStyles />
-        <Register />
+        <Catalogue />
       </Route>
       <Route path="/aboutus">
         <GlobalStyles />
