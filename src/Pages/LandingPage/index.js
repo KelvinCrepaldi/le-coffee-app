@@ -15,7 +15,7 @@ import kelvin from "../../assets/kelvin.png";
 import leonam from "../../assets/leonam.png";
 import luan from "../../assets/luan.png";
 import roberto from "../../assets/roberto.png";
-import ButtonComponent from "../../Components/Button";
+import { ButtonComponent } from "../../Components/Button";
 
 const LandingPage = () => {
   return (
