@@ -32,7 +32,7 @@ export const Sections = styled(Link)`
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 640px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -58,13 +58,16 @@ export const Sections = styled(Link)`
       transform: translateY(-5px);
     }
   }
+  @media(min-width: 768px){
+    width: 48vw;
+  }
 `;
 export const SectionsMod = styled(Link)`
   background: url(${backgroundAboutUs});
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 640px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -88,6 +91,9 @@ export const SectionsMod = styled(Link)`
       transition: 0.5s ease;
       transform: translateY(-5px);
     }
+  }
+  @media(min-width: 768px){
+    width: 48vw;
   }
 `;
 
