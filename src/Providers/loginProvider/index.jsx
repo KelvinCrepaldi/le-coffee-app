@@ -27,7 +27,9 @@ export const LoginProvider = ({ children }) => {
         localStorage.setItem("userId", JSON.stringify(res.data.user.id));
         history.push("/home");
       })
-      .catch(errorToast());
+      .catch((err) => {
+        errorToast();
+      });
   };
   const logout = (history) => {
     localStorage.clear();
