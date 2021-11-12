@@ -6,13 +6,13 @@ import Register from "../Pages/Register";
 import LandingPage from "../Pages/LandingPage";
 import LoginPage from "../Pages/Login";
 import Catalogue from "../Pages/Catalogue/"
-
+import AboutUs from "../Pages/AboutUs";
 const RoutesPatchs = () => {
   return (
     <Switch>
       <Route exact path="/">
         <GlobalStyles />
-        <Home />
+        <LandingPage />
       </Route>
       <Route path="/landingpage">
         <GlobalStyles />
@@ -28,7 +28,7 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/home">
         <GlobalStyles />
-        <Register />
+        <Home />
       </Route>
       <Route path="/catalogue">
         <GlobalStyles />
@@ -36,7 +36,7 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/aboutus">
         <GlobalStyles />
-        <Register />
+        <AboutUs />
       </Route>
       <Route path="/regionmap">
         <GlobalStyles />

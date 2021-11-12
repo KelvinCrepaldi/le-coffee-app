@@ -24,7 +24,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 97vw;
+  width: 88.5vw;
   margin: 20px auto;
 `;
 export const Sections = styled(Link)`
@@ -32,7 +32,7 @@ export const Sections = styled(Link)`
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 640px;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@ export const SectionsMod = styled(Link)`
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 640px;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -96,7 +96,7 @@ export const SectionMap = styled(Link)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 96vw;
+  width: 85vw;
   height: 450px;
   margin: 0 auto;
   display: flex;

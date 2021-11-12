@@ -15,7 +15,9 @@ const CatalogueComponent = () => {
   return (
     <Container>
       <ImageTop>
-        <h1>PRODUTOS <br/> <span>Home &gt; Produtos</span></h1>
+        <h1>
+          PRODUTOS <br /> <span>Home &gt; Produtos</span>
+        </h1>
       </ImageTop>
       <Content>
         {catalogue.map((product, index) => (
@@ -25,7 +27,10 @@ const CatalogueComponent = () => {
               <h3>{product.name}</h3>
               <span>{product.category}</span>
               <p>{product.price}</p>
-              <ButtonComponent variant="white" text = "Vizualizar"></ButtonComponent>
+              <ButtonComponent
+                variant="white"
+                text="Vizualizar"
+              ></ButtonComponent>
             </div>
           </BoxCard>
         ))}
