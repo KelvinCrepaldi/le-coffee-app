@@ -1,6 +1,13 @@
-import { ProductContainer } from "../../Styles/ComponentsStyle/ProductComponent";
+import {
+  ProductContainer,
+  BackgroundTransparent,
+} from "../../Styles/ComponentsStyle/ProductComponent";
 import { ButtonComponent } from "../Button";
+import { Counter } from "../Counter";
+import { useState } from "react";
 export const ProductComponent = () => {
+  const [active, setActive] = useState(true);
+  const [counter, setCounter] = useState(0);
   const product = {
     id: 1,
     name: "Minas Coffee",
@@ -12,46 +19,56 @@ export const ProductComponent = () => {
       "O sabor da bebida é intenso, a doçura ligeiramente presente com um toque de amargor. A finalização é achocolatada e caramelizada com notas amadeiradas. Elas são compatíveis com as máquinas do sistema Nespresso.",
     sca: 80,
   };
+
+  const handleCloseWindow = () => {
+    setActive(false);
+  };
   return (
-    <ProductContainer>
-      <div className="close-button">
-        <button>X</button>
-      </div>
-      <div className="item-content">
-        <div className="image-container">
-          <img src={product.image} />
-        </div>
-        <div className="content-container">
-          <h1>{product.name}</h1>
-          <label className="category">{product.category}</label>
-          <label className="price">{product.price}</label>
-          <label>{product.description}</label>
-          <div className="buttons-container">
-            <div class="top-buttons-container">
-              <ButtonComponent
-                className="top-button unfill"
-                variant="unfill"
-                text="Adicionar ao carrinho"
-              ></ButtonComponent>
-              <ButtonComponent
-                className="top-button unfill"
-                variant="unfill"
-                text="Solicitar amostra"
-              ></ButtonComponent>
+    <>
+      {active === true && (
+        <>
+          <BackgroundTransparent></BackgroundTransparent>
+          <ProductContainer>
+            <div className="close-button">
+              <button onClick={handleCloseWindow}>X</button>
             </div>
-            <ButtonComponent
-              className="botton-button brown"
-              variant="white"
-              text="Fazer login"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="item-rating">
-        <h1>Avaliações dos clientes</h1>
-        <h2>Flunano</h2>
-        <p>ASDKASIODK D SAOKDP SADPO SAPOD KSAOD KA POSAKPD KSAD </p>
-      </div>
-    </ProductContainer>
+            <div className="item-content">
+              <div className="image-container">
+                <img src={product.image} />
+              </div>
+              <div className="content-container">
+                <h1>{product.name}</h1>
+                <label className="category">{product.category}</label>
+                <label className="price">{product.price}</label>
+                <label className="description">{product.description}</label>
+                <Counter counter={counter} setCounter={setCounter} />
+                <div className="buttons-container">
+                  <div class="top-buttons-container">
+                    <ButtonComponent
+                      className="top-button unfill"
+                      variant="unfill"
+                      text="Adicionar ao carrinho"
+                    ></ButtonComponent>
+                    <ButtonComponent
+                      className="top-button unfill"
+                      variant="unfill"
+                      text="Solicitar amostra"
+                    ></ButtonComponent>
+                  </div>
+                  <ButtonComponent
+                    className="botton-button brown"
+                    variant="brown"
+                    text="Compre já!"
+                  />
+                </div>
+              </div>
+              <div className="item-rating">
+                <h1>Avaliações</h1>
+              </div>
+            </div>
+          </ProductContainer>
+        </>
+      )}
+    </>
   );
 };
