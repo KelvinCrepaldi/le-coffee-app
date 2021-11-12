@@ -3,7 +3,7 @@ import api from "../../Services";
 
 export const CommentContext = createContext();
 
-export const CommentProvider = ({ children }) => {
+export const RatingProvider = ({ children }) => {
   const [rating, setRating] = useState([]);
   
   const getRatingProducts = () => {
@@ -27,10 +27,10 @@ export const CommentProvider = ({ children }) => {
       .catch((error) => console.log(error));
   }
 
-  const deleteRating =  (ratingId) => {
+  const deleteRating =  (ratingId, token) => {
     api.delete(`ratingProducts/${ratingId}`, {
       headers: {
-        Authorization: `Bearer ${usrToken}`,
+        Authorization: `Bearer ${token}`,
       },
     })
     .then(console.log("deleted"))
