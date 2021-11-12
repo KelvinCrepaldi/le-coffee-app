@@ -5,10 +5,10 @@ import { FaBars } from "react-icons/fa";
 export const Nav = styled.nav`
   position: absolute;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
-  justify-content: space-between;
-  z-index: 10;
   margin: 0 auto;
   padding: 0.5rem calc((65vw - 1000px) / 2);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -119,7 +119,7 @@ export const NavMenu = styled.div`
     padding-top: 3.5rem;
     text-align: left;
     transition: transform 0.5s ease-in-out;
-    background: var(--brown-primary);
+    background: var(--brown-light);
   }
 `;
 export const NavBtn = styled.nav`
