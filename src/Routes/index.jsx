@@ -1,11 +1,12 @@
 import { Switch, Route } from "react-router";
 import GlobalStyles from "../Styles/GlobalStyles";
 
-import Home from "../Pages/Home";
 import Register from "../Pages/Register";
 import LandingPage from "../Pages/LandingPage";
 import LoginPage from "../Pages/Login";
+import Home from "../Pages/Home";
 import Catalogue from "../Pages/Catalogue/"
+import CartPage from "../Pages/Cart";
 
 const RoutesPatchs = () => {
   return (
@@ -29,6 +30,10 @@ const RoutesPatchs = () => {
       <Route path="/catalogue">
         <GlobalStyles />
         <Catalogue />
+      </Route>
+      <Route path="/cart">
+        <GlobalStyles />
+        <CartPage />
       </Route>
       <Route path="/aboutus">
         <GlobalStyles />
