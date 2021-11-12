@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import api from "../../Services";
 
-export const CommentContext = createContext();
+export const RatingContext = createContext();
 
 export const RatingProvider = ({ children }) => {
   const [rating, setRating] = useState([]);
@@ -38,6 +38,6 @@ export const RatingProvider = ({ children }) => {
   }
 
   return (
-    <CommentContext.Provider value={{ getRatingProducts, handleRating, deleteRating }}>{children}</CommentContext.Provider>
+    <RatingContext.Provider value={{ getRatingProducts, handleRating, deleteRating }}>{children}</RatingContext.Provider>
   );
 };
