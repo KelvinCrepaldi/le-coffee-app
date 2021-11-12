@@ -3,6 +3,7 @@ import backgroundTop from "../../../assets/coverTop.png";
 import backgroundProducts from "../../../assets/backgroundProducts.png";
 import backgroundAboutUs from "../../../assets/backgroundAboutUs.png";
 import mapHomePage from "../../../assets/mapHome.png";
+import { NavLink as Link } from "react-router-dom";
 export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -26,18 +27,19 @@ export const Content = styled.div`
   width: 97vw;
   margin: 20px auto;
 `;
-export const Sections = styled.section`
+export const Sections = styled(Link)`
   background: url(${backgroundProducts});
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: 0.3s ease-in;
+ 
   h3 {
     transition: 0.3s ease-in;
     text-align: center;
@@ -56,13 +58,16 @@ export const Sections = styled.section`
       transform: translateY(-5px);
     }
   }
+  @media(min-width: 768px){
+    width: 48vw;
+  }
 `;
-export const SectionsMod = styled.section`
+export const SectionsMod = styled(Link)`
   background: url(${backgroundAboutUs});
   background-position: center;
   background-size: cover;
   height: 400px;
-  width: 760px;
+  width: 95vw;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -87,14 +92,17 @@ export const SectionsMod = styled.section`
       transform: translateY(-5px);
     }
   }
+  @media(min-width: 768px){
+    width: 48vw;
+  }
 `;
 
-export const SectionMap = styled.section`
+export const SectionMap = styled(Link)`
   background: url(${mapHomePage});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 96vw;
+  width: 96.5vw;
   height: 450px;
   margin: 0 auto;
   display: flex;
