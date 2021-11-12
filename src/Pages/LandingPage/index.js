@@ -16,6 +16,7 @@ import leonam from "../../assets/leonam.png";
 import luan from "../../assets/luan.png";
 import roberto from "../../assets/roberto.png";
 import { ButtonComponent } from "../../Components/Button";
+import { CarouselNewProducts } from "../../Components/CarouselNewProducts";
 
 const LandingPage = () => {
   return (
@@ -64,7 +65,8 @@ const LandingPage = () => {
 
       <SectionThree>
         <p className="TitleS3">Novos Produtos</p>
-        <img src={cafe} alt="Carrossel" />
+        {/* <img src={cafe} alt="Carrossel" /> */}
+        <CarouselNewProducts />
       </SectionThree>
 
       <SectionFour>
