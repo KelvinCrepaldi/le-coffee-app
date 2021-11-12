@@ -58,6 +58,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Nova Round', cursive;
         background: #ecf0f1;
+        letter-spacing:1.5px;
     }
     
     body, input, button {
