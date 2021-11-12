@@ -12,10 +12,6 @@ const RoutesPatchs = () => {
     <Switch>
       <Route exact path="/">
         <GlobalStyles />
-        <Home />
-      </Route>
-      <Route path="/landingpage">
-        <GlobalStyles />
         <LandingPage />
       </Route>
       <Route path="/login">
@@ -28,7 +24,7 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/home">
         <GlobalStyles />
-        <Register />
+        <Home />
       </Route>
       <Route path="/catalogue">
         <GlobalStyles />
