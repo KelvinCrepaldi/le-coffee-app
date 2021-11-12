@@ -15,9 +15,8 @@ export const Nav = styled.nav`
 
   img {
     margin-right: 168px;
-    margin-top: 10px;
-    width: 150px;
-    height: 150px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
   }
 
