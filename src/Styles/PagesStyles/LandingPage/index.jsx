@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import main from "../../../assets/main-desktop.png";
 
 /**
 {
@@ -27,17 +26,15 @@ box-shadow: 0px 10px 5px #000;
 export const SectionOne = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow-x: hidden;
 
-
-
   height: 800px;
 
   p {
-    padding: 0 40px 0 40px;
+    padding: 0 30px 0 30px;
     margin-top: 75px;
     color: var(--white-primary);
     font-size: var(--font-size-medium);
@@ -53,7 +50,6 @@ export const SectionOne = styled.section`
   }
 
   .Logo {
-    margin-top: 25px;
     height: 175px;
   }
 
@@ -62,28 +58,16 @@ export const SectionOne = styled.section`
     flex-direction: column;
     align-items: center;
 
-    margin-top: 45px;
+    margin-top: 35px;
 
     button {
+      width: 195px;
       margin: 17px;
-    }
-
-    @media (min-width: 1024px) {
-      flex-direction: row;
-      justify-content: center;
-
-      .Cover {
-        height: 100%;
-      }
-
-      p {
-
-      }
+      padding: 17px;
     }
   }
 
   @media (min-width: 1024px) {
-    flex-grow: 1;
     width: 100%;
 
     p {
@@ -95,6 +79,10 @@ export const SectionOne = styled.section`
       height: 350px;
       width: 345px;
     }
+    
+    .Cover {
+        width: 100%;
+      }
   }
 `;
 
@@ -122,7 +110,7 @@ export const SectionTwo = styled.section`
   .S2 {
     margin-top: 25px;
     font-size: var(--font-size-large);
-    align: center;
+    text-align: center;
   }
 
   .Container {
@@ -156,7 +144,6 @@ export const SectionTwo = styled.section`
     .Container {
       display: flex;
       flex-direction: row;
-      flex-start: center;
       align-items: space-between;
     }
 
@@ -178,7 +165,7 @@ export const SectionThree = styled.section`
   }
 
   img {
-    heigth: 225px;
+    height: 225px;
   }
 
   .TitleS3 {
@@ -225,7 +212,7 @@ export const SectionFour = styled.section`
     .Team {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;;
+      justify-content: space-evenly;
     }
   }
 `;
