@@ -7,26 +7,32 @@ import LoginPage from "../Pages/Login";
 import Home from "../Pages/Home";
 import Catalogue from "../Pages/Catalogue/"
 import CartPage from "../Pages/Cart";
+import AboutUs from "../Pages/AboutUs";
 
 const RoutesPatchs = () => {
   return (
     <Switch>
+    
       <Route exact path="/">
         <GlobalStyles />
         <LandingPage />
       </Route>
+    
       <Route path="/login">
         <GlobalStyles />
         <LoginPage />
       </Route>
+    
       <Route path="/register">
         <GlobalStyles />
         <Register />
       </Route>
+    
       <Route path="/home">
         <GlobalStyles />
         <Home />
       </Route>
+    
       <Route path="/catalogue">
         <GlobalStyles />
         <Catalogue />
@@ -37,12 +43,14 @@ const RoutesPatchs = () => {
       </Route>
       <Route path="/aboutus">
         <GlobalStyles />
-        <Register />
+        <AboutUs />
       </Route>
+    
       <Route path="/regionmap">
         <GlobalStyles />
         <Register />
       </Route>
+    
     </Switch>
   );
 };

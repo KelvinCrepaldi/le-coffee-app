@@ -32,11 +32,15 @@ export const Nav = styled.nav`
 
       svg {
         font-size: 34px;
-        color: var(--gray-300);
+        color: var(--gray-medium);
         
         cursor: pointer;
         :hover{
-          color: var(--white-primary);
+          color: var(--brown-xlight);
+        }
+
+        :active {
+          color: var(--brown-xlight);
         }
       }
     }
@@ -75,7 +79,7 @@ export const NavLink = styled(Link)`
     transition: all 0.2s ease-in-out;
   }
   &.active {
-    color: var(--brown-primary);
+    color: var(--brown-xlight);
   }
 `;
 

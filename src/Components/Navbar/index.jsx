@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
+import { CgShoppingBag } from "react-icons/cg"
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -22,8 +23,11 @@ const Navbar = () => {
           <NavLink to="/home" activeStyle>
             Home
           </NavLink>
-          <NavLink to="/products" activeStyle>
+          <NavLink to="/catalogue" activeStyle>
             Produtos
+          </NavLink>
+          <NavLink to="/aboutus" activeStyle>
+            Quem somos
           </NavLink>
           <NavLink to="/region" activeStyle>
             Região
@@ -34,7 +38,7 @@ const Navbar = () => {
 
         <ul>
           <li>
-            <AiOutlineShoppingCart />
+            <CgShoppingBag />
           </li>
           <li>
             <MdOutlineLogout />
