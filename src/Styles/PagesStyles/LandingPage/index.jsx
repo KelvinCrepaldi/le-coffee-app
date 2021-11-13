@@ -40,14 +40,6 @@ export const SectionOne = styled.section`
     text-align: center;
   }
 
-  /* .Cover {
-    position: absolute;
-    z-index: -1;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
-
   .Cover {
     position: absolute;
     z-index: -1;
@@ -177,19 +169,21 @@ export const SectionThree = styled.section`
     margin-top: 50px;
   }
 
-  img {
-    height: 225px;
-  }
 
   .TitleS3 {
     margin-top: 25px;
     font-size: var(--font-size-xlarge);
   }
 
+  .Products {
+    height: 350px;
+  }
+
   @media (min-width: 1024px) {
-    align-items: center;
-    img {
-      width: 450px;
+    justify-content: center;
+
+    .Products {
+      width: 100%;
     }
   }
 `;

@@ -6,42 +6,46 @@ import Register from "../Pages/Register";
 import LandingPage from "../Pages/LandingPage";
 import LoginPage from "../Pages/Login";
 import Catalogue from "../Pages/Catalogue/"
-
+import AboutUs from "../Pages/AboutUs";
 const RoutesPatchs = () => {
   return (
     <Switch>
+    
       <Route exact path="/">
-        <GlobalStyles />
-        <Home />
-      </Route>
-      <Route path="/landingpage">
         <GlobalStyles />
         <LandingPage />
       </Route>
+    
       <Route path="/login">
         <GlobalStyles />
         <LoginPage />
       </Route>
+    
       <Route path="/register">
         <GlobalStyles />
         <Register />
       </Route>
+    
       <Route path="/home">
         <GlobalStyles />
-        <Register />
+        <Home />
       </Route>
+    
       <Route path="/catalogue">
         <GlobalStyles />
         <Catalogue />
       </Route>
+    
       <Route path="/aboutus">
         <GlobalStyles />
-        <Register />
+        <AboutUs />
       </Route>
+    
       <Route path="/regionmap">
         <GlobalStyles />
         <Register />
       </Route>
+    
     </Switch>
   );
 };

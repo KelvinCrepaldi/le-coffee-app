@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   img {
-    margin-right: 168px;
+    margin-right: 350px;
     margin-top: 10px;
     width: 150px;
     height: 150px;
@@ -33,11 +33,15 @@ export const Nav = styled.nav`
 
       svg {
         font-size: 34px;
-        color: var(--gray-300);
+        color: var(--gray-medium);
         
         cursor: pointer;
         :hover{
-          color: var(--white-primary);
+          color: var(--brown-xlight);
+        }
+
+        :active {
+          color: var(--brown-xlight);
         }
       }
     }
@@ -76,7 +80,7 @@ export const NavLink = styled(Link)`
     transition: all 0.2s ease-in-out;
   }
   &.active {
-    color: var(--brown-primary);
+    color: var(--brown-xlight);
   }
 `;
 
@@ -119,7 +123,7 @@ export const NavMenu = styled.div`
     padding-top: 3.5rem;
     text-align: left;
     transition: transform 0.5s ease-in-out;
-    background: var(--brown-primary);
+    background: var(--gray-medium);
   }
 `;
 export const NavBtn = styled.nav`
