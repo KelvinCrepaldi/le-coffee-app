@@ -7,6 +7,8 @@ import {
   Member,
 } from "../../Styles/PagesStyles/LandingPage";
 
+import { useHistory } from "react-router-dom";
+
 import cafe from "../../assets/cafe-7.png";
 import cup from "../../assets/cup-of-coffee.png";
 import logo from "../../assets/logo-main-white.png";
@@ -19,12 +21,14 @@ import luan from "../../assets/luan.png";
 import roberto from "../../assets/roberto.png";
 
 import { ButtonComponent } from "../../Components/Button";
+// import { CarouselNewProducts } from "../../Components/"
 
 const LandingPage = () => {
+  const history = useHistory();
   return (
     <>
       <SectionOne>
-        <img src={main} alt="Logo Le Coffee" className="Cover" />
+        <img src={main} alt="Cover Photo" className="Cover" />
 
         <img src={logo} alt="Logo Le Coffee" className="Logo" />
 
@@ -38,8 +42,16 @@ const LandingPage = () => {
         </p>
 
         <div className="GroupButtons">
-          <ButtonComponent variant="white" text="Login" />
-          <ButtonComponent variant="brown" text="Cadastre-se" />
+          <ButtonComponent
+            variant="white"
+            text="Login"
+            onClick={() => history.push("/login")}
+          />
+          <ButtonComponent
+            variant="brown"
+            text="Cadastre-se"
+            onClick={() => history.push("/register")}
+          />
         </div>
       </SectionOne>
 
@@ -69,32 +81,20 @@ const LandingPage = () => {
 
       <SectionThree>
         <p className="TitleS3">Novos Produtos</p>
-        {/* <img src={cafe} alt="Carrossel" /> */}
+        <CarouselNewProducts />
       </SectionThree>
 
       <SectionFour>
         <div className="TitleS4">Nosso Time</div>
 
         <div className="Team">
-          <Member>
-            <img src={kelvin} alt="Kelvin Crepaldi" />
-            <p>Kelvin Crepaldi - TL</p>
-          </Member>
+          <img src={kelvin} alt="Kelvin Crepaldi" className="Member" />
 
-          <Member>
-            <img src={leonam} alt="Leonam Rodrigues" />
-            <p>Leonam Rodrigues - PO</p>
-          </Member>
+          <img src={leonam} alt="Leonam Rodrigues" className="Member" />
 
-          <Member>
-            <img src={luan} alt="Luan Ferreira" />
-            <p>Luan Ferreira - SM</p>
-          </Member>
+          <img src={luan} alt="Luan Ferreira" className="Member" />
 
-          <Member>
-            <img src={roberto} alt="Roberto Rocha" />
-            <p>Roberto Rocha - QA</p>
-          </Member>
+          <img src={roberto} alt="Roberto Rocha" className="Member" />
         </div>
       </SectionFour>
 

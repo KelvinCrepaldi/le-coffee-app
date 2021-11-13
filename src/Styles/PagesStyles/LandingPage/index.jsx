@@ -26,20 +26,27 @@ box-shadow: 0px 10px 5px #000;
 export const SectionOne = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
   overflow-x: hidden;
 
-  height: 800px;
+  height: 850px;
 
   p {
-    padding: 0 30px 0 30px;
-    margin-top: 75px;
+    padding: 0 20px 0 20px;
+    margin-top: 35px;
     color: var(--white-primary);
     font-size: var(--font-size-medium);
     text-align: center;
   }
+
+  /* .Cover {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
 
   .Cover {
     position: absolute;
@@ -58,7 +65,7 @@ export const SectionOne = styled.section`
     flex-direction: column;
     align-items: center;
 
-    margin-top: 35px;
+    margin-top: 15px;
 
     button {
       width: 195px;
@@ -75,14 +82,20 @@ export const SectionOne = styled.section`
       font-size: var(--font-size-xlarge);
     }
 
+    .Cover {
+      width: 100%;
+    }
+
     .Logo {
       height: 350px;
       width: 345px;
+      margin-top: 35px;
     }
-    
-    .Cover {
-        width: 100%;
-      }
+
+    .GroupButtons {
+      flex-direction: row;
+      margin-top: 55px;
+    }
   }
 `;
 
@@ -184,6 +197,7 @@ export const SectionThree = styled.section`
 export const SectionFour = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   height: 950px;
@@ -197,23 +211,31 @@ export const SectionFour = styled.section`
     color: var(--white-primary);
   }
 
-  .Team {
+  .Member {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    width: 210px;
+
+    @media (min-width: 1024px) {
+      margin-top: 35px;
+      width: 335px;
+    }
+  }
+
+  .Team {
+    display: flex; 
+    flex-direction: column;
+    justify-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 
   @media (min-width: 1024px) {
     align-items: center;
 
     height: 550px;
-
-    .Team {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
   }
 `;
 
@@ -257,31 +279,5 @@ export const Logo = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  }
-`;
-
-export const Member = styled.div`
-  img {
-    width: 175px;
-  }
-
-  p {
-    position: relative;
-    top: -17%;
-    font-size: var(--font-size-large);
-    text-align: center;
-    color: var(--white-primary);
-  }
-
-  @media (min-width: 1024px) {
-    margin-top: 35px;
-
-    img {
-      width: 375px;
-    }
-
-    p {
-      font-size: var(--font-size-large);
-    }
   }
 `;
