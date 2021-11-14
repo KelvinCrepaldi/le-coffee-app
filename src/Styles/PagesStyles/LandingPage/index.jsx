@@ -161,29 +161,35 @@ export const SectionTwo = styled.section`
 export const SectionThree = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
-  height: 600px;
+  height: 750px;
 
   p {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
+  .Mobile {
+    display: initial;
+  }
+
+  .Desktop {
+    display: none;
+  }
 
   .TitleS3 {
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: var(--font-size-xlarge);
   }
 
-  .Products {
-    height: 350px;
-  }
-
   @media (min-width: 1024px) {
-    justify-content: center;
+    .Mobile {
+      display: none;
+    }
 
-    .Products {
-      width: 100%;
+    .Desktop {
+      display: initial;
     }
   }
 `;
@@ -217,7 +223,7 @@ export const SectionFour = styled.section`
   }
 
   .Team {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-items: center;
 

@@ -22,6 +22,7 @@ import roberto from "../../assets/roberto.png";
 
 import { ButtonComponent } from "../../Components/Button";
 import { CarouselNewProducts } from "../../Components/CarouselNewProducts";
+import { Carousel } from "react-responsive-carousel";
 
 const LandingPage = () => {
   const history = useHistory();
@@ -81,8 +82,13 @@ const LandingPage = () => {
 
       <SectionThree>
         <p className="TitleS3">Novos Produtos</p>
-        <div className="Products">
-          <CarouselNewProducts />
+       
+       <div className="Mobile">
+         <CarouselNewProducts percentage={20} />
+       </div>
+          
+        <div className="Desktop">
+          <CarouselNewProducts percentage={25} />
         </div>
       </SectionThree>
 
