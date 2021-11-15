@@ -5,6 +5,7 @@ import { CardTop } from "../../Styles/PagesStyles/CartPage";
 import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";
 import Navbar from "../../Components/Navbar";
+import { CartProduct } from "../../Components/CartProduct";
 const CartPage = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
@@ -52,9 +53,10 @@ const CartPage = () => {
             <h3>Seu carrinho:</h3>
           </CardTop>
           <div className="listContainer">
-            {cartList.map((item) => (
+            {/* {cartList.map((item) => (
               <p key={item.id}>{item.name}</p>
-            ))}
+            ))} */}
+            <CartProduct/>
           </div>
         </CartContainer>
       </div>

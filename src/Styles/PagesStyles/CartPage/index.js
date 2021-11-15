@@ -39,7 +39,6 @@ export const Page = styled.div`
     font-size: var(--font-size-large);
     margin: 25px auto 0;
   }
-
   @media(min-width: 768px){
       .content{
           display: flex;
@@ -82,6 +81,17 @@ export const CartContainer = styled.section`
   margin-bottom: 26px;
   border: 1px solid var(--brown-light);
   border-radius: 15px;
+
+  .listContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: inherit;
+    width: 100%;
+  } 
+  
   @media(min-width: 768px){
     min-height: 500px;
     width: 50vw;
