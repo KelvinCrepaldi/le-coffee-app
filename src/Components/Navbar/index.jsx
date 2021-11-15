@@ -16,7 +16,6 @@ import { CgShoppingBag } from "react-icons/cg"
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <>
       <Nav>
         <Bars open={open} onClick={() => setOpen(!open)} />
 
@@ -35,7 +34,7 @@ const Navbar = () => {
           </NavLink>
         </NavMenu>
 
-        <img src={logoNavbar}></img>
+        <img src={logoNavbar} alt="Logo"/>
 
         <ul>
           <li>
@@ -46,7 +45,6 @@ const Navbar = () => {
           </li>
         </ul>
       </Nav>
-    </>
   );
 };
 export default Navbar;
