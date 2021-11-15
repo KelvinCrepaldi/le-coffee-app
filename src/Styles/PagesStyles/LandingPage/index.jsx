@@ -26,31 +26,30 @@ box-shadow: 0px 10px 5px #000;
 export const SectionOne = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  height: 90vh;
+  position: relative;
+  overflow-x: hidden;
 
-  .Logo {
-    margin-top: 25px;
-    height: 175px;
+  height: 850px;
+
+  p {
+    padding: 0 20px 0 20px;
+    margin-top: 35px;
+    color: var(--white-primary);
+    font-size: var(--font-size-medium);
+    text-align: center;
   }
 
   .Cover {
     position: absolute;
     z-index: -1;
-    height: 100vh;
-
-    @media (min-width: 1024px) {
-      height: 100%;
-    }
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  p {
-    padding: 0 40px 0 40px;
-    margin-top: 75px;
-    color: var(--white-primary);
-    font-size: var(--font-size-medium);
-    text-align: center;
+  .Logo {
+    height: 175px;
   }
 
   .GroupButtons {
@@ -58,30 +57,36 @@ export const SectionOne = styled.section`
     flex-direction: column;
     align-items: center;
 
-    margin-top: 45px;
+    margin-top: 15px;
 
     button {
+      width: 195px;
       margin: 17px;
-    }
-
-    @media (min-width: 1024px) {
-      flex-direction: row;
-      justify-content: center;
+      padding: 21px;
     }
   }
 
   @media (min-width: 1024px) {
-    flex-grow: 1;
     width: 100%;
 
     p {
-      padding: 0 300px;
+      padding: 0 30px;
       font-size: var(--font-size-xlarge);
+    }
+
+    .Cover {
+      width: 100%;
     }
 
     .Logo {
       height: 350px;
       width: 345px;
+      margin-top: 35px;
+    }
+
+    .GroupButtons {
+      flex-direction: row;
+      margin-top: 55px;
     }
   }
 `;
@@ -91,26 +96,38 @@ export const SectionTwo = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  height: 600px;
+
+  height: 625px;
 
   background-color: var(--gray-primary);
   border-radius: 0 0 25px 25px;
 
   p {
     padding: 0 35px 0 35px;
-    color: var(--white-primary)
+    color: var(--white-primary);
   }
 
-  img {
-    width: 45px;
-    margin-right: 10px;
-  } 
+  button {
+    width: 195px;
+    margin: 17px;
+    padding: 17px;
+  }
 
   .S2 {
     margin-top: 25px;
     font-size: var(--font-size-large);
-    align: center;  
+    text-align: center;
+  }
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .Cup {
+      display: none;
+    }
   }
 
   .TextS2 {
@@ -124,15 +141,64 @@ export const SectionTwo = styled.section`
     align-items: center;
     margin: 25px 0 25px 0;
     color: var(--white-primary);
+
+    img {
+      width: 55px;
+    }
+
+    span {
+      margin: 10px;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    .Container {
+      .Cup {
+        display: none;
+      }
+    }
   }
 
   @media (min-width: 1024px) {
     .S2 {
-      font-size: var(--font-size-xlarge);  
+      font-size: var(--font-size-xlarge);
     }
 
-    .TextS2 {
-      font-size: var(--font-size-large);
+    .Container {
+      display: flex;
+      flex-direction: row;
+      align-items: space-between;
+      position: relative;
+
+      .Cup {
+        display: inline;
+        position: absolute;
+        z-index: 1;
+        width: 675px;
+      }
+
+      p {
+        margin: 0 25px 0 575px;
+        font-size: var(--font-size-medium);
+      }
+    }
+
+    .S2 {
+      margin: 0 25px 75px 575px;
+      font-size: var(--font-size-xlarge);
+    }
+
+    .S3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 25px 75px 575px;
+
+      button {
+        height: 75px;
+        width: 275px;
+        margin: 10px;
+      }
     }
   }
 `;
@@ -140,27 +206,35 @@ export const SectionTwo = styled.section`
 export const SectionThree = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  
-  height: 600px;
+
+  height: 750px;
 
   p {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
-  img {
-    heigth: 225px;
+  .Mobile {
+    display: initial;
+  }
+
+  .Desktop {
+    display: none;
   }
 
   .TitleS3 {
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: var(--font-size-xlarge);
   }
 
   @media (min-width: 1024px) {
-    align-items: center;
-    img {
-      width: 450px;
+    .Mobile {
+      display: none;
+    }
+
+    .Desktop {
+      display: initial;
     }
   }
 `;
@@ -168,16 +242,14 @@ export const SectionThree = styled.section`
 export const SectionFour = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  
+  position: relative;
+
   height: 950px;
 
   background-color: var(--gray-primary);
-  border-radius: 25px;
-
-  img {
-    width: 320px;
-  }
+  border-radius: 25px 25px 0 0;
 
   .TitleS4 {
     margin-top: 25px;
@@ -185,15 +257,31 @@ export const SectionFour = styled.section`
     color: var(--white-primary);
   }
 
+  .Member {
+    display: flex;
+    align-items: center;
+    width: 210px;
+
+    @media (min-width: 1024px) {
+      margin-top: 35px;
+      width: 335px;
+    }
+  }
+
+  .Team {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
   @media (min-width: 1024px) {
     align-items: center;
 
-    height: 400px;
-
-    .Team {
-      display: flex;
-      flex-direction: row;
-    }
+    height: 550px;
   }
 `;
 
@@ -202,11 +290,10 @@ export const Footer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   height: 500px;
 
-  background-color: black;
-  border-radius: 25px;
+  background-color: var(--black-primary);
 
   img {
     width: 150px;
@@ -238,24 +325,5 @@ export const Logo = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  }
-`;
-
-export const Member = styled.div`
-  img {
-    width: 195px;
-  }
-
-  p {
-    position: relative;
-    top: -20%;
-    text-align: center;
-    color: var(--white-primary);
-  }
-
-  @media (min-width: 1024px) {
-    img {
-      width: 320px;
-    }
   }
 `;
