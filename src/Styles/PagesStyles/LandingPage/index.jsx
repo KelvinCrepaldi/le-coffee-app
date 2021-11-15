@@ -62,7 +62,7 @@ export const SectionOne = styled.section`
     button {
       width: 195px;
       margin: 17px;
-      padding: 17px;
+      padding: 21px;
     }
   }
 
@@ -97,7 +97,7 @@ export const SectionTwo = styled.section`
   justify-content: center;
   align-items: center;
 
-  height: 600px;
+  height: 625px;
 
   background-color: var(--gray-primary);
   border-radius: 0 0 25px 25px;
@@ -107,9 +107,10 @@ export const SectionTwo = styled.section`
     color: var(--white-primary);
   }
 
-  img {
-    width: 45px;
-    margin-right: 10px;
+  button {
+    width: 195px;
+    margin: 17px;
+    padding: 17px;
   }
 
   .S2 {
@@ -122,9 +123,10 @@ export const SectionTwo = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
-    img {
-      width: 625px;
+    .Cup {
+      display: none;
     }
   }
 
@@ -139,6 +141,22 @@ export const SectionTwo = styled.section`
     align-items: center;
     margin: 25px 0 25px 0;
     color: var(--white-primary);
+
+    img {
+      width: 55px;
+    }
+
+    span {
+      margin: 10px;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    .Container {
+      .Cup {
+        display: none;
+      }
+    }
   }
 
   @media (min-width: 1024px) {
@@ -150,10 +168,37 @@ export const SectionTwo = styled.section`
       display: flex;
       flex-direction: row;
       align-items: space-between;
+      position: relative;
+
+      .Cup {
+        display: inline;
+        position: absolute;
+        z-index: 1;
+        width: 675px;
+      }
+
+      p {
+        margin: 0 25px 0 575px;
+        font-size: var(--font-size-medium);
+      }
     }
 
-    .TextS2 {
-      font-size: var(--font-size-large);
+    .S2 {
+      margin: 0 25px 75px 575px;
+      font-size: var(--font-size-xlarge);
+    }
+
+    .S3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 25px 75px 575px;
+
+      button {
+        height: 75px;
+        width: 275px;
+        margin: 10px;
+      }
     }
   }
 `;
@@ -199,6 +244,7 @@ export const SectionFour = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   height: 950px;
 

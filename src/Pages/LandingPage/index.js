@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 
 import cafe from "../../assets/cafe-7.png";
 import cup from "../../assets/cup-of-coffee.png";
+import beans from "../../assets/coffee-beans.png";
 import logo from "../../assets/logo-main-white.png";
 import main from "../../assets/main-desktop.png";
 
@@ -34,17 +35,18 @@ const LandingPage = () => {
         <img src={logo} alt="Logo Le Coffee" className="Logo" />
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
+          Le Coffee® é uma empresa de responsabilidade Eco-Social. Nosso
+          objetivo é gerar renda para pequenos produtores sem perder o foco na
+          redução das diferenças sociais e na melhoraria da qualidade de vida da
+          sociedade. Para alcançar tal objetivo, ensinamos os pequenos
+          produtores a harmonizar a exploração dos recursos naturais,
+          desenvolvimento tecnológico e mudanças institucionais focadas no
+          bem-estar social.
         </p>
 
         <div className="GroupButtons">
           <ButtonComponent
-            variant="white"
+            variant="unfill"
             text="Login"
             onClick={() => history.push("/login")}
           />
@@ -61,34 +63,37 @@ const LandingPage = () => {
           Encontre os melhores produtos e produtores do Brasil
         </p>
         <div className="Container Section2">
-          {/* <div className="Figure 2">
-            <img src={cup} alt="Cup of coffee" />
-          </div> */}
+          <img src={cup} alt="Cup of Coffee" className="Cup" />
           <p className="TextS2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            Um dos maiores diferenciais dos cafés da Le Coffee®, é que os
+            produtores podem fazer uma colheita tardia, mantendo os grãos
+            maduros por mais tempo no galho. O resultado é um produto
+            equilibrado entre acidez e doçura.
           </p>
         </div>
-        <div className="Security">
-          <img src={security} alt="100% Security" />
-          <span>100% Seguro</span>
+
+        <div className="S3">
+          <div className="Security">
+            <img src={security} alt="100% Security" />
+            <span>100% Seguro</span>
+          </div>
+          <ButtonComponent
+            variant="brown"
+            text="Cadastre-se"
+            onClick={() => history.push("/register")}
+          />
         </div>
-        <ButtonComponent buttonFunction="signup" className="Button SignUp" />
       </SectionTwo>
 
       <SectionThree>
         <p className="TitleS3">Novos Produtos</p>
-       
-       <div className="Mobile">
-         <CarouselNewProducts percentage={20} />
-       </div>
-          
+
+        <div className="Mobile">
+          <CarouselNewProducts percentage={100} showThumbs={false}/>
+        </div>
+
         <div className="Desktop">
-          <CarouselNewProducts percentage={25} />
+          <CarouselNewProducts percentage={30} />
         </div>
       </SectionThree>
 
@@ -114,7 +119,7 @@ const LandingPage = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-        <p>© Copyright 2021 Todos os direitos reservados - Le Coffe 2021</p>
+        <p>Copyright 2021 - Todos os direitos reservados - Le Coffee® 2021</p>
       </Footer>
     </>
   );

@@ -9,13 +9,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 import { CatalogueContext } from "../../Providers/catalogue";
 
-export const CarouselNewProducts = ({ percentage }) => {
+export const CarouselNewProducts = ({ percentage, showThumbs }) => {
   const { catalogue } = React.useContext(CatalogueContext);
 
   return (
     catalogue && (
       <div>
-        <Carousel autoPlay centerMode centerSlidePercentage={percentage} infiniteLoop> 
+        <Carousel autoPlay centerMode centerSlidePercentage={percentage} infiniteLoop showThumbs={showThumbs}> 
           {catalogue.map((product) => (
             <img
               key={product.id}
