@@ -25,6 +25,7 @@ export const LoginProvider = ({ children }) => {
         console.log(res);
         localStorage.setItem("token", JSON.stringify(res.data.accessToken));
         localStorage.setItem("userId", JSON.stringify(res.data.user.id));
+        localStorage.setItem("username", JSON.stringify(res.data.user.name));
         history.push("/home");
       })
       .catch((err) => {
