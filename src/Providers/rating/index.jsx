@@ -16,6 +16,15 @@ export const RatingProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
+  const getRatingByProductId = (id) => {
+    api
+      .get(`ratingProducts?productsId=${id}`)
+      .then((response) => {
+        setRating(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const handleRating = (data, token) => {
     api
       .post("ratingProducts", data, {
@@ -42,7 +51,13 @@ export const RatingProvider = ({ children }) => {
 
   return (
     <RatingContext.Provider
-      value={{ getRatingProducts, handleRating, deleteRating }}
+      value={{
+        rating,
+        getRatingByProductId,
+        getRatingProducts,
+        handleRating,
+        deleteRating,
+      }}
     >
       {children}
     </RatingContext.Provider>

@@ -6,13 +6,15 @@ import { RatingProvider } from "./rating";
 const ProvidersGathered = ({ children }) => {
   return (
     <>
-      <RegisterProvider>
-        <LoginProvider>
-          <UserProvider>
-            <CatalogueProvider>{children}</CatalogueProvider>
-          </UserProvider>
-        </LoginProvider>
-      </RegisterProvider>
+      <RatingProvider>
+        <RegisterProvider>
+          <LoginProvider>
+            <UserProvider>
+              <CatalogueProvider>{children}</CatalogueProvider>
+            </UserProvider>
+          </LoginProvider>
+        </RegisterProvider>
+      </RatingProvider>
     </>
   );
 };
