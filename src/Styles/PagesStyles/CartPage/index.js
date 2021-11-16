@@ -22,13 +22,11 @@ export const Page = styled.div`
     margin-bottom: 26px;
     border: 1px solid var(--brown-light);
     border-radius: 15px;
-
+    text-align: center;
     button {
-      position: absolute;
-
       height: 45px;
       width: 170px;
-      margin: 40px 0 0 64px;
+      margin-top: 40px;
     }
   }
   .chosenAddress {
@@ -47,9 +45,6 @@ export const Page = styled.div`
             width: 96vw;
         .card{
             width: 35vw;
-            button{
-                margin-left: 50px;
-            }
         }
         .card--address{
             margin-bottom: 100px;
@@ -64,9 +59,6 @@ export const Page = styled.div`
             width: 96vw;
         .card{
             width: 380px;
-            button{
-                margin-left: 50px;
-            }
         }
         .card--address{
             margin-bottom: 100px;
@@ -122,7 +114,3 @@ export const CardTop = styled.section`
     font-weight: var(--font-w-bold);
   }
 `;
-
-// export const SideCards = styled.div`
-//     media
-// `;

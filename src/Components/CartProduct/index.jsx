@@ -4,13 +4,16 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../Providers/userProvider"
 export const CartProduct = ({product}) => {
   const [qtd, setQtd] = useState(0);
-
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return parseInt(current);
+  });
 
   const { removeFromCart } = useContext(UserContext);
 
   const handleRemove = () => {
     console.log("removed");
-    // removeFromCart()
+    removeFromCart(product.id, userToken);
   }
 
   return(
