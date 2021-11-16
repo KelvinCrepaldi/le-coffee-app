@@ -9,11 +9,29 @@ import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { useContext } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
 import { ButtonComponent } from "../Button";
+import { ProductComponent } from "../ProductComponent";
+import { useState } from "react";
+
 const CatalogueComponent = () => {
   const { catalogue } = useContext(CatalogueContext);
+  const [selectedProduct, setSelectedProduct] = useState();
+  const [active, setActive] = useState(false);
+
+  const handleOpenModal = (product) => {
+    console.log(product);
+    setSelectedProduct(product);
+    setActive(true);
+  };
 
   return (
     <Container>
+      {active && (
+        <ProductComponent
+          product={selectedProduct}
+          active={active}
+          setActive={setActive}
+        ></ProductComponent>
+      )}
       <ImageTop>
         <h1>
           PRODUTOS <br /> <span>Home &gt; Produtos</span>
@@ -30,6 +48,7 @@ const CatalogueComponent = () => {
               <ButtonComponent
                 variant="white"
                 text="Vizualizar"
+                onClick={() => handleOpenModal(product)}
               ></ButtonComponent>
             </div>
           </BoxCard>
