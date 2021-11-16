@@ -76,28 +76,31 @@ export const Page = styled.div`
 `;
 
 export const CartContainer = styled.section`
-  min-height: 660px;
+  height: 600px;
   width: 94vw;
   margin-bottom: 26px;
   border: 1px solid var(--brown-light);
   border-radius: 15px;
 
+  
   .listContainer{
     display: flex;
+    overflow: hidden;
+    overflow-y: scroll;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
-    height: inherit;
+   
+    height: 88%;
     width: 100%;
   } 
   
   @media(min-width: 768px){
-    min-height: 500px;
+    height: 500px;
     width: 50vw;
   }
   @media(min-width: 1024px){
-    min-height: 500px;
+    height: 500px;
     width: 60vw;
   }
 

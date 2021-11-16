@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CartCard = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   height: 165px;
   width: 88%;
@@ -51,8 +51,12 @@ export const CartCard = styled.div`
   }
   @media (min-width: 768px) {
     width: 48vw;
+    img{
+      height: 100%;
+    }
   }
   @media (min-width: 1024px) {
     width: 56vw;
+    height: 125px;
   }
 `;
