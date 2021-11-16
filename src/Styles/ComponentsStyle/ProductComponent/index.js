@@ -79,15 +79,12 @@ export const ProductContainer = styled.section`
         font-size: var(--font-size-medium);
         color: var(--gray-primary);
         margin-bottom: 0px;
-        text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.3);
       }
 
       .buttons-container {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-      }
-      button:hover {
       }
 
       .top-buttons-container {
@@ -123,9 +120,6 @@ export const ProductContainer = styled.section`
       width: 100%;
 
       h1 {
-        color: var(--black-primary);
-        font-size: var(--font-size-xlarge);
-        font-weight: var(--font-w-normal);
         margin: 10px;
         padding: 10px;
         border-bottom: 1px solid var(--brown-xlight);

@@ -1,42 +1,13 @@
 import { RatingContainer } from "../../Styles/ComponentsStyle/Rating";
 import { ButtonComponent } from "../Button";
-import { useState, useContext } from "react";
-import { RatingContext } from "../../Providers/rating";
 
-export const RatingComponent = ({ product }) => {
-  const [inputMessage, setInputMessage] = useState("");
-  /* const userName = localStorage.getItem("userName"); */
-  const token = JSON.parse(localStorage.getItem("token"));
-  const userId = parseInt(localStorage.getItem("userId"));
-  const { handleRating } = useContext(RatingContext);
-
-  const changeInputMessage = (e) => {
-    setInputMessage(e);
-  };
-
-  const handleSendRate = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      text: inputMessage,
-      rating: 1,
-    };
-    console.log(obj);
-    console.log(token);
-
-    handleRating(obj, token);
-  };
-
+export const RatingComponent = () => {
   return (
     <RatingContainer>
       <div className="rate-container">
         <div className="rate-input">
           <span>Nome do usuário: </span>
-          <input
-            placeholder=" Adicionar uma avaliação..."
-            value={inputMessage}
-            onChange={(e) => changeInputMessage(e.target.value)}
-          ></input>
+          <input placeholder=" Adicionar uma avaliação..."></input>
         </div>
         <div className="rate-button">
           <ButtonComponent
@@ -48,7 +19,6 @@ export const RatingComponent = ({ product }) => {
             className="buttonPost brown"
             variant="brown"
             text="Enviar"
-            onClick={handleSendRate}
           ></ButtonComponent>
         </div>
       </div>

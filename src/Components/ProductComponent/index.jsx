@@ -7,10 +7,8 @@ import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { RatingComponent } from "../Rating/Rating";
 import { UserContext } from "../../Providers/userProvider";
-import { useHistory } from "react-router";
 
 export const ProductComponent = ({ product, setActive }) => {
-  const history = useHistory();
   const [counter, setCounter] = useState(1);
   const { addToCart } = useContext(UserContext);
   const token = JSON.parse(localStorage.getItem("token"));
@@ -26,10 +24,10 @@ export const ProductComponent = ({ product, setActive }) => {
       productsId: product.id,
       sample: false,
       quantity: counter,
-      name: product.name,
       image: product.image,
       price: product.price,
     };
+    console.log(obj);
     addToCart(obj, token);
   };
 
@@ -39,25 +37,12 @@ export const ProductComponent = ({ product, setActive }) => {
       productsId: product.id,
       sample: true,
       quantity: 1,
-      name: product.name,
       image: product.image,
       price: product.price,
     };
+    console.log(obj);
+    console.log(token);
     addToCart(obj, token);
-  };
-
-  const handleBuyNow = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      sample: false,
-      quantity: counter,
-      name: product.name,
-      image: product.image,
-      price: product.price,
-    };
-    addToCart(obj, token);
-    history.push("/cart");
   };
 
   return (
@@ -96,13 +81,12 @@ export const ProductComponent = ({ product, setActive }) => {
                 className="botton-button brown"
                 variant="brown"
                 text="Compre já!"
-                onClick={handleBuyNow}
               />
             </div>
           </div>
           <div className="item-rating">
             <h1>Avaliações</h1>
-            <RatingComponent product={product} />
+            <RatingComponent />
           </div>
         </div>
       </ProductContainer>
