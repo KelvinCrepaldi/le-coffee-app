@@ -18,7 +18,6 @@ const CartPage = () => {
     getCartList(userId);
   }, [getCartList, userId]);
 
-  console.log(cartList)
   // const testList = [
   //   {
   //     id: 1,

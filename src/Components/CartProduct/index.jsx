@@ -12,7 +12,6 @@ export const CartProduct = ({product}) => {
   const { removeFromCart } = useContext(UserContext);
 
   const handleRemove = () => {
-    console.log("removed");
     removeFromCart(product.id, userToken);
   }
 
