@@ -36,15 +36,16 @@ export const LoginForm = () => {
 
   return (
     <LoginFormContainer onSubmit={handleSubmit(login)}>
+    
       <Input
-        placeholder="Email"
+        placeholder="Digite seu email"
         register={register}
         name="email"
         error={errors.email?.message}
       />
-
+ 
       <Input
-        placeholder="Senha"
+        placeholder="Digite sua senha"
         type="password"
         register={register}
         name="password"

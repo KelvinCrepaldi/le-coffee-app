@@ -7,7 +7,7 @@ export const LoginFormContainer = styled.form`
   justify-content: flex-start;
   line-height: 40px;
   margin-top: 36px;
-  
+ 
     .bttnLogin {
       height: 50px;
       width: 70vw;

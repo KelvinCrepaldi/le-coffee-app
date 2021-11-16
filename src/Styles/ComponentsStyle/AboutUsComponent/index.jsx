@@ -91,8 +91,7 @@ export const Icons = styled.div`
 
   width: 100px;
 
-  a{
-    
+  a {
   }
   svg {
     font-size: 35px;

@@ -12,39 +12,48 @@ import {
 import { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
-import { CgShoppingBag } from "react-icons/cg"
+import { CgShoppingBag } from "react-icons/cg";
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { LoginContext } from "../../Providers/loginProvider/index";
+
 const Navbar = () => {
+  const history = useHistory();
+  const { logout } = useContext(LoginContext);
   const [open, setOpen] = useState(false);
+
   return (
-      <Nav>
-        <Bars open={open} onClick={() => setOpen(!open)} />
+    <Nav>
+      <Bars open={open} onClick={() => setOpen(!open)} />
 
-        <NavMenu open={open}>
-          <NavLink to="/home" activeStyle>
-            Home
-          </NavLink>
-          <NavLink to="/catalogue" activeStyle>
-            Produtos
-          </NavLink>
-          <NavLink to="/aboutus" activeStyle>
-            Quem somos
-          </NavLink>
-          <NavLink to="/region" activeStyle>
-            Região
-          </NavLink>
-        </NavMenu>
+      <NavMenu open={open}>
+        <NavLink to="/home" activeStyle>
+          Home
+        </NavLink>
+        <NavLink to="/catalogue" activeStyle>
+          Produtos
+        </NavLink>
+        <NavLink to="/aboutus" activeStyle>
+          Quem somos
+        </NavLink>
+        <NavLink to="/region" activeStyle>
+          Região
+        </NavLink>
+      </NavMenu>
 
-        <img src={logoNavbar} alt="Logo"/>
+      <img src={logoNavbar} alt="Logo" />
 
-        <ul>
-          <li>
+      <ul>
+        <li>
+          <NavLink to="/cart">
             <CgShoppingBag />
-          </li>
-          <li>
-            <MdOutlineLogout />
-          </li>
-        </ul>
-      </Nav>
+          </NavLink>
+        </li>
+        <li onClick={() => logout(history)}>
+          <MdOutlineLogout />
+        </li>
+      </ul>
+    </Nav>
   );
 };
 export default Navbar;
