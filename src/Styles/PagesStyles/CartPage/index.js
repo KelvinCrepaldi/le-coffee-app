@@ -14,7 +14,7 @@ export const Page = styled.div`
     height: 72px;
     width: 100vw;
     margin-bottom: 20px;
-    background-color: var(--brown-xlight);
+    background-color: var(--brown-dark);
   }
   .card {
     height: 200px;
