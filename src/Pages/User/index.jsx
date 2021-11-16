@@ -1,9 +1,13 @@
 import { CardTop, Page } from "../../Styles/PagesStyles/User";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { LoginContext } from "../../Providers/loginProvider";
 import Navbar from "../../Components/Navbar";
 
 const User = () => {
   const history = useHistory();
+
+  const { logout } = useContext(LoginContext);
 
   return (
     <Page>
@@ -11,7 +15,7 @@ const User = () => {
         <Navbar />
       </div>
       <div className="Title">Minha Conta</div>
-      <button type="submit" className="Logout">
+      <button type="submit" onClick={logout} className="Logout">
         Logout
       </button>
 
