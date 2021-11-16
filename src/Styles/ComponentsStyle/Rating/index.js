@@ -57,7 +57,37 @@ export const RatingContainer = styled.div`
   }
 
   //============= USER RATE ==========================
-
-  //============= RATE LIST ==========================
-  //============= RATE LIST ==========================
 `;
+
+//============= RATE CARD ==========================
+
+export const RateCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--black-primary);
+    font-weight: 400;
+  }
+
+  .rating {
+    width: 100%;
+    color: black;
+  }
+
+  .text {
+    color: var(--gray-600);
+    width: 100%;
+    font-size: var(--size-medium);
+    font-weight: var(--font-w-normal);
+    margin: 0px 20px;
+  }
+
+  :hover {
+    border-left: 3px solid var(--brown-xlight);
+    transition: 0.1s;
+  }
+`;
+//============= RATE CARD ==========================
