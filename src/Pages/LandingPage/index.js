@@ -5,6 +5,7 @@ import {
   SectionFour,
   Footer,
   Member,
+  DivGrand,
 } from "../../Styles/PagesStyles/LandingPage";
 
 import { useHistory } from "react-router-dom";
@@ -29,6 +30,7 @@ const LandingPage = () => {
   const history = useHistory();
   return (
     <>
+    <DivGrand>
       <SectionOne>
         <img src={main} alt="Cover Photo" className="Cover" />
 
@@ -84,6 +86,7 @@ const LandingPage = () => {
           />
         </div>
       </SectionTwo>
+    </DivGrand>
 
       <SectionThree>
         <p className="TitleS3">Novos Produtos</p>

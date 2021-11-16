@@ -6,7 +6,7 @@ export const Counter = ({ counter, setCounter }) => {
   };
 
   const handleCounterSub = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };

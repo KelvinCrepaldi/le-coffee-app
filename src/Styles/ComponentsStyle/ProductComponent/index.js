@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.section`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
-  top: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
 
   width: 90vw;
-  z-index: 11;
   border-radius: 10px;
 
   background-color: var(--white-primary);
+
   .close-button {
     display: flex;
     justify-content: right;
@@ -113,6 +116,16 @@ export const ProductContainer = styled.section`
       }
     }
 
+    .item-rating {
+      width: 100%;
+
+      h1 {
+        margin: 10px;
+        padding: 10px;
+        border-bottom: 1px solid var(--brown-xlight);
+      }
+    }
+
     //SCROLLBAR ============================
     ::-webkit-scrollbar {
       width: 6px;
@@ -137,8 +150,6 @@ export const ProductContainer = styled.section`
     //SCROLLBAR ============================
   }
 
-  /* width */
-
   @media (min-width: 1024px) {
     .item-content {
       display: flex;
@@ -156,15 +167,6 @@ export const ProductContainer = styled.section`
           margin-top: 0px;
           font-size: 30px;
         }
-      }
-    }
-    .item-rating {
-      width: 100%;
-
-      h1 {
-        margin: 10px;
-        padding: 10px;
-        border-bottom: 1px solid var(--brown-xlight);
       }
     }
   }
