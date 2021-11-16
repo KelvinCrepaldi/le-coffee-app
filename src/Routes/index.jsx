@@ -8,6 +8,7 @@ import Home from "../Pages/Home";
 import Catalogue from "../Pages/Catalogue/"
 import CartPage from "../Pages/Cart";
 import AboutUs from "../Pages/AboutUs";
+import User from "../Pages/User";
 
 const RoutesPatchs = () => {
   return (
@@ -37,10 +38,12 @@ const RoutesPatchs = () => {
         <GlobalStyles />
         <Catalogue />
       </Route>
+      
       <Route path="/cart">
         <GlobalStyles />
         <CartPage />
       </Route>
+      
       <Route path="/aboutus">
         <GlobalStyles />
         <AboutUs />
@@ -49,6 +52,11 @@ const RoutesPatchs = () => {
       <Route path="/regionmap">
         <GlobalStyles />
         <Register />
+      </Route>
+
+      <Route path="/user">
+        <GlobalStyles />
+        <User />
       </Route>
     
     </Switch>
