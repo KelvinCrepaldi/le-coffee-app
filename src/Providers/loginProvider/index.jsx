@@ -33,8 +33,8 @@ export const LoginProvider = ({ children }) => {
       });
   };
   const logout = (history) => {
-    localStorage.clear();
     history.push("/");
+    localStorage.clear();
   };
 
   return (
