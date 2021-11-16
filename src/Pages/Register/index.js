@@ -6,6 +6,7 @@ import bgImageRight from "./about-us-cover-2.png";
 import RegisterForm from "../../Components/RegisterForm";
 import { Page } from "../../Styles/PagesStyles/Register";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { ProductComponent } from "../../Components/ProductComponent";
 
 const Register = () => {
   const history = useHistory();
