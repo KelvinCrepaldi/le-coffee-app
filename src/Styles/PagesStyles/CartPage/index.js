@@ -22,13 +22,11 @@ export const Page = styled.div`
     margin-bottom: 26px;
     border: 1px solid var(--brown-light);
     border-radius: 15px;
-
+    text-align: center;
     button {
-      position: absolute;
-
       height: 45px;
       width: 170px;
-      margin: 40px 0 0 64px;
+      margin-top: 40px;
     }
   }
   .chosenAddress {
@@ -39,7 +37,6 @@ export const Page = styled.div`
     font-size: var(--font-size-large);
     margin: 25px auto 0;
   }
-
   @media(min-width: 768px){
       .content{
           display: flex;
@@ -48,9 +45,6 @@ export const Page = styled.div`
             width: 96vw;
         .card{
             width: 35vw;
-            button{
-                margin-left: 50px;
-            }
         }
         .card--address{
             margin-bottom: 100px;
@@ -65,9 +59,6 @@ export const Page = styled.div`
             width: 96vw;
         .card{
             width: 380px;
-            button{
-                margin-left: 50px;
-            }
         }
         .card--address{
             margin-bottom: 100px;
@@ -77,17 +68,31 @@ export const Page = styled.div`
 `;
 
 export const CartContainer = styled.section`
-  min-height: 660px;
+  height: 600px;
   width: 94vw;
   margin-bottom: 26px;
   border: 1px solid var(--brown-light);
   border-radius: 15px;
+
+  
+  .listContainer{
+    display: flex;
+    overflow: hidden;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   
+    height: 88%;
+    width: 100%;
+  } 
+  
   @media(min-width: 768px){
-    min-height: 500px;
+    height: 500px;
     width: 50vw;
   }
   @media(min-width: 1024px){
-    min-height: 500px;
+    height: 500px;
     width: 60vw;
   }
 
@@ -109,7 +114,3 @@ export const CardTop = styled.section`
     font-weight: var(--font-w-bold);
   }
 `;
-
-// export const SideCards = styled.div`
-//     media
-// `;
