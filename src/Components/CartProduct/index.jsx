@@ -6,7 +6,7 @@ export const CartProduct = ({product}) => {
   const [qtd, setQtd] = useState(0);
   const [userToken] = useState(() => {
     const current = localStorage.getItem("token") || "";
-    return parseInt(current);
+    return JSON.parse(current);
   });
 
   const { removeFromCart } = useContext(UserContext);
