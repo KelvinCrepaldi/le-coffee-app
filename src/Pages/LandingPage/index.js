@@ -59,9 +59,9 @@ const LandingPage = () => {
       </SectionOne>
 
       <SectionTwo>
-        <p className="Title S2">
+        <h2 className="Title S2">
           Encontre os melhores produtos e produtores do Brasil
-        </p>
+        </h2>
         <div className="Container Section2">
           <img src={cup} alt="Cup of Coffee" className="Cup" />
           <p className="TextS2">
@@ -75,7 +75,7 @@ const LandingPage = () => {
         <div className="S3">
           <div className="Security">
             <img src={security} alt="100% Security" />
-            <span>100% Seguro</span>
+            <span>100% <br/> Seguro</span>
           </div>
           <ButtonComponent
             variant="brown"
@@ -86,8 +86,8 @@ const LandingPage = () => {
       </SectionTwo>
 
       <SectionThree>
-        <p className="TitleS3">Novos Produtos</p>
-
+        <p className="TitleS3">NOVOS PRODUTOS</p>
+          <span>Conheça os nossos novos produtos</span>
         <div className="Mobile">
           <CarouselNewProducts percentage={100} showThumbs={false}/>
         </div>
@@ -98,7 +98,7 @@ const LandingPage = () => {
       </SectionThree>
 
       <SectionFour>
-        <div className="TitleS4">Nosso Time</div>
+        <h2 className="TitleS4">NOSSO TIME</h2>
 
         <div className="Team">
           <img src={kelvin} alt="Kelvin Crepaldi" className="Member" />

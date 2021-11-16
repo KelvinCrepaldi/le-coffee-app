@@ -4,7 +4,7 @@ export const InputContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
   .inputBox {
     display: flex;
@@ -13,8 +13,10 @@ export const InputContainer = styled.form`
     height: 46px;
     width: 64vw;
     max-width: 315px;
-    border: 2px solid var(--brown-light);
-    border-radius: 10px;
+    border: 2px solid var(--gray-100);
+    border-radius: 8px;
+
+ 
 
     input {
       width: 100%;
@@ -23,6 +25,12 @@ export const InputContainer = styled.form`
       background-color: transparent;
       outline: none;
       caret-color: var(--brown-details);
+      :focus{
+         border: 2px solid var(--brown-light);
+         border-radius: 8px;
+
+         
+    }
     }
   }
   .inputError {

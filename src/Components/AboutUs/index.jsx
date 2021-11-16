@@ -14,13 +14,13 @@ import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import Kelvin from "../../assets/kelvin.jpeg";
 import Leonam from "../../assets/leonamphoto.jpeg";
 import Luan from "../../assets/luanphoto.png";
-import Roberto from "../../assets/robertophoto.png";
+import Roberto from "../../assets/roberto-aboutus.png";
 const AboutUsComponent = () => {
   return (
     <Container>
       <ImageTop>
         <h1>
-          QUEM SOMOS <br /> <span>Home &gt; Quem somos</span>
+          Quem somos <br /> <span>Home &gt; Quem somos</span>
         </h1>
       </ImageTop>
       <Content>
@@ -78,7 +78,7 @@ const AboutUsComponent = () => {
           </BoxMembers>
 
           <BoxMembers>
-            <MemberPhoto></MemberPhoto>
+            <MemberPhoto src = {Roberto}></MemberPhoto>
             <h4>Roberto Rocha - Quality Assurance</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit

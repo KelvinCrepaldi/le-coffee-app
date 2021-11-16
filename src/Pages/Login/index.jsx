@@ -29,7 +29,7 @@ const LoginPage = () => {
         <img src={logo} alt="Mug logo" />
       </div>
       <div className="formContent">
-        <h1>Bem vindo(a)!</h1>
+        <h1>Olá, <br/> <span>seja bem vindo(a)!</span> </h1>
         <LoginForm />
         <ButtonComponent variant="white"
         text="Registrar-se" className="bttnRegister"

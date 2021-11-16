@@ -36,8 +36,9 @@ export const SectionOne = styled.section`
     padding: 0 20px 0 20px;
     margin-top: 35px;
     color: var(--white-primary);
-    font-size: var(--font-size-medium);
-    text-align: center;
+    font-size: var(--font-size-small);
+    text-align: justify;
+    width: 89%;
   }
 
   .Cover {
@@ -67,11 +68,15 @@ export const SectionOne = styled.section`
   }
 
   @media (min-width: 1024px) {
-    width: 100%;
+    width: 100vw;
+    img{
+      width: 100%;
+    }
 
     p {
       padding: 0 30px;
-      font-size: var(--font-size-xlarge);
+      max-width:850px;
+      font-size: var(--font-size-medium);
     }
 
     .Cover {
@@ -105,6 +110,7 @@ export const SectionTwo = styled.section`
   p {
     padding: 0 35px 0 35px;
     color: var(--white-primary);
+    width: 89%;
   }
 
   button {
@@ -117,6 +123,15 @@ export const SectionTwo = styled.section`
     margin-top: 25px;
     font-size: var(--font-size-large);
     text-align: center;
+    font-weight: bold;
+    color: #ffff;
+    width: 81%;
+    text-align: left;
+
+    @media (min-width:1024px){
+      max-width: 580px ;
+     
+    }
   }
 
   .Container {
@@ -124,7 +139,9 @@ export const SectionTwo = styled.section`
     flex-direction: column;
     align-items: center;
     position: relative;
-
+    .p {
+      width: 650px;
+    }
     .Cup {
       display: none;
     }
@@ -132,6 +149,14 @@ export const SectionTwo = styled.section`
 
   .TextS2 {
     margin-top: 30px;
+    font-size: var(--font-size-small);
+    text-align: justify;
+    width: 100%;
+
+    @media (min-width:1024px){
+      max-width: 650px ;
+
+    }
   }
 
   .Security {
@@ -143,11 +168,13 @@ export const SectionTwo = styled.section`
     color: var(--white-primary);
 
     img {
-      width: 55px;
+      width: 20px;
     }
 
     span {
       margin: 10px;
+      text-align: center;
+      font-size: 13px;
     }
   }
 
@@ -162,6 +189,7 @@ export const SectionTwo = styled.section`
   @media (min-width: 1024px) {
     .S2 {
       font-size: var(--font-size-xlarge);
+
     }
 
     .Container {
@@ -249,7 +277,7 @@ export const SectionFour = styled.section`
   height: 950px;
 
   background-color: var(--gray-primary);
-  border-radius: 25px 25px 0 0;
+  border-radius: 35px 35px 0 0;
 
   .TitleS4 {
     margin-top: 25px;
@@ -275,13 +303,17 @@ export const SectionFour = styled.section`
 
     @media (min-width: 1024px) {
       flex-direction: row;
+
+      img{
+        width: 250px;
+      }
     }
   }
 
   @media (min-width: 1024px) {
     align-items: center;
-
-    height: 550px;
+  
+    height: 450px;
   }
 `;
 

@@ -16,7 +16,7 @@ const CatalogueComponent = () => {
     <Container>
       <ImageTop>
         <h1>
-          PRODUTOS <br /> <span>Home &gt; Produtos</span>
+          Produtos <br /> <span>Home &gt; Produtos</span>
         </h1>
       </ImageTop>
       <Content>

@@ -13,9 +13,15 @@ import { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
 import { CgShoppingBag } from "react-icons/cg";
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { LoginContext } from "../../Providers/loginProvider/index";
 
 const Navbar = () => {
+  const history = useHistory();
+  const { logout } = useContext(LoginContext);
   const [open, setOpen] = useState(false);
+
   return (
     <Nav>
       <Bars open={open} onClick={() => setOpen(!open)} />
@@ -39,9 +45,11 @@ const Navbar = () => {
 
       <ul>
         <li>
-          <CgShoppingBag />
+          <NavLink to="/cart">
+            <CgShoppingBag />
+          </NavLink>
         </li>
-        <li>
+        <li onClick={() => logout(history)}>
           <MdOutlineLogout />
         </li>
       </ul>
