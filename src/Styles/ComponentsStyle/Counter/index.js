@@ -37,6 +37,13 @@ export const CounterCountainer = styled.div`
     border: none;
   }
 
+  button:hover {
+    background-color: var(--brown-light);
+  }
+  button:active {
+    background-color: var(--brown-medium);
+  }
+
   .buttonContainer {
     display: flex;
     flex-direction: column;

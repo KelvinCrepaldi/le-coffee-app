@@ -40,8 +40,6 @@ export const RatingContainer = styled.div`
   }
 
   .rate-button {
-    display: flex;
-    justify-content: right;
     width: 100%;
     padding: 5px;
 
@@ -58,6 +56,21 @@ export const RatingContainer = styled.div`
     }
   }
 
+  .mobile-500px {
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 500px) {
+    .rate-button {
+      display: flex;
+      justify-content: right;
+    }
+
+    .mobile-500px {
+      margin-top: 0px;
+    }
+  }
+
   //============= USER RATE ==========================
 `;
 
@@ -67,11 +80,13 @@ export const RateCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  margin-top: 20px;
   h2 {
+    width: 100%;
     margin: 0;
     padding: 0;
     color: var(--black-primary);
-    font-weight: 400;
+    font-weight: 400px;
   }
 
   .rating {
@@ -85,6 +100,9 @@ export const RateCard = styled.div`
     font-size: var(--size-medium);
     font-weight: var(--font-w-normal);
     margin: 0px 20px;
+    padding: 0px 6px;
+    padding-top: 5px;
+    border-left: 1px solid var(--brown-xlight);
   }
 
   :hover {

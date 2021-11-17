@@ -4,11 +4,12 @@ import { ButtonComponent } from "../Button";
 import { RatingContext } from "../../Providers/rating";
 import { useEffect, useState } from "react";
 import { RatingButton } from "../RatingButton";
+import ReactStars from "react-rating-stars-component";
 
 export const RatingComponent = ({ product, setRateMedia }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
-  const userName = localStorage.getItem("userName");
+  const userName = JSON.parse(localStorage.getItem("username"));
   const [ratingValue, setRatingValue] = useState();
   const { rating, getRatingByProductId, handleRating } =
     useContext(RatingContext);
@@ -62,7 +63,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
     <RatingContainer>
       <div className="rate-container">
         <div className="rate-input">
-          <span>{userName}</span>
+          <span>{userName}:</span>
           <input
             value={inputText}
             onChange={(e) => changeInputText(e.target.value)}
@@ -72,25 +73,33 @@ export const RatingComponent = ({ product, setRateMedia }) => {
 
         <div className="rate-button">
           <RatingButton setRatingValue={setRatingValue} />
-          <ButtonComponent
-            className="buttonCancel brown "
-            variant="brown"
-            text="Cancelar"
-            onClick={handleCancelSendRate}
-          ></ButtonComponent>
-          <ButtonComponent
-            className="buttonPost brown"
-            variant="brown"
-            text="Enviar"
-            onClick={handleSendRate}
-          ></ButtonComponent>
+          <div class="mobile-500px">
+            <ButtonComponent
+              className="buttonCancel brown "
+              variant="brown"
+              text="Cancelar"
+              onClick={handleCancelSendRate}
+            ></ButtonComponent>
+            <ButtonComponent
+              className="buttonPost brown"
+              variant="brown"
+              text="Enviar"
+              onClick={handleSendRate}
+            ></ButtonComponent>
+          </div>
         </div>
       </div>
       <div>
         {rating.map((e) => (
           <RateCard>
-            <h2>Nome do usuário</h2>
-            <span className="rating">{e.rating}</span>
+            <h2>{e.name}</h2>
+            <ReactStars
+              count={5}
+              value={e.rating}
+              size={20}
+              activeColor="#ffd700"
+              edit={false}
+            />
             <span className="text">{e.text}</span>
           </RateCard>
         ))}

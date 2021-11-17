@@ -49,16 +49,6 @@ export const ProductComponent = ({ product, setActive }) => {
   };
 
   const handleBuyNow = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      sample: true,
-      quantity: counter,
-      image: product.image,
-      price: product.price,
-      name: product.name,
-    };
-    addToCart(obj, token);
     history.push("/cart");
   };
 
@@ -83,7 +73,12 @@ export const ProductComponent = ({ product, setActive }) => {
             </div>
 
             <span className="category">{product.category}</span>
-            <span className="price">{product.price}</span>
+            <span className="price">
+              {Intl.NumberFormat("BRL", {
+                style: "currency",
+                currency: "BRL",
+              }).format(product.price)}
+            </span>
             <span className="description">{product.description}</span>
             <Counter counter={counter} setCounter={setCounter} />
             <div className="buttons-container">
@@ -91,8 +86,8 @@ export const ProductComponent = ({ product, setActive }) => {
                 <ButtonComponent
                   className="top-button unfill"
                   variant="unfill"
-                  text="Adicionar ao carrinho"
-                  onClick={handleAddToCart}
+                  text="Ir para o carrinho"
+                  onClick={handleBuyNow}
                 ></ButtonComponent>
                 <ButtonComponent
                   className="top-button unfill"
@@ -104,8 +99,8 @@ export const ProductComponent = ({ product, setActive }) => {
               <ButtonComponent
                 className="botton-button brown"
                 variant="brown"
-                text="Compre já!"
-                onClick={handleBuyNow}
+                text="Adicionar no carrinho"
+                onClick={handleAddToCart}
               />
             </div>
           </div>

@@ -28,6 +28,10 @@ export const ProductContainer = styled.section`
       background: none;
       border: none;
     }
+    button:hover {
+      font-size: 25px;
+      color: var(--brown-light);
+    }
   }
 
   .item-content {
@@ -116,11 +120,30 @@ export const ProductContainer = styled.section`
         font-size: var(--font-size-standart);
       }
 
+      .top-button:hover {
+        border-color: var(--brown-light);
+        transition: 0.1s;
+      }
+
+      .top-button:active {
+        border-color: var(--brown-dark);
+        color: var(--brown-dark);
+      }
+
       .botton-button {
         margin: 20px 10px;
         width: 100%;
         height: 50px;
         font-size: var(--font-size-standart);
+      }
+
+      .botton-button:hover {
+        background-color: var(--brown-light);
+        transition: 0.1s;
+      }
+
+      .botton-button:active {
+        background-color: var(--brown-medium);
       }
 
       h1 {
