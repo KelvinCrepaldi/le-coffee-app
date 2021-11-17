@@ -13,11 +13,11 @@ import { CartContext } from "../../Providers/cartProvider";
 export const ProductComponent = ({ product, setActive }) => {
   const history = useHistory();
   const [counter, setCounter] = useState(1);
-  const { addToCart } = useContext(CartContext);
+  const [rateMedia, setRateMedia] = useState(0);
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
-  const [rateMedia, setRateMedia] = useState(0);
-
+  const { addToCart, cartList, findRepeated } = useContext(CartContext);
+  
   const handleCloseWindow = () => {
     setActive(false);
   };
@@ -61,7 +61,7 @@ export const ProductComponent = ({ product, setActive }) => {
         </div>
         <div className="item-content">
           <div className="image-container">
-            <img src={product.image} alt="product"/>
+            <img src={product.image} alt="product" />
           </div>
           <div className="content-container">
             <div className="titleContainer">
@@ -82,7 +82,7 @@ export const ProductComponent = ({ product, setActive }) => {
             <span className="description">{product.description}</span>
             <Counter counter={counter} setCounter={setCounter} />
             <div className="buttons-container">
-              <div class="top-buttons-container">
+              <div className="top-buttons-container">
                 <ButtonComponent
                   className="top-button unfill"
                   variant="unfill"
