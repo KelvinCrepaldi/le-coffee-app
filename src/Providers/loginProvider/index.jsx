@@ -1,22 +1,10 @@
 import { createContext } from "react";
 import api from "../../Services";
-import toast from "react-hot-toast";
+import { ErrorAlert } from "../../Components/Alerts";
+
 export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const errorToast = () =>
-    toast.error("Usuário não encontrado!", {
-      style: {
-        border: "1px solid var(--alert-error)",
-        padding: "16px",
-        color: "var(--alert-error)",
-        background: "var(--white-primary)",
-      },
-      iconTheme: {
-        primary: "var(--alert-error)",
-        secondary: "var(--white-primary)",
-      },
-    });
 
   const handleLogin = (data, history) => {
     api
@@ -29,7 +17,7 @@ export const LoginProvider = ({ children }) => {
         history.push("/home");
       })
       .catch((err) => {
-        errorToast();
+        ErrorAlert("Usuário não encontrado!", "top-center");
       });
   };
   const logout = (history) => {
