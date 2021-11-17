@@ -19,6 +19,7 @@ export const RatingContainer = styled.div`
     border-bottom: 1px solid rgba(170, 102, 85, 0.3);
     span {
       font-size: var(--font-size-large);
+      color: var(--black-primary);
     }
     input {
       flex-grow: 1;
@@ -39,20 +40,34 @@ export const RatingContainer = styled.div`
   }
 
   .rate-button {
-    display: flex;
-    justify-content: right;
     width: 100%;
     padding: 5px;
 
     .buttonCancel {
       background-color: rgb(100, 100, 100, 0.4);
       width: 100px;
-      height: 30px;
+      height: 35px;
       margin-right: 5px;
     }
 
     .buttonPost {
       width: 100px;
+      height: 35px;
+    }
+  }
+
+  .mobile-500px {
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 500px) {
+    .rate-button {
+      display: flex;
+      justify-content: right;
+    }
+
+    .mobile-500px {
+      margin-top: 0px;
     }
   }
 
@@ -65,11 +80,13 @@ export const RateCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  margin-top: 20px;
   h2 {
+    width: 100%;
     margin: 0;
     padding: 0;
     color: var(--black-primary);
-    font-weight: 400;
+    font-weight: 400px;
   }
 
   .rating {
@@ -83,6 +100,9 @@ export const RateCard = styled.div`
     font-size: var(--size-medium);
     font-weight: var(--font-w-normal);
     margin: 0px 20px;
+    padding: 0px 6px;
+    padding-top: 5px;
+    border-left: 1px solid var(--brown-xlight);
   }
 
   :hover {
