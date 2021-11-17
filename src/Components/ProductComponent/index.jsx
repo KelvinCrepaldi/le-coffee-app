@@ -8,12 +8,12 @@ import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { RatingComponent } from "../Rating/Rating";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 
 export const ProductComponent = ({ product, setActive }) => {
   const history = useHistory();
   const [counter, setCounter] = useState(1);
-  const { addToCart } = useContext(UserContext);
+  const { addToCart } = useContext(CartContext);
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
   const [rateMedia, setRateMedia] = useState(0);
@@ -61,7 +61,7 @@ export const ProductComponent = ({ product, setActive }) => {
         </div>
         <div className="item-content">
           <div className="image-container">
-            <img src={product.image} />
+            <img src={product.image} alt="product"/>
           </div>
           <div className="content-container">
             <div className="titleContainer">
