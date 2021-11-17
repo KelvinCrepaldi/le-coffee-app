@@ -18,22 +18,34 @@ export const CartProduct = ({ product }) => {
   };
 
   const removeOnePdt = () => {
-    const newQtd = product.quantity - 1
-    api.patch(`userCart/${product.id}`, { quantity: newQtd }, {
-      headers: {
-        Authorization: `Bearer ${userToken}`
-      }
-    })
-  }
-  
+    const newQtd = product.quantity - 1;
+    if (newQtd < 1) {
+      removeFromCart(product.id, userToken);
+    } else {
+      api.patch(
+        `userCart/${product.id}`,
+        { quantity: newQtd },
+        {
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
+    }
+  };
+
   const addOnePdt = () => {
-    const newQtd = product.quantity + 1
-    api.patch(`userCart/${product.id}`, { quantity: newQtd }, {
-      headers: {
-        Authorization: `Bearer ${userToken}`
+    const newQtd = product.quantity + 1;
+    api.patch(
+      `userCart/${product.id}`,
+      { quantity: newQtd },
+      {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
       }
-    })
-  }
+    );
+  };
 
   return (
     <CartCard>
