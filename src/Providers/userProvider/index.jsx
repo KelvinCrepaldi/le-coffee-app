@@ -1,10 +1,10 @@
 import { createContext, useState } from "react";
+import { ErrorAlert, SuccessAlert } from "../../Components/Alerts";
 import api from "../../Services";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-
   const [cartList, setCartList] = useState([]);
 
   const getCartList = (usrID) => {
@@ -19,12 +19,16 @@ export const UserProvider = ({ children }) => {
   };
 
   const addToCart = (newPdt, usrToken) => {
-    api.post("userCart", newPdt, {
-      headers: {
-        Authorization: `Bearer ${usrToken}`,
-      },
-    })
-    .then(console.log("added"));
+    api
+      .post("userCart", newPdt, {
+        headers: {
+          Authorization: `Bearer ${usrToken}`,
+        },
+      })
+      .then((res) => SuccessAlert("Adicionado", "top-right"))
+      .catch((err) =>
+        ErrorAlert("Não foi possível adicionar o produto", "top-right")
+      );
   };
 
   const removeFromCart = (pdtID, usrToken) => {
@@ -34,7 +38,10 @@ export const UserProvider = ({ children }) => {
           Authorization: `Bearer ${usrToken}`,
         },
       })
-      .then(console.log("deleted"));
+      .then((res) => SuccessAlert("Removido", "top-right"))
+      .catch((err) =>
+        ErrorAlert("Não foi possível remover o produto", "top-right")
+      );
   };
 
   return (

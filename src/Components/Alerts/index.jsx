@@ -3,14 +3,11 @@ import toast from "react-hot-toast";
 export const SuccessAlert = (text,pos) => toast.success(text, {
     position: `${pos}`,
     style: {
-      border: "1px solid var(--alert-succes)",
+      border: "1px solid var(--alert-success)",
       padding: "16px",
-      color: "var(--alert-succes)",
+      color: "var(--alert-success)",
       background: "var(--white-primary)",
-    },
-    iconTheme: {
-      primary: "var(--alert-succes)",
-      secondary: "var(--white-primary)",
+      width: "80%"
     },
   })
 
