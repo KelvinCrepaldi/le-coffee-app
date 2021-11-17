@@ -4,7 +4,7 @@ import api from "../../Services";
 
 export const UserContext = createContext();
 
-export const UserProvider = ({ children
+export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [cartList, setCartList] = useState([]);
 
