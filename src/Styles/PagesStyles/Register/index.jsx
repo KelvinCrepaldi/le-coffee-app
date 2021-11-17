@@ -58,7 +58,8 @@ export const Page = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      width: 170px;
+      width: 250px;
+
 
       button {
         width: 60px;
@@ -75,6 +76,8 @@ export const Page = styled.div`
       }
       p {
         color: #fff;
+        width:180px;
+
       }
     }
 

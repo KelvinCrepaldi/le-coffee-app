@@ -24,14 +24,14 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 88.5vw;
+  width: 90vw;
   margin: 20px auto;
 `;
 export const Sections = styled(Link)`
   background: url(${backgroundProducts});
   background-position: center;
   background-size: cover;
-  height: 400px;
+  height: 450px;
   width: 95vw;
   margin: 10px auto;
   display: flex;
@@ -59,14 +59,14 @@ export const Sections = styled(Link)`
     }
   }
   @media(min-width: 768px){
-    width: 48vw;
+    width: 43.5vw;
   }
 `;
 export const SectionsMod = styled(Link)`
   background: url(${backgroundAboutUs});
   background-position: center;
   background-size: cover;
-  height: 400px;
+  height: 450px;
   width: 95vw;
   margin: 10px auto;
   display: flex;
@@ -93,7 +93,7 @@ export const SectionsMod = styled(Link)`
     }
   }
   @media(min-width: 768px){
-    width: 48vw;
+    width: 43.5vw;
   }
 `;
 
@@ -102,7 +102,7 @@ export const SectionMap = styled(Link)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 85vw;
+  width: 88.5vw;
   height: 450px;
   margin: 0 auto;
   display: flex;

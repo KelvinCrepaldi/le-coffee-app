@@ -52,32 +52,36 @@ const RegisterForm = () => {
         <div className="title">
           <h1>Registre-se</h1>
           <span>
-            e prove dos <br />
+            e prove dos
             melhores cafés
           </span>
         </div>
-        <div>
+        <div className = "content">
+        
           <Input
-            placeholder="Nome"
+            placeholder="Digite seu nome"
             register={register}
             name="name"
             error={errors.name?.message}
           ></Input>
+            
           <Input
-            placeholder="E-mail"
+            placeholder="Digite seu email"
             register={register}
             name="email"
             error={errors.email?.message}
           ></Input>
+             
           <Input
-            placeholder="Senha"
+            placeholder="Digite sua senha"
             type="password"
             register={register}
             name="password"
             error={errors.password?.message}
           ></Input>
+            
           <Input
-            placeholder="Confirmar senha"
+            placeholder="Confirme sua senha"
             type="password"
             register={register}
             name="secondPassword"

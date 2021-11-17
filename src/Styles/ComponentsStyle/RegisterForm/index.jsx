@@ -5,7 +5,7 @@ export const RegisterFormContainer = styled.form`
   flex-wrap: wrap;
   align-items: center;
   align-content: space-between;
-
+  
   h1 {
     font-size: var(--font-size-medium);
     font-weight: var(--font-w-normal);
@@ -23,6 +23,7 @@ export const RegisterFormContainer = styled.form`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
   }
 
   .title {

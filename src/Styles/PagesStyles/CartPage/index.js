@@ -8,13 +8,13 @@ export const Page = styled.div`
 
   min-height: 100vh;
 
-  .navBar{
-      display: flex;
-      align-items: center;
-      height: 72px;
-      width: 100vw;
-      margin-bottom: 20px;
-      background-color: var(--brown-xlight);
+  .navBar {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    width: 100vw;
+    margin-bottom: 20px;
+    background-color: var(--brown-dark);
   }
   .card {
     height: 200px;
@@ -37,33 +37,33 @@ export const Page = styled.div`
     font-size: var(--font-size-large);
     margin: 25px auto 0;
   }
-  @media(min-width: 768px){
-      .content{
-          display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            width: 96vw;
-        .card{
-            width: 35vw;
-        }
-        .card--address{
-            margin-bottom: 100px;
-        }
+  @media (min-width: 768px) {
+    .content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 96vw;
+      .card {
+        width: 35vw;
       }
+      .card--address {
+        margin-bottom: 100px;
+      }
+    }
   }
-  @media(min-width: 1024px){
-      .content{
-          display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            width: 96vw;
-        .card{
-            width: 380px;
-        }
-        .card--address{
-            margin-bottom: 100px;
-        }
+  @media (min-width: 1024px) {
+    .content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 96vw;
+      .card {
+        width: 380px;
       }
+      .card--address {
+        margin-bottom: 100px;
+      }
+    }
   }
 `;
 
@@ -74,31 +74,29 @@ export const CartContainer = styled.section`
   border: 1px solid var(--brown-light);
   border-radius: 15px;
 
-  
-  .listContainer{
+  .listContainer {
     display: flex;
     overflow: hidden;
     overflow-y: scroll;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-   
+
     height: 88%;
     width: 100%;
-  } 
-  
-  @media(min-width: 768px){
+  }
+
+  @media (min-width: 768px) {
     height: 500px;
     width: 50vw;
   }
-  @media(min-width: 1024px){
+  @media (min-width: 1024px) {
     height: 500px;
     width: 60vw;
   }
-
 `;
 
-export const CardTop = styled.section`
+export const CardTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
