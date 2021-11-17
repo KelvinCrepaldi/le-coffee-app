@@ -76,12 +76,14 @@ export const CartProvider = ({ children }) => {
         ErrorAlert("Não foi possível remover o produto", "top-right")
       );
   };
+  
 
   return (
     <CartContext.Provider
       value={{
         removeIDLocal,
         cartList,
+        setCartList,
         addToCart,
         removeFromCart,
       }}

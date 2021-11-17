@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import logoNavbar from "../../assets/logo.png";
 import {
   Nav,
@@ -10,7 +10,6 @@ import {
   Content,
 } from "../../Styles/ComponentsStyle/Navbar/index";
 import { useState } from "react";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
 import { CgShoppingBag } from "react-icons/cg";
 import { useContext } from "react";
@@ -21,6 +20,10 @@ const Navbar = () => {
   const history = useHistory();
   const { logout } = useContext(LoginContext);
   const [open, setOpen] = useState(false);
+
+  const handleLogout = () => {
+    logout(history)
+  }
 
   return (
     <Nav>
@@ -49,7 +52,7 @@ const Navbar = () => {
             <CgShoppingBag />
           </NavLink>
         </li>
-        <li onClick={() => logout(history)}>
+        <li onClick={handleLogout}>
           <MdOutlineLogout />
         </li>
       </ul>
