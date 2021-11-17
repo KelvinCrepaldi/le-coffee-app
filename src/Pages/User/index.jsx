@@ -1,13 +1,27 @@
 import { CardTop, Page } from "../../Styles/PagesStyles/User";
-import { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider";
+import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
 
 const User = () => {
+  const [userId] = useState(() => {
+    const current = localStorage.getItem("userId") || "";
+    return parseInt(current);
+  });
+
+  const usrToken = localStorage.getItem("token") || "";
+  
   const history = useHistory();
 
   const { logout } = useContext(LoginContext);
+
+  const { user, getUser } = useContext(UserContext);
+
+  useEffect(() => {
+    getUser(userId, usrToken);
+  }, []);
 
   return (
     <Page>
@@ -15,7 +29,8 @@ const User = () => {
         <Navbar />
       </div>
       <div className="Title">Minha Conta</div>
-      <button type="submit" onClick={logout} className="Logout">
+      <p>Bem-vindo, {user.name}</p>
+      <button type="submit" onClick={() => logout(history)} className="Logout">
         Logout
       </button>
 
@@ -24,7 +39,7 @@ const User = () => {
           <div>Detalhes da Conta</div>
         </CardTop>
         <div className="CardContent">
-          <div>Alterar dados da conta</div>
+          <Link to="/user/change">Alterar dados da conta</Link>
           <div>Excluir conta</div>
         </div>
       </div>
@@ -34,7 +49,7 @@ const User = () => {
           <div>Meus Pedidos</div>
         </CardTop>
         <div className="CardContent">
-            <div>Produtos cadastrados</div>
+          <div>Produtos cadastrados</div>
         </div>
       </div>
     </Page>

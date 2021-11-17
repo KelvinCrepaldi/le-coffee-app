@@ -8,6 +8,10 @@ export const Page = styled.div`
 
   min-height: 100vh;
 
+  p {
+    font-size: var(--font-size-xsmall);
+  } 
+
   .NavBar {
     display: flex;
     align-items: center;
@@ -43,6 +47,12 @@ export const Page = styled.div`
       justify-content: center;
       align-items: center;
       height: 150px;
+      a {
+        color: var(--black-primary);
+      }
+      a:hover {
+        color: var(--brown-light);
+      }
     }
   }
 

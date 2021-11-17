@@ -9,6 +9,7 @@ import Catalogue from "../Pages/Catalogue/"
 import CartPage from "../Pages/Cart";
 import AboutUs from "../Pages/AboutUs";
 import User from "../Pages/User";
+import ChangeUserData from "../Pages/ChangeUserData";
 
 const RoutesPatchs = () => {
   return (
@@ -54,9 +55,14 @@ const RoutesPatchs = () => {
         <Register />
       </Route>
 
-      <Route path="/user">
+      <Route exact path="/user">
         <GlobalStyles />
         <User />
+      </Route>
+
+      <Route  path="/user/change">
+        <GlobalStyles />
+        <ChangeUserData />
       </Route>
     
     </Switch>
