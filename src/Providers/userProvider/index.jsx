@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
+import { ErrorAlert, SuccessAlert } from "../../Components/Alerts";
 import api from "../../Services";
 
 export const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
+export const UserProvider = ({ children
   const [user, setUser] = useState({});
-
   const [cartList, setCartList] = useState([]);
 
   const getUser = (usrID, usrToken) => {
@@ -85,7 +85,10 @@ export const UserProvider = ({ children }) => {
           Authorization: `Bearer ${usrToken}`,
         },
       })
-      .then(console.log("added"));
+      .then((res) => SuccessAlert("Adicionado", "top-right"))
+      .catch((err) =>
+        ErrorAlert("Não foi possível adicionar o produto", "top-right")
+      );
   };
 
   const removeFromCart = (pdtID, usrToken) => {
@@ -95,7 +98,10 @@ export const UserProvider = ({ children }) => {
           Authorization: `Bearer ${usrToken}`,
         },
       })
-      .then(console.log("deleted"));
+      .then((res) => SuccessAlert("Removido", "top-right"))
+      .catch((err) =>
+        ErrorAlert("Não foi possível remover o produto", "top-right")
+      );
   };
 
   return (
