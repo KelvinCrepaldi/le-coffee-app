@@ -3,6 +3,7 @@ import { LoginProvider } from "./loginProvider";
 import { CatalogueProvider } from "./catalogue";
 import { UserProvider } from "./userProvider";
 import { RatingProvider } from "./rating";
+import { CartProvider } from "./cartProvider";
 const ProvidersGathered = ({ children }) => {
   return (
     <>
@@ -10,7 +11,9 @@ const ProvidersGathered = ({ children }) => {
         <RegisterProvider>
           <LoginProvider>
             <UserProvider>
+              <CartProvider>
               <CatalogueProvider>{children}</CatalogueProvider>
+              </CartProvider>
             </UserProvider>
           </LoginProvider>
         </RegisterProvider>

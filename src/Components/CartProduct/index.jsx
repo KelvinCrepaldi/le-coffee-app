@@ -1,7 +1,7 @@
 import { CartCard } from "../../Styles/ComponentsStyle/CartProduct";
 import { ButtonComponent } from "../Button";
 import { useContext, useState } from "react";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 import { AddRemovePdt } from "../../Styles/ComponentsStyle/CartProduct";
 import api from "../../Services";
 
@@ -11,7 +11,7 @@ export const CartProduct = ({ product }) => {
     return JSON.parse(current);
   });
 
-  const { removeFromCart } = useContext(UserContext);
+  const { removeFromCart } = useContext(CartContext);
 
   const handleRemove = () => {
     removeFromCart(product.id, userToken);

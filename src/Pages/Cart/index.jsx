@@ -1,18 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { ButtonComponent } from "../../Components/Button";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
 import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";
 import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
+
 const CartPage = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
 
-  const { cartList, getCartList } = useContext(UserContext);
+  const { cartList, getCartList } = useContext(CartContext);
 
   useEffect(() => {
     getCartList(userId);
