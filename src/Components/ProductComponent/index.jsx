@@ -1,3 +1,4 @@
+import { GiCoffeeBeans } from "react-icons/gi";
 import {
   ProductContainer,
   BackgroundTransparent,
@@ -15,6 +16,7 @@ export const ProductComponent = ({ product, setActive }) => {
   const { addToCart } = useContext(UserContext);
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
+  const [rateMedia, setRateMedia] = useState(0);
 
   const handleCloseWindow = () => {
     setActive(false);
@@ -72,10 +74,17 @@ export const ProductComponent = ({ product, setActive }) => {
             <img src={product.image} />
           </div>
           <div className="content-container">
-            <h1>{product.name}</h1>
-            <label className="category">{product.category}</label>
-            <label className="price">{product.price}</label>
-            <label className="description">{product.description}</label>
+            <div className="titleContainer">
+              <h1>{product.name}</h1>
+              <span className="rate">
+                <GiCoffeeBeans />
+                {Math.round(rateMedia * 10) / 10}
+              </span>
+            </div>
+
+            <span className="category">{product.category}</span>
+            <span className="price">{product.price}</span>
+            <span className="description">{product.description}</span>
             <Counter counter={counter} setCounter={setCounter} />
             <div className="buttons-container">
               <div class="top-buttons-container">
@@ -102,7 +111,7 @@ export const ProductComponent = ({ product, setActive }) => {
           </div>
           <div className="item-rating">
             <h1>Avaliações</h1>
-            <RatingComponent product={product} />
+            <RatingComponent product={product} setRateMedia={setRateMedia} />
           </div>
         </div>
       </ProductContainer>

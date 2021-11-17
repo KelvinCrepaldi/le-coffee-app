@@ -52,29 +52,45 @@ export const ProductContainer = styled.section`
       flex-wrap: wrap;
 
       h1 {
-        width: 100%;
         padding: 10px;
-
+        width: 100%;
         color: var(--black-primary);
         font-size: var(--font-size-xlarge);
       }
-      label {
+      .titleContainer {
+        display: flex;
         width: 100%;
+        border-bottom: 1px solid var(--brown-xlight);
+      }
+
+      .rate {
+        display: flex;
+        align-items: center;
+
+        font-size: 30px;
+        color: var(--brown-xlight);
+        width: 110px;
+        padding: 0;
+      }
+      span {
         padding: 10px;
       }
       .category {
+        width: 100%;
         font-size: var(--font-size-medium);
         font-weight: var(--font-w-normal);
         font-family: "normal";
         color: var(--gray-primary);
       }
       .price {
+        width: 100%;
         font-size: var(--font-size-medium);
         font-weight: var(--font-w-bold);
         color: #732f16;
       }
 
       .description {
+        width: 100%;
         font-weight: var(--font-w-normal);
         font-size: var(--font-size-medium);
         color: var(--gray-primary);
@@ -111,8 +127,6 @@ export const ProductContainer = styled.section`
         margin-top: 20px;
         margin-bottom: 10px;
         padding-bottom: 10px;
-        width: 100%;
-        border-bottom: 1px solid var(--brown-xlight);
       }
     }
 
@@ -120,6 +134,7 @@ export const ProductContainer = styled.section`
       width: 100%;
 
       h1 {
+        color: var(--black-primary);
         margin: 10px;
         padding: 10px;
         border-bottom: 1px solid var(--brown-xlight);

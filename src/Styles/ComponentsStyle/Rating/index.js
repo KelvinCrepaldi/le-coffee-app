@@ -19,6 +19,7 @@ export const RatingContainer = styled.div`
     border-bottom: 1px solid rgba(170, 102, 85, 0.3);
     span {
       font-size: var(--font-size-large);
+      color: var(--black-primary);
     }
     input {
       flex-grow: 1;
@@ -47,12 +48,13 @@ export const RatingContainer = styled.div`
     .buttonCancel {
       background-color: rgb(100, 100, 100, 0.4);
       width: 100px;
-      height: 30px;
+      height: 35px;
       margin-right: 5px;
     }
 
     .buttonPost {
       width: 100px;
+      height: 35px;
     }
   }
 
