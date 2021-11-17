@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
         },
       })
       .then((res) => SuccessAlert("Removido", "top-right"))
-      .catch((err) =>
+      .catch(() =>
         ErrorAlert("Não foi possível remover o produto", "top-right")
       );
   };
