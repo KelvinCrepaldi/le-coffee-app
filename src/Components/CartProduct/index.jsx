@@ -11,9 +11,10 @@ export const CartProduct = ({ product }) => {
     return JSON.parse(current);
   });
 
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart, removeIDLocal } = useContext(CartContext);
 
   const handleRemove = () => {
+    removeIDLocal(product.productsId)
     removeFromCart(product.id, userToken);
   };
 
