@@ -11,6 +11,7 @@ import AboutUs from "../Pages/AboutUs";
 import User from "../Pages/User";
 import ChangeUserData from "../Pages/ChangeUserData";
 import UserAddress from "../Components/UserAddress";
+import ShowAddress from "../Pages/ShowAddress";
 
 const RoutesPatchs = () => {
   return (
@@ -69,6 +70,11 @@ const RoutesPatchs = () => {
       <Route  path="/user/address">
         <GlobalStyles />
         <UserAddress />
+      </Route>
+
+      <Route  path="/user/showAddresses">
+        <GlobalStyles />
+        <ShowAddress />
       </Route>
     
     </Switch>
