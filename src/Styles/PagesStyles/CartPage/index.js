@@ -7,7 +7,11 @@ export const Page = styled.div`
   justify-content: flex-start;
 
   min-height: 100vh;
-
+ 
+#close {
+  color: red;
+  width: 100px;
+}
   .navBar {
     display: flex;
     align-items: center;
@@ -112,3 +116,4 @@ export const CardTop = styled.div`
     font-weight: var(--font-w-bold);
   }
 `;
+

@@ -5,6 +5,8 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [cartList, setCartList] = useState([]);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const getUser = (usrID, usrToken) => {
     if (usrID !== "") {
@@ -132,6 +134,9 @@ export const UserProvider = ({ children }) => {
         getUser,
         user,
         changeUserData,
+        modalIsOpen,
+        openModal,
+        closeModal,
         addUserAddress,
         getUserAddress,
       }}

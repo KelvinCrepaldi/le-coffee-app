@@ -6,12 +6,27 @@ import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";
 import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
+import React from "react";
+import ModalOrder from "../../Components/Order/index";
 
 const CartPage = () => {
-  const { cartList } = useContext(CartContext);
-  
-  const  total = cartList.reduce((acc, pdt) => (pdt.price * pdt.quantity) + acc,0)
-    
+  const [userId] = useState(() => {
+    const current = localStorage.getItem("userId") || "";
+    return parseInt(current);
+  });
+
+  const { cartList, getCartList, modalIsOpen, openModal, closeModal } =
+    useContext(UserContext);
+
+  useEffect(() => {
+    getCartList(userId);
+  }, [getCartList, userId]);
+
+  const total = cartList.reduce(
+    (acc, pdt) => pdt.price * pdt.quantity + acc,
+    0
+  );
+
   return (
     <Page>
       <div className="navBar">
@@ -39,7 +54,11 @@ const CartPage = () => {
               <p>Enviar para:</p>
               <p>Casa*</p>
             </div>
-            <ButtonComponent variant="brown" text="Finalizar compra" />
+            <ButtonComponent
+              onClick={openModal}
+              variant="brown"
+              text="Finalizar compra"
+            />
           </div>
         </div>
         <CartContainer>
@@ -53,6 +72,8 @@ const CartPage = () => {
           </div>
         </CartContainer>
       </div>
+
+      <ModalOrder modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </Page>
   );
 };
