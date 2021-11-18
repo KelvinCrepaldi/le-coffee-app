@@ -5,91 +5,88 @@ import api from "../../Services";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [userID] = useState(()=>{
-    const current = localStorage.getItem("userId") || "";
-    return parseInt(current)
-  })
+  
   const [cartList, setCartList] = useState([]);
   
-  useEffect(()=>{
-    if (userID !== "") {
+  const getCartList = (usrID) => {
       api
-        .get(`users/${userID}?_embed=userCart`)
+        .get(`users/${usrID}?_embed=userCart`)
         .then((res) => {
           setCartList(res.data.userCart);
         })
         .catch((err) => console.log(err));
-    }
-  },[userID, cartList])
+    
+  }
 
+  
   const findRepeated = (id) =>{
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
-
+    
     if(!idList.includes(id)){
       idList.push(id)
     }
     else{
       return true
     }
-
+    
     localStorage.setItem("idList",JSON.stringify([...idList]))
     return false
   }
-
+  
   const removeIDLocal = (id) => {
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
-
-   const newList = idList.filter((item)=> item !== id);
-   localStorage.setItem("idList",JSON.stringify([...newList]))
+    
+    const newList = idList.filter((item)=> item !== id);
+    localStorage.setItem("idList",JSON.stringify([...newList]))
   }
-
+  
   const addToCart = (newPdt, usrToken) => {
     const isRepeated = findRepeated(newPdt.productsId);
     if(!isRepeated){
       api
-        .post("userCart", newPdt, {
-          headers: {
-            Authorization: `Bearer ${usrToken}`,
-          },
-        })
-        .then((res) => SuccessAlert("Adicionado", "top-right"))
-        .catch((err) =>
-          ErrorAlert("Não foi possível adicionar o produto", "top-right")
-        );
+      .post("userCart", newPdt, {
+        headers: {
+          Authorization: `Bearer ${usrToken}`,
+        },
+      })
+      .then((res) => SuccessAlert("Adicionado", "top-right"))
+      .catch((err) =>
+      ErrorAlert("Não foi possível adicionar o produto", "top-right")
+      );
     }
     else{
       ErrorAlert("Produto já adicionado", "top-right")
     }
   };
-
+  
   const removeFromCart = (pdtID, usrToken) => {
     
     api
-      .delete(`userCart/${pdtID}`, {
-        headers: {
-          Authorization: `Bearer ${usrToken}`,
-        },
-      })
-      .catch(() =>
-        ErrorAlert("Não foi possível remover o produto", "top-right")
-      );
+    .delete(`userCart/${pdtID}`, {
+      headers: {
+        Authorization: `Bearer ${usrToken}`,
+      },
+    })
+    .catch(() =>
+    ErrorAlert("Não foi possível remover o produto", "top-right")
+    );
   };
-
+  
   const clearCart = (usrToken) => {
     cartList.forEach(element => {
       removeFromCart(element.id,usrToken)
     });
   };
   
-
   return (
     <CartContext.Provider
-      value={{
-        removeIDLocal,
-        cartList,
+    value={{
+      removeIDLocal,
+      cartList,
         addToCart,
         removeFromCart,
         clearCart,
+        getCartList,
       }}
     >
       {children}

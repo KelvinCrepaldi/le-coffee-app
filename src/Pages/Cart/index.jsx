@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ButtonComponent } from "../../Components/Button";
 import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
@@ -8,7 +8,15 @@ import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
 
 const CartPage = () => {
-  const { cartList } = useContext(CartContext);
+  const [userID] = useState(()=>{
+    const current = localStorage.getItem("userId") || "";
+    return parseInt(current)
+  })
+  const { getCartList, cartList } = useContext(CartContext);
+  
+  useEffect(() => {
+    getCartList(userID);
+  }, [getCartList, userID]);
   
   const  total = cartList.reduce((acc, pdt) => (pdt.price * pdt.quantity) + acc,0)
     
