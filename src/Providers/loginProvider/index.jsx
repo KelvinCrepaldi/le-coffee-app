@@ -5,7 +5,6 @@ import { ErrorAlert } from "../../Components/Alerts";
 export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-
   const handleLogin = (data, history) => {
     api
       .post("login", data)
