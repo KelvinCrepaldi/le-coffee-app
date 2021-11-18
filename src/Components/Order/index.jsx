@@ -193,8 +193,8 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
                 helperText={errors.installment?.message}
               >
                 <MenuItem value="1">
-                  À vista até 10% de desconto - R${" "}
-                  {total - (total * 0.1).toFixed(2)}
+                  À vista até 10% de desconto - R$
+                  {(total - (total * 0.1)).toFixed(2)}
                 </MenuItem>
                 <MenuItem value="2">
                   2x sem juros - R$ {(total / 2).toFixed(2)}
