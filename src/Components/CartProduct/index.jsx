@@ -11,29 +11,42 @@ export const CartProduct = ({ product }) => {
     return JSON.parse(current);
   });
 
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart, removeIDLocal } = useContext(CartContext);
 
   const handleRemove = () => {
+    removeIDLocal(product.productsId)
     removeFromCart(product.id, userToken);
   };
 
   const removeOnePdt = () => {
-    const newQtd = product.quantity - 1
-    api.patch(`userCart/${product.id}`, { quantity: newQtd }, {
-      headers: {
-        Authorization: `Bearer ${userToken}`
-      }
-    })
-  }
-  
+    const newQtd = product.quantity - 1;
+    if (newQtd < 1) {
+      removeFromCart(product.id, userToken);
+    } else {
+      api.patch(
+        `userCart/${product.id}`,
+        { quantity: newQtd },
+        {
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
+    }
+  };
+
   const addOnePdt = () => {
-    const newQtd = product.quantity + 1
-    api.patch(`userCart/${product.id}`, { quantity: newQtd }, {
-      headers: {
-        Authorization: `Bearer ${userToken}`
+    const newQtd = product.quantity + 1;
+    api.patch(
+      `userCart/${product.id}`,
+      { quantity: newQtd },
+      {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
       }
-    })
-  }
+    );
+  };
 
   return (
     <CartCard>
