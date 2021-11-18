@@ -32,7 +32,7 @@ const LandingPage = () => {
     <>
     <DivGrand>
       <SectionOne>
-        <img src={main} alt="Cover Photo" className="Cover" />
+        <img src={main} alt="Cover" className="Cover" />
 
         <img src={logo} alt="Logo Le Coffee" className="Logo" />
 
