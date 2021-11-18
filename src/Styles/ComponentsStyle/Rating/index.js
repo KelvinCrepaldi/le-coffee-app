@@ -17,9 +17,15 @@ export const RatingContainer = styled.div`
     display: flex;
     padding-bottom: 7px;
     border-bottom: 1px solid rgba(170, 102, 85, 0.3);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
     span {
-      font-size: var(--font-size-large);
+      font-size: var(--font-size-small);
+      width: 100%;
       color: var(--black-primary);
+      margin-bottom: 20px;
     }
     input {
       flex-grow: 1;
@@ -42,7 +48,11 @@ export const RatingContainer = styled.div`
   .rate-button {
     width: 100%;
     padding: 5px;
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
     .buttonCancel {
       background-color: rgb(100, 100, 100, 0.4);
       width: 100px;
@@ -57,7 +67,9 @@ export const RatingContainer = styled.div`
   }
 
   .mobile-500px {
+    display: flex;
     margin-top: 20px;
+    margin-left: 20px;
   }
 
   @media screen and (min-width: 500px) {

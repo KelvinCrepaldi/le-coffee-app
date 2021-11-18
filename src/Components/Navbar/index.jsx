@@ -16,6 +16,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider/index";
 import { CartContext } from "../../Providers/cartProvider";
+import { BiUser } from "react-icons/bi";
 const Navbar = () => {
   const history = useHistory();
 
@@ -56,12 +57,19 @@ const Navbar = () => {
 
       <ul>
         <li>
+          <NavLink to="/user">
+            <BiUser />
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/cart">
             <CgShoppingBag />
           </NavLink>
         </li>
         <li onClick={handleLogout}>
+        <NavLink to="/">
           <MdOutlineLogout />
+          </NavLink>
         </li>
       </ul>
     </Nav>

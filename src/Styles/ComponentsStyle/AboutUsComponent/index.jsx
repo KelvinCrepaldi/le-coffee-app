@@ -49,7 +49,7 @@ export const Content = styled.div`
   flex-wrap: wrap;
   background: #fff;
 
-  border-radius: 8px;
+  border-radius: 30px;
   box-shadow: 1px 4px 4px 2px rgba(0, 0, 0, 0.25);
 `;
 export const Box = styled.div`
