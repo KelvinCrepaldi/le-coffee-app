@@ -9,16 +9,16 @@ export const Page = styled.div`
   min-height: 100vh;
 
   .Title {
-    margin-top: 55px;
+    margin-top: 115px;
     font-size: var(--font-size-xlarge);
   }
 
   .Card {
-    height: 200px;
     width: 94vw;
     margin: 26px 0 26px 0;
     border: 1px solid var(--brown-light);
     border-radius: 15px;
+
 
     .CardContent {
       display: flex;

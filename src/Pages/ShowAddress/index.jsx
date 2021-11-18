@@ -1,33 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { LoginContext } from "../../Providers/loginProvider";
-import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
+import { ShowAddress } from "../../Components/ShowAddress";
 
-const ShowAddress = () => {
-  const [userId] = useState(() => {
-    const current = localStorage.getItem("userId") || "";
-    return parseInt(current);
-  });
-
-  const usrToken = localStorage.getItem("token") || "";
-
-  const history = useHistory();
-
-  const { logout } = useContext(LoginContext);
-
-  const { user, getUser } = useContext(UserContext);
-
-  useEffect(() => {
-    getUser(userId, usrToken);
-  }, []);
+const ShowAddressPage = () => {
 
   return (
     <>
       <Navbar />
+
       <ShowAddress />
     </>
   );
 };
 
-export default ShowAddress;
+export default ShowAddressPage;

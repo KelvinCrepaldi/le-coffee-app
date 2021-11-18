@@ -5,6 +5,7 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [userAddress, setUserAddress] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const getUser = (usrID, usrToken) => {
@@ -78,7 +79,7 @@ export const UserProvider = ({ children }) => {
             state: state,
             postalcode: postalcode,
             country: country,
-            address: address,
+            street: address,
             number: number,
           },
           {
@@ -104,16 +105,16 @@ export const UserProvider = ({ children }) => {
   };
 
   const getUserAddress = (usrID, usrToken) => {
+    const token = JSON.parse(usrToken);
     if (usrID !== "") {
       api
         .get(`userAddress?userId=${usrID}`, {
           headers: {
-            Authorization: `Bearer ${usrToken}`,
+            Authorization: `Bearer ${token}`,
           },
         })
         .then((res) => {
-          console.log(res.data);
-          console.log("Done");
+          setUserAddress(res.data);
         })
         .catch((error) => {
           if (error.response) {
@@ -138,6 +139,7 @@ export const UserProvider = ({ children }) => {
         // closeModal,
         addUserAddress,
         getUserAddress,
+        userAddress
       }}
     >
       {children}

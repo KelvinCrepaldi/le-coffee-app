@@ -12,6 +12,10 @@ export const Page = styled.div`
     font-size: var(--font-size-xsmall);
   }
 
+  button {
+    margin-top: 15px;
+  }
+
   .NavBar {
     display: flex;
     align-items: center;
