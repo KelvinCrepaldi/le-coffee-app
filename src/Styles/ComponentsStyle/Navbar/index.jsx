@@ -102,7 +102,7 @@ export const Bars = styled(FaBars)`
     cursor: pointer;
     color: ${({ open }) => (open ? "#fff" : "#ffffff6f")};
     transition: all 0.3s linear;
-    z-index: 1001;
+    z-index: 1002;
   }
 `;
 
@@ -118,7 +118,7 @@ export const NavMenu = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1001;
     flex-direction: column;
     align-items: flex-start;
     height: 100vh;
