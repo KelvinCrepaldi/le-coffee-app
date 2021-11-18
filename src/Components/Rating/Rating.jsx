@@ -1,10 +1,11 @@
-import { useContext } from "react";
 import { RatingContainer, RateCard } from "../../Styles/ComponentsStyle/Rating";
 import { ButtonComponent } from "../Button";
 import { RatingContext } from "../../Providers/rating";
-import { useEffect, useState } from "react";
 import { RatingButton } from "../RatingButton";
 import ReactStars from "react-rating-stars-component";
+
+import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 export const RatingComponent = ({ product, setRateMedia }) => {
   const token = JSON.parse(localStorage.getItem("token"));

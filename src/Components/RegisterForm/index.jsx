@@ -52,27 +52,23 @@ const RegisterForm = () => {
       <div className="center-mobile">
         <div className="title">
           <h1>Registre-se</h1>
-          <span>
-            e prove dos
-            melhores cafés
-          </span>
+          <span>e prove dos melhores cafés</span>
         </div>
-        <div className = "content">
-        
+        <div className="content">
           <Input
             placeholder="Digite seu nome"
             register={register}
             name="name"
             error={errors.name?.message}
           ></Input>
-            
+
           <Input
             placeholder="Digite seu email"
             register={register}
             name="email"
             error={errors.email?.message}
           ></Input>
-             
+
           <Input
             placeholder="Digite sua senha"
             type="password"
@@ -80,7 +76,7 @@ const RegisterForm = () => {
             name="password"
             error={errors.password?.message}
           ></Input>
-            
+
           <Input
             placeholder="Confirme sua senha"
             type="password"
@@ -101,8 +97,13 @@ const RegisterForm = () => {
           text="Fazer login"
           onClick={handleBackToLogin}
         />
-                <p style = {{marginTop: "10px", fontSize: "12px"}}>Voltar para o <Link style = {{color:"#AA6655"}}to = "/home"> inicio</Link></p>
-
+        <p style={{ marginTop: "10px", fontSize: "12px" }}>
+          Voltar para o{" "}
+          <Link style={{ color: "#AA6655" }} to="/home">
+            {" "}
+            inicio
+          </Link>
+        </p>
       </div>
     </RegisterFormContainer>
   );

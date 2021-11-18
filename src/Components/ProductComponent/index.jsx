@@ -1,22 +1,23 @@
-import { GiCoffeeBeans } from "react-icons/gi";
 import {
   ProductContainer,
   BackgroundTransparent,
 } from "../../Styles/ComponentsStyle/ProductComponent";
+import { GiCoffeeBeans } from "react-icons/gi";
+import { RatingComponent } from "../Rating/Rating";
 import { ButtonComponent } from "../Button";
 import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
-import { RatingComponent } from "../Rating/Rating";
+
 import { CartContext } from "../../Providers/cartProvider";
 
 export const ProductComponent = ({ product, setActive }) => {
-  const history = useHistory();
   const [counter, setCounter] = useState(1);
   const [rateMedia, setRateMedia] = useState(0);
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
-  const { addToCart, cartList, findRepeated } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+  const history = useHistory();
 
   const handleCloseWindow = () => {
     setActive(false);

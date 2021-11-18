@@ -1,9 +1,10 @@
-import { useHistory } from "react-router-dom";
-import bgImageLeft from "./cover-rodape.png";
-import bgImageRight from "./about-us-cover-2.png";
+import bgImageLeft from "../../assets/cover-rodape.png";
+import bgImageRight from "../../assets/about-us-cover-2.png";
 import RegisterForm from "../../Components/RegisterForm";
 import { Page } from "../../Styles/PagesStyles/Register";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
   const history = useHistory();

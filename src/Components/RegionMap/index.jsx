@@ -8,9 +8,10 @@ import {
 import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapContext } from "../../Providers/mapProvider";
+import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
+
 import { useContext, useEffect, useState } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
-import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
 
 export const RegionMapComponent = () => {
   const { regionCoordinates } = useContext(MapContext);
@@ -57,7 +58,7 @@ export const RegionMapComponent = () => {
             <button onClick={() => setRegion("Sudeste")}>Sudeste</button>
             <button onClick={() => setRegion("Sul")}>Sul</button>
           </section>
-          
+
           <section className="slct">
             <select
               defaultValue="default"
