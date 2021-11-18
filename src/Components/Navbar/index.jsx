@@ -15,13 +15,15 @@ import { CgShoppingBag } from "react-icons/cg";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider/index";
-
+import { CartContext } from "../../Providers/cartProvider";
 const Navbar = () => {
   const history = useHistory();
   const { logout } = useContext(LoginContext);
+  const { clearCart } = useContext(CartContext);
   const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
+    clearCart()
     logout(history)
   }
 
