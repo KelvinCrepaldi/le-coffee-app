@@ -1,28 +1,21 @@
-import { CgPacman } from "react-icons/cg";
-import { Redirect, Route as ReactRoute, RouteProps } from "react-router-dom";
+import { Redirect, Route as ReactRoute } from "react-router-dom";
 import GlobalStyles from "../Styles/GlobalStyles";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { LoginContext } from "../Providers/loginProvider";
 
-export const Route = ({ isPrivate = false, component: Component, ...rest }) => {
-  // pegar o token acessToken
-  const [token, setToken] = useState();
-  console.log(token);
-
-  useEffect(() => {
-    const isLoged = localStorage.getItem("token") || false;
-    console.log(isLoged + " key");
-    if (isLoged) {
-      return setToken(true);
-    } else {
-      return setToken(false);
-    }
-  }, [Component]);
+export const Route = ({
+  isPrivate = false,
+  component: Component,
+  test,
+  ...rest
+}) => {
+  const { isLoged } = useContext(LoginContext);
 
   return (
     <ReactRoute
       {...rest}
       render={() =>
-        isPrivate === !!token ? (
+        isPrivate === !!isLoged ? (
           <>
             <GlobalStyles />
             <Component />
