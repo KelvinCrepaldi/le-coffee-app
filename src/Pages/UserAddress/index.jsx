@@ -1,19 +1,16 @@
-import { useHistory } from "react-router-dom";
-import { ButtonComponent } from "../../Components/Button";
-
+import { Page } from "../../Styles/PagesStyles/UserAddress";
+import Navbar from "../../Components/Navbar";
 import UserAddress from "../../Components/UserAddress";
 
 const UserAddressPage = () => {
-  const history = useHistory();
-
-  const handleBackToUserPage = () => {
-    history.push("/user");
-  };
-
   return (
-    <div>
+    <Page>
+      <div className="navBar">
+        <Navbar />
+      </div>
+
       <UserAddress />
-    </div>
+    </Page>
   );
 };
 
