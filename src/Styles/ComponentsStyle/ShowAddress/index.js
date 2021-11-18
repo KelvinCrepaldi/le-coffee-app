@@ -8,6 +8,12 @@ export const Page = styled.div`
 
   min-height: 100vh;
 
+  button {
+    margin-top: 20px;
+    width: 265px;
+    height: 54px;
+  }
+
   .Title {
     margin-top: 115px;
     font-size: var(--font-size-xlarge);
@@ -18,7 +24,6 @@ export const Page = styled.div`
     margin: 26px 0 26px 0;
     border: 1px solid var(--brown-light);
     border-radius: 15px;
-
 
     .CardContent {
       display: flex;

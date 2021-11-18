@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { ErrorAlert, SuccessAlert } from "../../Components/Alerts";
 import api from "../../Services";
 
 export const UserContext = createContext();
@@ -21,11 +22,7 @@ export const UserProvider = ({ children }) => {
         })
         .catch((error) => {
           if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert(`User ${error.response.statusText}`, "top-left");
           }
         });
     }
@@ -52,22 +49,20 @@ export const UserProvider = ({ children }) => {
         )
         .then((res) => {
           setUser(res.data);
-          console.log("Dados alterados com sucesso:", res.data);
+          SuccessAlert("Dados alterados com sucesso:", "center");
         })
         .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert("Usuário não cadastrado", "top-left");
           }
         });
     }
   };
 
   const addUserAddress = (usrID, usrToken, data) => {
-    const { city, state, postalcode, country, address, number } = data;
+    const { city, state, postalcode, country, street, number } = data;
     const token = JSON.parse(usrToken);
     if (usrID !== "") {
       api
@@ -79,7 +74,7 @@ export const UserProvider = ({ children }) => {
             state: state,
             postalcode: postalcode,
             country: country,
-            street: address,
+            street: street,
             number: number,
           },
           {
@@ -88,17 +83,12 @@ export const UserProvider = ({ children }) => {
             },
           }
         )
-        .then((res) => {
-          console.log(res.data);
-          console.log("Done");
-        })
+        .then((res) =>  SuccessAlert("Endereço cadastrado", "center"))
         .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert(`${error.response.statusText}`, "top-left");
           }
         });
     }
@@ -124,11 +114,7 @@ export const UserProvider = ({ children }) => {
         })
         .catch((error) => {
           if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert("Endereço(s) não encontrados(s)");
           }
         });
     }

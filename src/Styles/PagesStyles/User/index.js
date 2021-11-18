@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundTop from "../../../assets/coverTop.png";
 
 export const Page = styled.div`
   display: flex;
@@ -68,6 +69,26 @@ export const Page = styled.div`
   @media (min-width: 1024px) {
     .Card {
       width: 380px;
+    }
+  }
+`;
+
+export const ImageTop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  background: url(${backgroundTop});
+  background-position: center;
+  background-size: cover;
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 0.8;
+    span {
+      font-size: 14px;
     }
   }
 `;
