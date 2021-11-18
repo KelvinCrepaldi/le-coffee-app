@@ -11,7 +11,7 @@ import { ButtonComponent } from "../../Components/Button";
 
 const LoginPage = () => {
   const history = useHistory();
-  
+
   return (
     <Page>
       <div className="bgContent">
@@ -19,9 +19,8 @@ const LoginPage = () => {
         <img className="imgRight" src={bgImageRight} alt="Mug logo" />
       </div>
       <div className="toLogin">
-        <button onClick={()=> history.push("/register")}>
-
-          <AiOutlineArrowLeft className="icon"/>
+        <button onClick={() => history.push("/register")}>
+          <AiOutlineArrowLeft className="icon" />
         </button>
         <p>Cadastro</p>
       </div>
@@ -29,11 +28,16 @@ const LoginPage = () => {
         <img src={logo} alt="Mug logo" />
       </div>
       <div className="formContent">
-        <h1>Olá, <br/> <span>seja bem vindo(a)!</span> </h1>
+        <h1>
+          Olá, <br /> <span>seja bem vindo(a)!</span>{" "}
+        </h1>
         <LoginForm />
-        <ButtonComponent variant="white"
-        text="Registrar-se" className="bttnRegister"
-        onClick={()=> history.push("/register")}/>
+        <ButtonComponent
+          variant="white"
+          text="Registrar-se"
+          className="bttnRegister"
+          onClick={() => history.push("/register")}
+        />
       </div>
     </Page>
   );

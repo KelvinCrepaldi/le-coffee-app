@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { ButtonComponent } from "../../Components/Button";
 import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
@@ -6,6 +6,8 @@ import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";
 import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
+import React from "react";
+import ModalOrder from "../../Components/Order/index";
 
 const CartPage = () => {
   const [userId] = useState(() => {
@@ -13,14 +15,18 @@ const CartPage = () => {
     return parseInt(current);
   });
 
-  const { cartList, getCartList } = useContext(CartContext);
+  const { cartList, getCartList, modalIsOpen, openModal, closeModal } =
+    useContext(UserContext);
 
   useEffect(() => {
     getCartList(userId);
   }, [getCartList, userId]);
-  
-  const  total = cartList.reduce((acc, pdt) => (pdt.price * pdt.quantity) + acc,0)
-    
+
+  const total = cartList.reduce(
+    (acc, pdt) => pdt.price * pdt.quantity + acc,
+    0
+  );
+
   return (
     <Page>
       <div className="navBar">
@@ -48,7 +54,11 @@ const CartPage = () => {
               <p>Enviar para:</p>
               <p>Casa*</p>
             </div>
-            <ButtonComponent variant="brown" text="Finalizar compra" />
+            <ButtonComponent
+              onClick={openModal}
+              variant="brown"
+              text="Finalizar compra"
+            />
           </div>
         </div>
         <CartContainer>
@@ -62,6 +72,8 @@ const CartPage = () => {
           </div>
         </CartContainer>
       </div>
+
+      <ModalOrder modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </Page>
   );
 };
