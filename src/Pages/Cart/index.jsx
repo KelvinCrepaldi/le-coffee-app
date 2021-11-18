@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { ButtonComponent } from "../../Components/Button";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
 import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";

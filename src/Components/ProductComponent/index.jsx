@@ -8,15 +8,15 @@ import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { RatingComponent } from "../Rating/Rating";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 
 export const ProductComponent = ({ product, setActive }) => {
   const history = useHistory();
   const [counter, setCounter] = useState(1);
-  const { addToCart } = useContext(UserContext);
+  const [rateMedia, setRateMedia] = useState(0);
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
-  const [rateMedia, setRateMedia] = useState(0);
+  const { addToCart, cartList, findRepeated } = useContext(CartContext);
 
   const handleCloseWindow = () => {
     setActive(false);
@@ -61,14 +61,18 @@ export const ProductComponent = ({ product, setActive }) => {
         </div>
         <div className="item-content">
           <div className="image-container">
-            <img src={product.image} />
+            <img src={product.image} alt="product" />
           </div>
           <div className="content-container">
             <div className="titleContainer">
               <h1>{product.name}</h1>
               <span className="rate">
                 <GiCoffeeBeans />
-                {Math.round(rateMedia * 10) / 10}
+                <span>
+                  {rateMedia
+                    ? (Math.round(rateMedia * 10) / 10).toFixed(1)
+                    : (0).toFixed(1)}
+                </span>
               </span>
             </div>
 
@@ -82,7 +86,7 @@ export const ProductComponent = ({ product, setActive }) => {
             <span className="description">{product.description}</span>
             <Counter counter={counter} setCounter={setCounter} />
             <div className="buttons-container">
-              <div class="top-buttons-container">
+              <div className="top-buttons-container">
                 <ButtonComponent
                   className="top-button unfill"
                   variant="unfill"

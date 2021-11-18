@@ -10,7 +10,7 @@ export const Page = styled.div`
 
   p {
     font-size: var(--font-size-xsmall);
-  } 
+  }
 
   .NavBar {
     display: flex;
@@ -18,7 +18,7 @@ export const Page = styled.div`
     height: 72px;
     width: 100vw;
     margin-bottom: 20px;
-    background-color: var(--brown-xlight);
+    background-color: var(--brown-dark);
   }
 
   .Title {
@@ -43,7 +43,7 @@ export const Page = styled.div`
 
     .CardContent {
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 150px;
