@@ -18,20 +18,20 @@ import { LoginContext } from "../../Providers/loginProvider/index";
 import { CartContext } from "../../Providers/cartProvider";
 const Navbar = () => {
   const history = useHistory();
-  
+
   const [userToken] = useState(() => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
   });
   const [open, setOpen] = useState(false);
-  
+
   const { logout } = useContext(LoginContext);
   const { clearCart } = useContext(CartContext);
 
   const handleLogout = () => {
-    clearCart(userToken)
-    logout(history)
-  }
+    clearCart(userToken);
+    logout(history);
+  };
 
   return (
     <Nav>
@@ -47,7 +47,7 @@ const Navbar = () => {
         <NavLink to="/aboutus" activeStyle>
           Quem somos
         </NavLink>
-        <NavLink to="/region" activeStyle>
+        <NavLink to="/regionmap" activeStyle>
           Região
         </NavLink>
       </NavMenu>
