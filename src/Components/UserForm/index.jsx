@@ -92,6 +92,7 @@ const UserForm = () => {
       </div>
       <div className="button-container">
         <ButtonComponent type="submit" variant="brown" text="Alterar" />
+        <ButtonComponent type="submit" variant="unfill" text="Voltar" onClick={() => history.push("/user")} />
       </div>
     </UserFormContainer>
   );

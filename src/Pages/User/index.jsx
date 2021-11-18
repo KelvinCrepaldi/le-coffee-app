@@ -26,7 +26,7 @@ const User = () => {
   return (
     <Page>
       <div className="NavBar">
-        <Navbar />
+        <Navbar className="nv" />
       </div>
       <div className="Title">Minha Conta</div>
       <p>Bem-vindo, {user.name}</p>
@@ -39,17 +39,19 @@ const User = () => {
           <div>Detalhes da Conta</div>
         </CardTop>
         <div className="CardContent">
-          <Link to="/user/change">Alterar dados da conta</Link>
-          <div>Excluir conta</div>
+          <Link to="/user">Ver Meus Dados</Link>
+          <Link to="/user/change">Alterar Dados</Link>
         </div>
       </div>
 
       <div className="Card Orders">
         <CardTop>
-          <div>Meus Pedidos</div>
+          <div>Endereços</div>
         </CardTop>
         <div className="CardContent">
-          <div>Produtos cadastrados</div>
+          <Link to="/user/address">Cadastrar Endereço</Link>
+          <Link to="/user">Ver Endereços</Link>
+          <Link to="/user">Alterar Endereços</Link>
         </div>
       </div>
     </Page>
