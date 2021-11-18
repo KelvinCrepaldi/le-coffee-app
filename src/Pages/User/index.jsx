@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
+import { ButtonComponent } from "../../Components/Button";
 
 const User = () => {
   const [userId] = useState(() => {
@@ -39,8 +40,9 @@ const User = () => {
           <div>Detalhes da Conta</div>
         </CardTop>
         <div className="CardContent">
-          <Link to="/user">Ver Meus Dados</Link>
-          <Link to="/user/change">Alterar Dados</Link>
+          <div>Nome: {user.name}</div>
+          <div>Email: {user.email}</div>
+          <ButtonComponent variant="unfill" text="Alterar Dados" onClick={() => history.push("/user/change")}/>
         </div>
       </div>
 
@@ -50,8 +52,7 @@ const User = () => {
         </CardTop>
         <div className="CardContent">
           <Link to="/user/address">Cadastrar Endereço</Link>
-          <Link to="/user">Ver Endereços</Link>
-          <Link to="/user">Alterar Endereços</Link>
+          <Link to="/user/showAddress">Ver Endereços</Link>
         </div>
       </div>
     </Page>

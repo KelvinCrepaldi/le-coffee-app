@@ -1,11 +1,9 @@
 import { useHistory } from "react-router-dom";
-
-import UserAddress from "../../Components/UserAddress";
-import { Page } from "../../Styles/PagesStyles/UserAddress";
-
 import { ButtonComponent } from "../../Components/Button";
 
-const UserAddress = () => {
+import UserAddress from "../../Components/UserAddress";
+
+const UserAddressPage = () => {
   const history = useHistory();
 
   const handleBackToUserPage = () => {
@@ -19,4 +17,4 @@ const UserAddress = () => {
   );
 };
 
-export default UserAddress;
+export default UserAddressPage;

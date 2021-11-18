@@ -8,42 +8,17 @@ export const Page = styled.div`
 
   min-height: 100vh;
 
-  p {
-    font-size: var(--font-size-xsmall);
-  }
-
-  button {
-    margin-top: 15px;
-  }
-
-  .NavBar {
-    display: flex;
-    align-items: center;
-    height: 72px;
-    width: 100vw;
-    margin-bottom: 20px;
-    background-color: var(--brown-dark);
-  }
-
   .Title {
-    margin-top: 55px;
+    margin-top: 115px;
     font-size: var(--font-size-xlarge);
   }
 
-  .Logout {
-    margin-top: 10px;
-  }
-
   .Card {
-    height: 200px;
     width: 94vw;
     margin: 26px 0 26px 0;
     border: 1px solid var(--brown-light);
     border-radius: 15px;
 
-    .Top {
-      background: var(--brow-light);
-    }
 
     .CardContent {
       display: flex;

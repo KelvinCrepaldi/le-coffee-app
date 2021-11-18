@@ -22,7 +22,7 @@ const UserAddress = () => {
   const history = useHistory();
 
   const registerSchema = yup.object({
-    address: yup.string().max(150, "Campo obrigatório. Máximo de 150 caracteres.").required("Endereço é obrigatório"),
+    street: yup.string().max(150, "Campo obrigatório. Máximo de 150 caracteres.").required("Endereço é obrigatório"),
     number: yup.number().required("Número é obrigatório"),
     state: yup.string().max(40, "Campo obrigatório. Máximo de 40 caracteres.").required("Estado é obrigatório"),
     city: yup.string().max(40, "Campo obrigatório. Máximo de 50 caracteres.").required("Cidade é obrigatório"),
@@ -59,8 +59,8 @@ const UserAddress = () => {
           <Input
             placeholder="Endereço"
             register={register}
-            name="address"
-            error={errors.address?.message}
+            name="street"
+            error={errors.street?.message}
           ></Input>
           <Input
             placeholder="Número"

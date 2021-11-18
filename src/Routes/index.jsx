@@ -8,7 +8,8 @@ import CartPage from "../Pages/Cart";
 import AboutUs from "../Pages/AboutUs";
 import User from "../Pages/User";
 import ChangeUserData from "../Pages/ChangeUserData";
-import UserAddress from "../Components/UserAddress";
+import UserAddressPage from "../Pages/UserAddress";
+import ShowAddressPage from "../Pages/ShowAddress";
 import { Route } from "./Route";
 import RegionMap from "../Pages/RegionMap";
 
@@ -25,7 +26,8 @@ const RoutesPatchs = () => {
       <Route path="/aboutus" component={AboutUs} isPrivate={true} />
       <Route path="/regionmap" component={RegionMap} isPrivate={true} />
       <Route path="/user/change" component={ChangeUserData} isPrivate={true} />
-      <Route path="/user/address" component={UserAddress} isPrivate={true} />
+      <Route path="/user/address" component={UserAddressPage} isPrivate={true} />
+      <Route path="/user/showAddress" component={ShowAddressPage} isPrivate={true} />
       <Route path="/user" component={User} isPrivate={true} />
     </Switch>
   );
