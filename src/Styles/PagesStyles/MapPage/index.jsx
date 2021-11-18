@@ -12,17 +12,18 @@ export const SelectionContainer = styled.div`
     select {
       padding-bottom: 5px;
       margin-bottom: 20px;
-      
+      font-size: var(--font-small);
       background-color: transparent;
-      color:var(--white-primary);
+      color: var(--white-primary);
       border: none;
       border-bottom: 3px solid var(--brown-xlight);
       outline: none;
     }
     select option {
+      font-size: 12px;
       background-color: var(--brown-xlight);
       border: none;
-}
+    }
   }
   @media (min-width: 768px) {
     .btts {
@@ -35,20 +36,20 @@ export const SelectionContainer = styled.div`
       justify-content: space-around;
       width: 70vw;
       max-width: 800px;
-      button{
-      padding-bottom: 5px;
-      
-      background-color: transparent;
-      color: var(--white-primary);
-      border: none;
-      border-bottom: 3px solid var(--brown-xlight);
-      transition: 0.4s;
+      button {
+        padding-bottom: 5px;
 
-      &:hover{
-        transform: translateY(-5px);
+        background-color: transparent;
+        color: var(--white-primary);
+        border: none;
+        border-bottom: 3px solid var(--brown-xlight);
         transition: 0.4s;
-        border-color: var(--white-primary);
-      }
+
+        &:hover {
+          transform: translateY(-5px);
+          transition: 0.4s;
+          border-color: var(--white-primary);
+        }
       }
     }
     .slct {
