@@ -1,9 +1,13 @@
 import { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../../Providers/userProvider";
 import { CardTop, Page } from "../../Styles/ComponentsStyle/ShowAddress";
+import { ButtonComponent } from "../Button";
 
 export const ShowAddress = () => {
   const { getUserAddress, userAddress } = useContext(UserContext);
+
+  const history = useHistory();
 
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
@@ -15,8 +19,6 @@ export const ShowAddress = () => {
   useEffect(() => {
     getUserAddress(userId, usrToken);
   }, []);
-
-  console.log("Array:", userAddress);
 
   return (
     <Page>
@@ -31,7 +33,7 @@ export const ShowAddress = () => {
               <div>
                 Rua: {elem.street}, {elem.number}
               </div>
-              <div>CEP: {elem.postalCode}</div>
+              <div>CEP: {elem.postalcode}</div>
               <div>
                 {elem.city} - {elem.state}
               </div>
@@ -39,6 +41,7 @@ export const ShowAddress = () => {
           </div>
         </div>
       ))}
+      <ButtonComponent variant="brown" text="Voltar" onClick={() => history.push("/user")} />
     </Page>
   );
 };
