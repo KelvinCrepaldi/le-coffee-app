@@ -9,9 +9,12 @@ export const CartProvider = ({ children }) => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current)
   })
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return JSON.parse(current);
+  });
   const [cartList, setCartList] = useState([]);
   
-  // const getCartList = (usrID) => {
   useEffect(()=>{
     if (userID !== "") {
       api
@@ -22,7 +25,7 @@ export const CartProvider = ({ children }) => {
         .catch((err) => console.log(err));
     }
   },[userID, cartList])
-  // };
+
   const findRepeated = (id) =>{
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
 
@@ -71,11 +74,17 @@ export const CartProvider = ({ children }) => {
           Authorization: `Bearer ${usrToken}`,
         },
       })
-      .then((res) => SuccessAlert("Removido", "top-right"))
       .catch(() =>
         ErrorAlert("Não foi possível remover o produto", "top-right")
       );
   };
+
+  const clearCart = () => {
+    cartList.forEach(element => {
+      removeFromCart(element.id,userToken)
+    });
+  };
+  
 
   return (
     <CartContext.Provider
@@ -84,6 +93,7 @@ export const CartProvider = ({ children }) => {
         cartList,
         addToCart,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}
