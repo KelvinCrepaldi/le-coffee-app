@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ButtonComponent } from "../../Components/Button";
 import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
@@ -8,18 +8,20 @@ import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
 import React from "react";
 import ModalOrder from "../../Components/Order/index";
+import { UserContext } from "../../Providers/userProvider";
 
 const CartPage = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-
-  const { cartList, getCartList, modalIsOpen, openModal, closeModal } =
+  const { getCartList, cartList } =
+    useContext(CartContext);
+  const { modalIsOpen, openModal, closeModal } =
     useContext(UserContext);
 
   useEffect(() => {
-    getCartList(userId);
+      getCartList(userId);
   }, [getCartList, userId]);
 
   const total = cartList.reduce(

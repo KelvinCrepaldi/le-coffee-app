@@ -11,7 +11,7 @@ import * as yup from "yup";
 import Modal from "react-modal";
 import { GiCoffeeBeans } from "react-icons/gi";
 import { useContext, useState } from "react";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 
 const ModalOrder = ({ modalIsOpen, closeModal }) => {
   const customStyles = {
@@ -33,7 +33,7 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
 
   const [isOrdered, setIsOrdered] = useState(false);
 
-  const { cartList } = useContext(UserContext);
+  const { cartList } = useContext(CartContext);
 
   const schemaOrder = yup.object({
     nameCard: yup.string().required("Campo obrigatório!"),
