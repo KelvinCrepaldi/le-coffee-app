@@ -52,7 +52,7 @@ export const Page = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     padding: 0;
     .topContent {
       display: none;
@@ -103,7 +103,7 @@ export const Page = styled.div`
       right: 22%;
       top: 50%;
       transform: translateY(-50%);
-
+      height: 400px;
       width: 360px;
       border-radius: 18px;
       box-shadow: 3px 2px 12px var(--gray-600);

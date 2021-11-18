@@ -37,7 +37,7 @@ export const ProductContainer = styled.section`
   .item-content {
     padding: 0 20px 20px;
     margin: 4px;
-
+    font-size: 0.5rem;
     height: 80vh;
     overflow-y: auto;
 
@@ -54,6 +54,7 @@ export const ProductContainer = styled.section`
     .content-container {
       display: flex;
       flex-wrap: wrap;
+
 
       h1 {
         padding: 10px;
@@ -135,6 +136,7 @@ export const ProductContainer = styled.section`
         width: 100%;
         height: 50px;
         font-size: var(--font-size-standart);
+        
       }
 
       .botton-button:hover {
@@ -156,12 +158,14 @@ export const ProductContainer = styled.section`
     .item-rating {
       width: 100%;
 
+
       h1 {
         color: var(--black-primary);
         margin: 10px;
         padding: 10px;
         border-bottom: 1px solid var(--brown-xlight);
       }
+   
     }
 
     //SCROLLBAR ============================

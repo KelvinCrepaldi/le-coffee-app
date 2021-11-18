@@ -208,7 +208,7 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
               </TextField>
             </FormControl>
           </div>
-          <p>Total {total}</p>
+  
           <ButtonComponent
             variant="white"
             style={{ background: "#61db61" }}

@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   const { handleRegister } = useContext(RegisterContext);
@@ -100,6 +101,8 @@ const RegisterForm = () => {
           text="Fazer login"
           onClick={handleBackToLogin}
         />
+                <p style = {{marginTop: "10px", fontSize: "12px"}}>Voltar para o <Link style = {{color:"#AA6655"}}to = "/home"> inicio</Link></p>
+
       </div>
     </RegisterFormContainer>
   );

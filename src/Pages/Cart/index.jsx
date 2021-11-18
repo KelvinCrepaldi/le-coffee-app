@@ -36,34 +36,42 @@ const CartPage = () => {
       </div>
       <div className="content">
         <div>
-          <div className="card card--address">
-            <CardTop>
-              <p>Selecionar endereço</p>
-            </CardTop>
 
-            <div className="addressList"></div>
-          </div>
-
-          <div className="card card--total">
+        <div className="card card--total">
             <CardTop>
-              <p>Total a pagar:</p>
+              <p>Resumo</p>
               <p className="total">
-                R$:
-                {total.toFixed(2)}
+            
               </p>
             </CardTop>
-            <div className="chosenAddress">
-              <p>Enviar para:</p>
-              <p>Casa*</p>
-            </div>
+            <div className="summary">
+              <p>Valor dos produtos: <span>R$ {total.toFixed(2)}</span> </p>
+              <p>Desconto:<span>R$ 00,00</span></p>
+              <p>Total a prazo: <span>R$ {total.toFixed(2)}</span></p>
+              <div >
+                Valor total do <strong>pagamento</strong> <br/>
+                <span>R$ {total.toFixed(2)}</span>
+              </div>
             <ButtonComponent
               onClick={openModal}
               variant="brown"
               text="Finalizar compra"
             />
+            </div>
+
           </div>
+
+
+          <div className="card card--address">
+            <CardTop>
+              <p>Selecionar endereço</p>
+            </CardTop>
+
+            <div className="addressList"> </div>
+          </div>
+
         </div>
-        <CartContainer>
+          <CartContainer>
           <CardTop>
             <h3>Seu carrinho:</h3>
           </CardTop>
@@ -73,6 +81,8 @@ const CartPage = () => {
             ))}
           </div>
         </CartContainer>
+    
+      
       </div>
 
       <ModalOrder modalIsOpen={modalIsOpen} closeModal={closeModal} />

@@ -7,6 +7,7 @@ export const ButtonContainer = styled.div`
     font-size: 30px;
     border: none;
     margin: 3px;
+
   }
 
   button:hover ~ button {

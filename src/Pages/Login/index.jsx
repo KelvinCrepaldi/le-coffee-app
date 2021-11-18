@@ -8,6 +8,7 @@ import bgImageRight from "../../assets/about-us-cover-2.png";
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { ButtonComponent } from "../../Components/Button";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -38,6 +39,8 @@ const LoginPage = () => {
           className="bttnRegister"
           onClick={() => history.push("/register")}
         />
+
+        <p style = {{marginTop: "10px", fontSize: "12px"}}>Voltar para o <Link style = {{color:"#AA6655"}}to = "/home"> inicio</Link></p>
       </div>
     </Page>
   );
