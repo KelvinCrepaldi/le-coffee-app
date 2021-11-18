@@ -76,6 +76,9 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         color: #fff;
     }
+    img{
+        pointer-events: none;
+    }
 
 `;
 
