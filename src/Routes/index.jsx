@@ -10,6 +10,7 @@ import CartPage from "../Pages/Cart";
 import AboutUs from "../Pages/AboutUs";
 import User from "../Pages/User";
 import ChangeUserData from "../Pages/ChangeUserData";
+import UserAddress from "../Components/UserAddress";
 
 const RoutesPatchs = () => {
   return (
@@ -63,6 +64,11 @@ const RoutesPatchs = () => {
       <Route  path="/user/change">
         <GlobalStyles />
         <ChangeUserData />
+      </Route>
+
+      <Route  path="/user/address">
+        <GlobalStyles />
+        <UserAddress />
       </Route>
     
     </Switch>
