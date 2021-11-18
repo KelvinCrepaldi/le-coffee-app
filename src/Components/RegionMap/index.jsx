@@ -10,6 +10,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapContext } from "../../Providers/mapProvider";
 import { useContext, useEffect, useState } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
+import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
 
 export const RegionMapComponent = () => {
   const { regionCoordinates } = useContext(MapContext);
@@ -45,29 +46,35 @@ export const RegionMapComponent = () => {
         </h1>
       </ImageTop>
       <Content>
-        <div>
-          <button onClick={() => setRegion("all")}>Todas as regiões</button>
-          <button onClick={() => setRegion("Norte")}>Norte</button>
-          <button onClick={() => setRegion("Nordeste")}>Nordeste</button>
-          <button onClick={() => setRegion("CentroOeste")}>Centro-Oeste</button>
-          <button onClick={() => setRegion("Sudeste")}>Sudeste</button>
-          <button onClick={() => setRegion("Sul")}>Sul</button>
-
-          <select
-            defaultValue="default"
-            onChange={(e) => setRegion(e.target.value)}
-          >
-            <option value="default" disabled>
-              Escolher uma região
-            </option>
-            <option value="all">Todas as regiões</option>
-            <option value="Norte">Norte</option>
-            <option value="Nordeste">Nordeste</option>
-            <option value="CentroOeste">Centro-Oeste</option>
-            <option value="Sudeste">Sudeste</option>
-            <option value="Sul">Sul</option>
-          </select>
-        </div>
+        <SelectionContainer>
+          <section className="btts">
+            <button onClick={() => setRegion("all")}>Todas as regiões</button>
+            <button onClick={() => setRegion("Norte")}>Norte</button>
+            <button onClick={() => setRegion("Nordeste")}>Nordeste</button>
+            <button onClick={() => setRegion("CentroOeste")}>
+              Centro-Oeste
+            </button>
+            <button onClick={() => setRegion("Sudeste")}>Sudeste</button>
+            <button onClick={() => setRegion("Sul")}>Sul</button>
+          </section>
+          
+          <section className="slct">
+            <select
+              defaultValue="default"
+              onChange={(e) => setRegion(e.target.value)}
+            >
+              <option value="default" disabled>
+                Escolher uma região
+              </option>
+              <option value="all">Todas as regiões</option>
+              <option value="Norte">Norte</option>
+              <option value="Nordeste">Nordeste</option>
+              <option value="CentroOeste">Centro-Oeste</option>
+              <option value="Sudeste">Sudeste</option>
+              <option value="Sul">Sul</option>
+            </select>
+          </section>
+        </SelectionContainer>
 
         <LeafletContainer>
           <MapContainer

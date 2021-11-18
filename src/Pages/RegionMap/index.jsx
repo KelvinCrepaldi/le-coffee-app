@@ -4,7 +4,7 @@ const RegionMap = () => {
   return (
     <>
       <Navbar />
-      <RegionMapComponent></RegionMapComponent>
+      <RegionMapComponent/>
     </>
   );
 };
