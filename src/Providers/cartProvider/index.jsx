@@ -1,26 +1,23 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { ErrorAlert, SuccessAlert } from "../../Components/Alerts";
 import api from "../../Services";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [userID] = useState(()=>{
-    const current = localStorage.getItem("userId") || "";
-    return parseInt(current)
-  })
+
   const [cartList, setCartList] = useState([]);
   
-  useEffect(()=>{
-    if (userID !== "") {
+  const getCartList = (usrID) => {
+    if (usrID !== "") {
       api
-        .get(`users/${userID}?_embed=userCart`)
+        .get(`users/${usrID}?_embed=userCart`)
         .then((res) => {
           setCartList(res.data.userCart);
         })
         .catch((err) => console.log(err));
     }
-  },[userID, cartList])
+  }
 
   const findRepeated = (id) =>{
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
@@ -87,6 +84,7 @@ export const CartProvider = ({ children }) => {
       value={{
         removeIDLocal,
         cartList,
+        getCartList,
         addToCart,
         removeFromCart,
         clearCart,
