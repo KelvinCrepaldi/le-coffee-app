@@ -85,7 +85,7 @@ export const UserProvider = ({ children }) => {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          },
+          }
         )
         .then((res) => {
           console.log(res.data);
@@ -103,6 +103,12 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   const getUserAddress = (usrID, usrToken) => {
     if (usrID !== "") {
       api
@@ -134,8 +140,8 @@ export const UserProvider = ({ children }) => {
         user,
         changeUserData,
         modalIsOpen,
-        // openModal,
-        // closeModal,
+        openModal,
+        closeModal,
         addUserAddress,
         getUserAddress,
       }}
