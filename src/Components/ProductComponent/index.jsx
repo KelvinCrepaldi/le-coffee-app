@@ -17,7 +17,7 @@ export const ProductComponent = ({ product, setActive }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
   const { addToCart, cartList, findRepeated } = useContext(CartContext);
-  
+
   const handleCloseWindow = () => {
     setActive(false);
   };
@@ -68,7 +68,11 @@ export const ProductComponent = ({ product, setActive }) => {
               <h1>{product.name}</h1>
               <span className="rate">
                 <GiCoffeeBeans />
-                {Math.round(rateMedia * 10) / 10}
+                <span>
+                  {rateMedia
+                    ? (Math.round(rateMedia * 10) / 10).toFixed(1)
+                    : (0).toFixed(1)}
+                </span>
               </span>
             </div>
 
