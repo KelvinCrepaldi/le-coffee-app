@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import api from "../../Services";
 import { ErrorAlert } from "../../Components/Alerts";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const LoginContext = createContext();
 
@@ -15,16 +15,6 @@ export const LoginProvider = ({ children }) => {
       return false;
     }
   });
-
-  /* useEffect(() => {
-    const isLoged = localStorage.getItem("token") || false;
-    console.log(isLoged + " key");
-    if (isLoged) {
-      return setIsLoged(true);
-    } else {
-      return setIsLoged(false);
-    }
-  }, [isLoged, setIsLoged]); */
 
   const handleLogin = (data, history) => {
     api
