@@ -18,12 +18,18 @@ import { LoginContext } from "../../Providers/loginProvider/index";
 import { CartContext } from "../../Providers/cartProvider";
 const Navbar = () => {
   const history = useHistory();
+  
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return JSON.parse(current);
+  });
+  const [open, setOpen] = useState(false);
+  
   const { logout } = useContext(LoginContext);
   const { clearCart } = useContext(CartContext);
-  const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
-    clearCart()
+    clearCart(userToken)
     logout(history)
   }
 

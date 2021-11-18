@@ -9,10 +9,6 @@ export const CartProvider = ({ children }) => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current)
   })
-  const [userToken] = useState(() => {
-    const current = localStorage.getItem("token") || "";
-    return JSON.parse(current);
-  });
   const [cartList, setCartList] = useState([]);
   
   useEffect(()=>{
@@ -79,9 +75,9 @@ export const CartProvider = ({ children }) => {
       );
   };
 
-  const clearCart = () => {
+  const clearCart = (usrToken) => {
     cartList.forEach(element => {
-      removeFromCart(element.id,userToken)
+      removeFromCart(element.id,usrToken)
     });
   };
   
