@@ -8,7 +8,6 @@ export const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [isLoged, setIsLoged] = useState(() => {
     const isLoged = localStorage.getItem("token") || false;
-    console.log(isLoged + " key");
     if (isLoged) {
       return true;
     } else {
