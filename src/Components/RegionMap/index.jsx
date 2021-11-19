@@ -99,7 +99,7 @@ export const RegionMapComponent = () => {
         </LeafletContainer>
       </Content>
       <Footer>
-        <img src={logoNavbar} alt="img logo"></img>
+        <img src={logoNavbar} alt="navLogo"/>
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>
