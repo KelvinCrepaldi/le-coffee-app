@@ -5,13 +5,9 @@ import {
   Footer,
   Content,
   Sections,
-  SectionProducts,
-  SectionAboutUs,
   SectionMap,
-  NavLink
 } from "../../Styles/ComponentsStyle/HomeComponent";
 import logoNavbar from "../../assets/Logo-main-black 4.png";
-import { Link } from "react-router-dom";
 
 const HomeComponent = () => {
   return (
@@ -40,7 +36,7 @@ const HomeComponent = () => {
 
       </Content>
 
-        <SectionMap to = "region">
+        <SectionMap to = "regionmap">
           <h3>
             MAPA <br /> <span>Ver mais</span>
           </h3>
@@ -48,7 +44,7 @@ const HomeComponent = () => {
 
 
       <Footer>
-        <img src={logoNavbar}></img>
+        <img src={logoNavbar} alt="navLogo"/>
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>

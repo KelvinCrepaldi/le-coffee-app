@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.form`
+export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 20px;
 
   .inputBox {
@@ -16,8 +16,6 @@ export const InputContainer = styled.form`
     border: 2px solid var(--gray-100);
     border-radius: 8px;
 
- 
-
     input {
       width: 100%;
       padding: 0 10px;
@@ -25,12 +23,10 @@ export const InputContainer = styled.form`
       background-color: transparent;
       outline: none;
       caret-color: var(--brown-details);
-      :focus{
-         border: 2px solid var(--brown-light);
-         border-radius: 8px;
-
-         
-    }
+      :focus {
+        border: 2px solid var(--brown-light);
+        border-radius: 8px;
+      }
     }
   }
   .inputError {

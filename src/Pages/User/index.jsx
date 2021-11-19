@@ -4,52 +4,56 @@ import { Link, useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
+import { ButtonComponent } from "../../Components/Button";
+
+import Cover from "../../assets/cover-user.png";
 
 const User = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-
   const usrToken = localStorage.getItem("token") || "";
-  
   const history = useHistory();
-
   const { logout } = useContext(LoginContext);
-
   const { user, getUser } = useContext(UserContext);
 
   useEffect(() => {
     getUser(userId, usrToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Page>
+      <img src={Cover} alt="Cover" className="Cover" />
       <div className="NavBar">
-        <Navbar />
+        <Navbar className="nv" />
       </div>
       <div className="Title">Minha Conta</div>
       <p>Bem-vindo, {user.name}</p>
-      <button type="submit" onClick={() => logout(history)} className="Logout">
-        Logout
-      </button>
-
+      <ButtonComponent variant="brown" text="Logout" onClick={() => logout(history)} />
+       
       <div className="Card Account">
         <CardTop>
           <div>Detalhes da Conta</div>
         </CardTop>
         <div className="CardContent">
-          <Link to="/user/change">Alterar dados da conta</Link>
-          <div>Excluir conta</div>
+          <div>Nome: {user.name}</div>
+          <div>Email: {user.email}</div>
+          <ButtonComponent
+            variant="brown"
+            text="Alterar Dados"
+            onClick={() => history.push("/user/change")}
+          />
         </div>
       </div>
-
       <div className="Card Orders">
         <CardTop>
-          <div>Meus Pedidos</div>
+          <div>Endereços</div>
         </CardTop>
         <div className="CardContent">
-          <div>Produtos cadastrados</div>
+          <Link to="/user/address">Cadastrar Endereço</Link>
+          <Link to="/user/showAddress">Ver Endereços</Link>
         </div>
       </div>
     </Page>

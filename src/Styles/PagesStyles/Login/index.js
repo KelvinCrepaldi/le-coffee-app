@@ -22,10 +22,10 @@ export const Page = styled.div`
 
   .formContent {
     width: 90%;
-    height: 70vh;
     max-height: 500px;
     padding: 16px 0;
     text-align: center;
+    padding-bottom: 30px;
 
     background-color: #f5f5f5;
     border-radius: 20px 20px 0 0;
@@ -52,7 +52,7 @@ export const Page = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     padding: 0;
     .topContent {
       display: none;
@@ -103,7 +103,6 @@ export const Page = styled.div`
       right: 22%;
       top: 50%;
       transform: translateY(-50%);
-
       width: 360px;
       border-radius: 18px;
       box-shadow: 3px 2px 12px var(--gray-600);
@@ -111,6 +110,5 @@ export const Page = styled.div`
         display: none;
       }
     }
-
   }
 `;

@@ -14,11 +14,16 @@ export const Nav = styled.nav`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   img {
-    margin-right: 355px;
+    margin-right: 215px;
     width: 70px;
     height: 70px;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      visibility: hidden;
+    }
   }
+
 
   ul {
     height: 100%;
@@ -31,7 +36,7 @@ export const Nav = styled.nav`
       margin: 0.2rem;
 
       svg {
-        font-size: 34px;
+        font-size: 24px;
         color: #fffd;
         cursor: pointer;
         :hover {
@@ -46,6 +51,8 @@ export const Nav = styled.nav`
     @media screen and (max-width: 768px) {
       position: absolute;
       right: 0;
+
+ 
     }
   }
   @media screen and (max-width: 768px) {
@@ -64,7 +71,7 @@ export const NavLink = styled(Link)`
   display: flex;
   height: 100%;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 0.9rem;
 
   font-weight: bold;
   font-size: 15px;
@@ -95,7 +102,7 @@ export const Bars = styled(FaBars)`
     cursor: pointer;
     color: ${({ open }) => (open ? "#fff" : "#ffffff6f")};
     transition: all 0.3s linear;
-    z-index: 1001;
+    z-index: 1002;
   }
 `;
 
@@ -111,7 +118,7 @@ export const NavMenu = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1001;
     flex-direction: column;
     align-items: flex-start;
     height: 100vh;

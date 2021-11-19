@@ -3,18 +3,24 @@ import { LoginProvider } from "./loginProvider";
 import { CatalogueProvider } from "./catalogue";
 import { UserProvider } from "./userProvider";
 import { RatingProvider } from "./rating";
+import { CartProvider } from "./cartProvider";
+import { MapProvider } from "./mapProvider";
 const ProvidersGathered = ({ children }) => {
   return (
     <>
-      <RatingProvider>
-        <RegisterProvider>
-          <LoginProvider>
-            <UserProvider>
-              <CatalogueProvider>{children}</CatalogueProvider>
-            </UserProvider>
-          </LoginProvider>
-        </RegisterProvider>
-      </RatingProvider>
+      <MapProvider>
+        <RatingProvider>
+          <RegisterProvider>
+            <LoginProvider>
+              <UserProvider>
+                <CartProvider>
+                  <CatalogueProvider>{children}</CatalogueProvider>
+                </CartProvider>
+              </UserProvider>
+            </LoginProvider>
+          </RegisterProvider>
+        </RatingProvider>
+      </MapProvider>
     </>
   );
 };

@@ -1,25 +1,43 @@
 import { useContext, useEffect, useState } from "react";
 import { ButtonComponent } from "../../Components/Button";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
 import { CartContainer } from "../../Styles/PagesStyles/CartPage";
 import { Page } from "../../Styles/PagesStyles/CartPage";
 import Navbar from "../../Components/Navbar";
 import { CartProduct } from "../../Components/CartProduct";
+import React from "react";
+import ModalOrder from "../../Components/Order/index";
+import { UserContext } from "../../Providers/userProvider";
+import { AddresCard } from "../../Components/AddresCard";
+
 const CartPage = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-
-  const { cartList, getCartList } = useContext(UserContext);
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return JSON.parse(current);
+  });
+  const { getCartList, cartList } =
+    useContext(CartContext);
+  const { modalIsOpen, openModal, closeModal, getUserAddress, userAddress } =
+    useContext(UserContext);
 
   useEffect(() => {
     getCartList(userId);
   }, [getCartList, userId]);
-  
-  const  total = cartList.reduce((acc, pdt) => (pdt.price * pdt.quantity) + acc,0)
-    
+
+  useEffect(() => {
+    getUserAddress(userId, userToken);
+}, [getUserAddress, userId, userToken]);
+
+  const total = cartList.reduce(
+    (acc, pdt) => pdt.price * pdt.quantity + acc,
+    0
+  );
+
   return (
     <Page>
       <div className="navBar">
@@ -27,27 +45,43 @@ const CartPage = () => {
       </div>
       <div className="content">
         <div>
+          <div className="card card--total">
+            <CardTop>
+              <p>Resumo</p>
+              <p className="total"></p>
+            </CardTop>
+            <div className="summary">
+              <p>
+                Valor dos produtos: <span>R$ {total.toFixed(2)}</span>{" "}
+              </p>
+              <p>
+                Desconto:<span>R$ 00,00</span>
+              </p>
+              <p>
+                Total a prazo: <span>R$ {total.toFixed(2)}</span>
+              </p>
+              <div>
+                Valor total do <strong>pagamento</strong> <br />
+                <span>R$ {total.toFixed(2)}</span>
+              </div>
+              <ButtonComponent
+                onClick={openModal}
+                variant="brown"
+                text="Finalizar compra"
+              />
+            </div>
+          </div>
+
           <div className="card card--address">
             <CardTop>
               <p>Selecionar endereço</p>
             </CardTop>
 
-            <div className="addressList"></div>
-          </div>
-
-          <div className="card card--total">
-            <CardTop>
-              <p>Total a pagar:</p>
-              <p className="total">
-                R$:
-                {total.toFixed(2)}
-              </p>
-            </CardTop>
-            <div className="chosenAddress">
-              <p>Enviar para:</p>
-              <p>Casa*</p>
+            <div className="addressList"> 
+            {userAddress.map((item) => (
+              <AddresCard key={item.id} address={item}/>
+            ))}
             </div>
-            <ButtonComponent variant="brown" text="Finalizar compra" />
           </div>
         </div>
         <CartContainer>
@@ -61,6 +95,8 @@ const CartPage = () => {
           </div>
         </CartContainer>
       </div>
+
+      <ModalOrder modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </Page>
   );
 };

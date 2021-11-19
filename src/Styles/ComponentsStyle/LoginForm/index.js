@@ -12,10 +12,10 @@ export const LoginFormContainer = styled.form`
       height: 50px;
       width: 70vw;
       max-width: 290px;
-      margin-top: 34px;
+      margin-top: 20px;
       background-color: #aa6655;
       color: #fbfbfb;
       border: none;
-      border-radius: 17px;
+      border-radius: 5px;
     }
 `;

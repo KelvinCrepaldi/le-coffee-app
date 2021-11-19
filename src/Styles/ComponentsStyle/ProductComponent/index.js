@@ -37,7 +37,7 @@ export const ProductContainer = styled.section`
   .item-content {
     padding: 0 20px 20px;
     margin: 4px;
-
+    font-size: 0.8rem;
     height: 80vh;
     overflow-y: auto;
 

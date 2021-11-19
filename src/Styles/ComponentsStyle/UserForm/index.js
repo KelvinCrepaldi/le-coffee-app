@@ -41,6 +41,7 @@ export const UserFormContainer = styled.form`
     margin-bottom: 30px;
 
     button {
+      margin-top: 20px;
       width: 265px;
       height: 54px;
     }
@@ -56,12 +57,10 @@ export const UserFormContainer = styled.form`
   }
 
   .center-mobile {
-    margin: 0 auto;
+    margin: 125px auto 0 auto;
   }
 
   @media (min-width: 1024px) {
-    .display-desktop {
-      display: none;
-    }
+    
   }
 `;

@@ -4,23 +4,32 @@ import {
   Nav,
   NavLink,
   Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-  Content,
+  NavMenu
 } from "../../Styles/ComponentsStyle/Navbar/index";
 import { useState } from "react";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
 import { CgShoppingBag } from "react-icons/cg";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider/index";
-
+import { CartContext } from "../../Providers/cartProvider";
+import { BiUser } from "react-icons/bi";
 const Navbar = () => {
   const history = useHistory();
-  const { logout } = useContext(LoginContext);
+
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return JSON.parse(current);
+  });
   const [open, setOpen] = useState(false);
+
+  const { logout } = useContext(LoginContext);
+  const { clearCart } = useContext(CartContext);
+
+  const handleLogout = () => {
+    clearCart(userToken);
+    logout(history);
+  };
 
   return (
     <Nav>
@@ -36,7 +45,7 @@ const Navbar = () => {
         <NavLink to="/aboutus" activeStyle>
           Quem somos
         </NavLink>
-        <NavLink to="/region" activeStyle>
+        <NavLink to="/regionmap" activeStyle>
           Região
         </NavLink>
       </NavMenu>
@@ -45,12 +54,19 @@ const Navbar = () => {
 
       <ul>
         <li>
+          <NavLink to="/user">
+            <BiUser />
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/cart">
             <CgShoppingBag />
           </NavLink>
         </li>
-        <li onClick={() => logout(history)}>
+        <li onClick={handleLogout}>
+        <NavLink to="/">
           <MdOutlineLogout />
+          </NavLink>
         </li>
       </ul>
     </Nav>

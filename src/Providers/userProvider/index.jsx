@@ -6,7 +6,8 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [cartList, setCartList] = useState([]);
+  const [userAddress, setUserAddress] = useState([]);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const getUser = (usrID, usrToken) => {
     if (usrID !== "") {
@@ -21,11 +22,7 @@ export const UserProvider = ({ children }) => {
         })
         .catch((error) => {
           if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert(`User ${error.response.statusText}`, "top-left");
           }
         });
     }
@@ -33,7 +30,6 @@ export const UserProvider = ({ children }) => {
 
   // Function change name, email and password
   const changeUserData = (usrID, usrToken, data) => {
-    console.log(data);
     const { email, password, name } = data;
     if (usrID !== "") {
       api
@@ -53,55 +49,74 @@ export const UserProvider = ({ children }) => {
         )
         .then((res) => {
           setUser(res.data);
-          console.log("Dados alterados com sucesso:", res.data);
+          SuccessAlert("Dados alterados com sucesso:", "center");
         })
         .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+            ErrorAlert("Usuário não cadastrado", "top-left");
           }
         });
     }
   };
 
-  const getCartList = (usrID) => {
+  const addUserAddress = (usrID, usrToken, data) => {
+    const { city, state, postalcode, country, street, number } = data;
+    const token = JSON.parse(usrToken);
     if (usrID !== "") {
       api
-        .get(`users/${usrID}?_embed=userCart`)
-        .then((res) => {
-          setCartList(res.data.userCart);
-        })
-        .catch((err) => console.log(err));
+        .post(
+          "userAddress",
+          {
+            userId: usrID,
+            city: city,
+            state: state,
+            postalcode: postalcode,
+            country: country,
+            street: street,
+            number: number,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => SuccessAlert("Endereço cadastrado", "center"))
+        .catch((error) => {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            ErrorAlert(`${error.response.statusText}`, "top-left");
+          }
+        });
     }
   };
 
-  const addToCart = (newPdt, usrToken) => {
-    api
-      .post("userCart", newPdt, {
-        headers: {
-          Authorization: `Bearer ${usrToken}`,
-        },
-      })
-      .then((res) => SuccessAlert("Adicionado", "top-right"))
-      .catch((err) =>
-        ErrorAlert("Não foi possível adicionar o produto", "top-right")
-      );
+  const openModal = () => {
+    setIsOpen(true);
   };
-
-  const removeFromCart = (pdtID, usrToken) => {
-    api
-      .delete(`userCart/${pdtID}`, {
-        headers: {
-          Authorization: `Bearer ${usrToken}`,
-        },
-      })
-      .then((res) => SuccessAlert("Removido", "top-right"))
-      .catch((err) =>
-        ErrorAlert("Não foi possível remover o produto", "top-right")
-      );
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  const getUserAddress = (usrID, usrToken) => {
+    if (usrID !== "") {
+      api
+        .get(`userAddress?userId=${usrID}`, {
+          headers: {
+            Authorization: `Bearer ${usrToken}`,
+          },
+        })
+        .then((res) => {
+          setUserAddress(res.data);
+        })
+        .catch((error) => {
+          if (error.response) {
+            ErrorAlert("Endereço(s) não encontrados(s)");
+          }
+        });
+    }
   };
 
   return (
@@ -110,10 +125,12 @@ export const UserProvider = ({ children }) => {
         getUser,
         user,
         changeUserData,
-        getCartList,
-        cartList,
-        addToCart,
-        removeFromCart,
+        modalIsOpen,
+        openModal,
+        closeModal,
+        addUserAddress,
+        getUserAddress,
+        userAddress,
       }}
     >
       {children}

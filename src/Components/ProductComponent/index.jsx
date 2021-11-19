@@ -1,22 +1,24 @@
-import { GiCoffeeBeans } from "react-icons/gi";
 import {
   ProductContainer,
   BackgroundTransparent,
 } from "../../Styles/ComponentsStyle/ProductComponent";
+import { GiCoffeeBeans } from "react-icons/gi";
+import { RatingComponent } from "../Rating/Rating";
 import { ButtonComponent } from "../Button";
 import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
-import { RatingComponent } from "../Rating/Rating";
-import { UserContext } from "../../Providers/userProvider";
+import { CartContext } from "../../Providers/cartProvider";
+import { SampleContainer } from "../SampleContainer";
 
 export const ProductComponent = ({ product, setActive }) => {
-  const history = useHistory();
+  const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounter] = useState(1);
-  const { addToCart } = useContext(UserContext);
+  const [rateMedia, setRateMedia] = useState();
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
-  const [rateMedia, setRateMedia] = useState(0);
+  const { addToCart } = useContext(CartContext);
+  const history = useHistory();
 
   const handleCloseWindow = () => {
     setActive(false);
@@ -36,16 +38,7 @@ export const ProductComponent = ({ product, setActive }) => {
   };
 
   const handleRequestSample = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      sample: true,
-      quantity: 1,
-      image: product.image,
-      price: product.price,
-      name: product.name,
-    };
-    addToCart(obj, token);
+    setIsOpen(true);
   };
 
   const handleBuyNow = () => {
@@ -56,19 +49,24 @@ export const ProductComponent = ({ product, setActive }) => {
     <>
       <BackgroundTransparent></BackgroundTransparent>
       <ProductContainer>
+        {isOpen && <SampleContainer isOpen={isOpen} setIsOpen={setIsOpen} />}
         <div className="close-button">
           <button onClick={handleCloseWindow}>X</button>
         </div>
         <div className="item-content">
           <div className="image-container">
-            <img src={product.image} />
+            <img src={product.image} alt="product" />
           </div>
           <div className="content-container">
             <div className="titleContainer">
               <h1>{product.name}</h1>
               <span className="rate">
                 <GiCoffeeBeans />
-                {Math.round(rateMedia * 10) / 10}
+                <span>
+                  {rateMedia
+                    ? (Math.round(rateMedia * 10) / 10).toFixed(1)
+                    : (0).toFixed(1)}
+                </span>
               </span>
             </div>
 
@@ -82,7 +80,7 @@ export const ProductComponent = ({ product, setActive }) => {
             <span className="description">{product.description}</span>
             <Counter counter={counter} setCounter={setCounter} />
             <div className="buttons-container">
-              <div class="top-buttons-container">
+              <div className="top-buttons-container">
                 <ButtonComponent
                   className="top-button unfill"
                   variant="unfill"

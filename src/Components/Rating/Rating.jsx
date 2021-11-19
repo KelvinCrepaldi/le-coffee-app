@@ -1,16 +1,16 @@
-import { useContext } from "react";
 import { RatingContainer, RateCard } from "../../Styles/ComponentsStyle/Rating";
 import { ButtonComponent } from "../Button";
 import { RatingContext } from "../../Providers/rating";
-import { useEffect, useState } from "react";
 import { RatingButton } from "../RatingButton";
 import ReactStars from "react-rating-stars-component";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 export const RatingComponent = ({ product, setRateMedia }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
   const userName = JSON.parse(localStorage.getItem("username"));
-  const [ratingValue, setRatingValue] = useState();
+  const [ratingValue, setRatingValue] = useState(1);
   const { rating, getRatingByProductId, handleRating } =
     useContext(RatingContext);
   const [inputText, setInputText] = useState("");
@@ -72,8 +72,11 @@ export const RatingComponent = ({ product, setRateMedia }) => {
         </div>
 
         <div className="rate-button">
-          <RatingButton setRatingValue={setRatingValue} />
-          <div class="mobile-500px">
+          <RatingButton
+            ratingValue={ratingValue}
+            setRatingValue={setRatingValue}
+          />
+          <div className="mobile-500px">
             <ButtonComponent
               className="buttonCancel brown "
               variant="brown"
@@ -91,7 +94,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
       </div>
       <div>
         {rating.map((e) => (
-          <RateCard>
+          <RateCard key={e.id}>
             <h2>{e.name}</h2>
             <ReactStars
               count={5}
