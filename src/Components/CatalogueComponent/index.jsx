@@ -40,7 +40,7 @@ const CatalogueComponent = () => {
       <Content>
         {catalogue.map((product, index) => (
           <BoxCard key={index}>
-            <img src={product.image} />
+            <img src={product.image} alt="Coffee"/>
             <div>
               <h3>{product.name}</h3>
               <span>{product.category}</span>
@@ -56,7 +56,7 @@ const CatalogueComponent = () => {
       </Content>
 
       <Footer>
-        <img src={logoNavbar}></img>
+        <img src={logoNavbar} alt="navLogo"/>
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>
