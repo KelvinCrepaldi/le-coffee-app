@@ -9,11 +9,10 @@ import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapContext } from "../../Providers/mapProvider";
 import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
-import { useContext, , useState } from "react";
+import { useContext, useState } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
 
 export const RegionMapComponent = () => {
-  const { regionCoordinates } = useContext(MapContext);
   const { catalogue } = useContext(CatalogueContext);
   const [onMap, setOnMap] = useState(catalogue);
   const [onRegion, setOnRegion] = useState([-13, -50]);
@@ -94,9 +93,7 @@ export const RegionMapComponent = () => {
             />
             {onMap.map((e) => (
               <Marker position={e.position}>
-                <Popup>
-                  {e.name}
-                </Popup>
+                <Popup>{e.name}</Popup>
               </Marker>
             ))}
           </MapContainer>
