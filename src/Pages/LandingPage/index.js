@@ -26,69 +26,71 @@ const LandingPage = () => {
   const history = useHistory();
   return (
     <>
-    <DivGrand>
-      <SectionOne>
-        <img src={main} alt="Cover" className="Cover" />
+      <DivGrand>
+        <SectionOne>
+          <img src={main} alt="Cover" className="Cover" />
 
-        <img src={logo} alt="Logo Le Coffee" className="Logo" />
+          <img src={logo} alt="Logo Le Coffee" className="Logo" />
 
-        <p>
-          Le Coffee® é uma empresa de responsabilidade Eco-Social. Nosso
-          objetivo é gerar renda para pequenos produtores sem perder o foco na
-          redução das diferenças sociais e na melhoraria da qualidade de vida da
-          sociedade. Para alcançar tal objetivo, ensinamos os pequenos
-          produtores a harmonizar a exploração dos recursos naturais,
-          desenvolvimento tecnológico e mudanças institucionais focadas no
-          bem-estar social.
-        </p>
-
-        <div className="GroupButtons">
-          <ButtonComponent
-            variant="unfill"
-            text="Login"
-            onClick={() => history.push("/login")}
-          />
-          <ButtonComponent
-            variant="brown"
-            text="Cadastre-se"
-            onClick={() => history.push("/register")}
-          />
-        </div>
-      </SectionOne>
-
-      <SectionTwo>
-        <h2 className="Title S2">
-          Encontre os melhores produtos e produtores do Brasil
-        </h2>
-        <div className="Container Section2">
-          <img src={cup} alt="Cup of Coffee" className="Cup" />
-          <p className="TextS2">
-            Um dos maiores diferenciais dos cafés da Le Coffee®, é que os
-            produtores podem fazer uma colheita tardia, mantendo os grãos
-            maduros por mais tempo no galho. O resultado é um produto
-            equilibrado entre acidez e doçura.
+          <p>
+            Le Coffee® é uma empresa de responsabilidade Eco-Social. Nosso
+            objetivo é gerar renda para pequenos produtores sem perder o foco na
+            redução das diferenças sociais e na melhoraria da qualidade de vida
+            da sociedade. Para alcançar tal objetivo, ensinamos os pequenos
+            produtores a harmonizar a exploração dos recursos naturais,
+            desenvolvimento tecnológico e mudanças institucionais focadas no
+            bem-estar social.
           </p>
-        </div>
 
-        <div className="S3">
-          <div className="Security">
-            <img src={security} alt="100% Security" />
-            <span>100% <br/> Seguro</span>
+          <div className="GroupButtons">
+            <ButtonComponent
+              variant="unfill"
+              text="Login"
+              onClick={() => history.push("/login")}
+            />
+            <ButtonComponent
+              variant="brown"
+              text="Cadastre-se"
+              onClick={() => history.push("/register")}
+            />
           </div>
-          <ButtonComponent
-            variant="brown"
-            text="Cadastre-se"
-            onClick={() => history.push("/register")}
-          />
-        </div>
-      </SectionTwo>
-    </DivGrand>
+        </SectionOne>
+
+        <SectionTwo>
+          <h2 className="Title S2">
+            Encontre os melhores produtos e produtores do Brasil
+          </h2>
+          <div className="Container Section2">
+            <img src={cup} alt="Cup of Coffee" className="Cup" />
+            <p className="TextS2">
+              Um dos maiores diferenciais dos cafés da Le Coffee®, é que os
+              produtores podem fazer uma colheita tardia, mantendo os grãos
+              maduros por mais tempo no galho. O resultado é um produto
+              equilibrado entre acidez e doçura.
+            </p>
+          </div>
+
+          <div className="S3">
+            <div className="Security">
+              <img src={security} alt="100% Security" />
+              <span>
+                100% <br /> Seguro
+              </span>
+            </div>
+            <ButtonComponent
+              variant="brown"
+              text="Cadastre-se"
+              onClick={() => history.push("/register")}
+            />
+          </div>
+        </SectionTwo>
+      </DivGrand>
 
       <SectionThree>
         <p className="TitleS3">NOVOS PRODUTOS</p>
-          <span>Conheça os nossos novos produtos</span>
+        <span>Conheça os nossos novos produtos</span>
         <div className="Mobile">
-          <CarouselNewProducts percentage={100} showThumbs={false}/>
+          <CarouselNewProducts percentage={100} showThumbs={false} />
         </div>
 
         <div className="Desktop">

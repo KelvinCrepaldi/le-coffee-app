@@ -3,9 +3,7 @@ import bgImageRight from "../../assets/about-us-cover-2.png";
 import RegisterForm from "../../Components/RegisterForm";
 import { Page } from "../../Styles/PagesStyles/Register";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-
 import { useHistory } from "react-router-dom";
-
 const Register = () => {
   const history = useHistory();
 

@@ -5,23 +5,19 @@ import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
 import { ButtonComponent } from "../../Components/Button";
-
 const User = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-
   const usrToken = localStorage.getItem("token") || "";
-  
   const history = useHistory();
-
   const { logout } = useContext(LoginContext);
-
   const { user, getUser } = useContext(UserContext);
 
   useEffect(() => {
     getUser(userId, usrToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -34,7 +30,6 @@ const User = () => {
       <button type="submit" onClick={() => logout(history)} className="Logout">
         Logout
       </button>
-
       <div className="Card Account">
         <CardTop>
           <div>Detalhes da Conta</div>
@@ -42,10 +37,13 @@ const User = () => {
         <div className="CardContent">
           <div>Nome: {user.name}</div>
           <div>Email: {user.email}</div>
-          <ButtonComponent variant="unfill" text="Alterar Dados" onClick={() => history.push("/user/change")}/>
+          <ButtonComponent
+            variant="unfill"
+            text="Alterar Dados"
+            onClick={() => history.push("/user/change")}
+          />
         </div>
       </div>
-
       <div className="Card Orders">
         <CardTop>
           <div>Endereços</div>

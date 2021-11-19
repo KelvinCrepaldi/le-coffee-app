@@ -8,7 +8,6 @@ import { ButtonComponent } from "../Button";
 import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
-
 import { CartContext } from "../../Providers/cartProvider";
 
 export const ProductComponent = ({ product, setActive }) => {
