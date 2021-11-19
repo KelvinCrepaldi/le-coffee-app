@@ -105,14 +105,15 @@ const UserAddress = () => {
             error={errors.postalcode?.message}
           ></Input>
         </div>
-      </div>
-      <div className="button-container">
-        <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
-        <ButtonComponent
-          variant="unfill"
-          text="Voltar"
-          onClick={() => history.push("/user")}
-        />
+
+        <div className="button-container">
+          <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
+          <ButtonComponent
+            variant="unfill"
+            text="Voltar"
+            onClick={() => history.push("/user")}
+          />
+        </div>
       </div>
     </UserAddressContainer>
   );

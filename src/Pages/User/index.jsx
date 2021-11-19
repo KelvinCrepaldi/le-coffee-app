@@ -5,6 +5,9 @@ import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
 import { ButtonComponent } from "../../Components/Button";
+
+import Cover from "../../assets/cover-user.png";
+
 const User = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
@@ -22,14 +25,14 @@ const User = () => {
 
   return (
     <Page>
+      <img src={Cover} alt="Cover" className="Cover" />
       <div className="NavBar">
         <Navbar className="nv" />
       </div>
       <div className="Title">Minha Conta</div>
       <p>Bem-vindo, {user.name}</p>
-      <button type="submit" onClick={() => logout(history)} className="Logout">
-        Logout
-      </button>
+      <ButtonComponent variant="brown" text="Logout" onClick={() => logout(history)} />
+       
       <div className="Card Account">
         <CardTop>
           <div>Detalhes da Conta</div>
@@ -38,7 +41,7 @@ const User = () => {
           <div>Nome: {user.name}</div>
           <div>Email: {user.email}</div>
           <ButtonComponent
-            variant="unfill"
+            variant="brown"
             text="Alterar Dados"
             onClick={() => history.push("/user/change")}
           />

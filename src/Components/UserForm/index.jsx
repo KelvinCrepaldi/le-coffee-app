@@ -92,15 +92,16 @@ const UserForm = () => {
             error={errors.secondPassword?.message}
           ></Input>
         </div>
-      </div>
-      <div className="button-container">
-        <ButtonComponent type="submit" variant="brown" text="Alterar" />
-        <ButtonComponent
-          type="submit"
-          variant="unfill"
-          text="Voltar"
-          onClick={() => history.push("/user")}
-        />
+
+        <div className="button-container">
+          <ButtonComponent type="submit" variant="brown" text="Alterar" />
+          <ButtonComponent
+            type="submit"
+            variant="unfill"
+            text="Voltar"
+            onClick={() => history.push("/user")}
+          />
+        </div>
       </div>
     </UserFormContainer>
   );
