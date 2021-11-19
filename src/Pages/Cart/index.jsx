@@ -15,13 +15,11 @@ const CartPage = () => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-  const { getCartList, cartList } =
-    useContext(CartContext);
-  const { modalIsOpen, openModal, closeModal } =
-    useContext(UserContext);
+  const { getCartList, cartList } = useContext(CartContext);
+  const { modalIsOpen, openModal, closeModal } = useContext(UserContext);
 
   useEffect(() => {
-      getCartList(userId);
+    getCartList(userId);
   }, [getCartList, userId]);
 
   const total = cartList.reduce(
@@ -36,31 +34,32 @@ const CartPage = () => {
       </div>
       <div className="content">
         <div>
-
-        <div className="card card--total">
+          <div className="card card--total">
             <CardTop>
               <p>Resumo</p>
-              <p className="total">
-            
-              </p>
+              <p className="total"></p>
             </CardTop>
             <div className="summary">
-              <p>Valor dos produtos: <span>R$ {total.toFixed(2)}</span> </p>
-              <p>Desconto:<span>R$ 00,00</span></p>
-              <p>Total a prazo: <span>R$ {total.toFixed(2)}</span></p>
-              <div >
-                Valor total do <strong>pagamento</strong> <br/>
+              <p>
+                Valor dos produtos: <span>R$ {total.toFixed(2)}</span>{" "}
+              </p>
+              <p>
+                Desconto:<span>R$ 00,00</span>
+              </p>
+              <p>
+                Total a prazo: <span>R$ {total.toFixed(2)}</span>
+              </p>
+              <div>
+                Valor total do <strong>pagamento</strong> <br />
                 <span>R$ {total.toFixed(2)}</span>
               </div>
-            <ButtonComponent
-              onClick={openModal}
-              variant="brown"
-              text="Finalizar compra"
-            />
+              <ButtonComponent
+                onClick={openModal}
+                variant="brown"
+                text="Finalizar compra"
+              />
             </div>
-
           </div>
-
 
           <div className="card card--address">
             <CardTop>
@@ -69,9 +68,8 @@ const CartPage = () => {
 
             <div className="addressList"> </div>
           </div>
-
         </div>
-          <CartContainer>
+        <CartContainer>
           <CardTop>
             <h3>Seu carrinho:</h3>
           </CardTop>
@@ -81,8 +79,6 @@ const CartPage = () => {
             ))}
           </div>
         </CartContainer>
-    
-      
       </div>
 
       <ModalOrder modalIsOpen={modalIsOpen} closeModal={closeModal} />
