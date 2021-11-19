@@ -7,7 +7,6 @@ import {
 } from "../../Styles/ComponentsStyle/RegionMap";
 import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { MapContext } from "../../Providers/mapProvider";
 import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
 import { useContext, useState } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
@@ -100,7 +99,7 @@ export const RegionMapComponent = () => {
         </LeafletContainer>
       </Content>
       <Footer>
-        <img src={logoNavbar}></img>
+        <img src={logoNavbar} alt="img logo"></img>
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>
