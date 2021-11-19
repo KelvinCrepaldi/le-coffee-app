@@ -1,15 +1,12 @@
 import { LoginForm } from "../../Components/LoginForm";
 import { Page } from "../../Styles/PagesStyles/Login";
-import { useHistory } from "react-router";
-
 import logo from "../../assets/Logo-main-black-4.png";
 import bgImageLeft from "../../assets/cover-rodape.png";
 import bgImageRight from "../../assets/about-us-cover-2.png";
-
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { ButtonComponent } from "../../Components/Button";
 import { Link } from "react-router-dom";
-
+import { useHistory } from "react-router";
 const LoginPage = () => {
   const history = useHistory();
 
@@ -40,7 +37,13 @@ const LoginPage = () => {
           onClick={() => history.push("/register")}
         />
 
-        <p style = {{marginTop: "10px", fontSize: "12px"}}>Voltar para o <Link style = {{color:"#AA6655"}}to = "/home"> inicio</Link></p>
+        <p style={{ marginTop: "10px", fontSize: "12px" }}>
+          Voltar para o{" "}
+          <Link style={{ color: "#AA6655" }} to="/home">
+            {" "}
+            inicio
+          </Link>
+        </p>
       </div>
     </Page>
   );
