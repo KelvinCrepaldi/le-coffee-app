@@ -14,10 +14,12 @@ export const ShowAddress = () => {
     return parseInt(current);
   });
 
-  const usrToken = localStorage.getItem("token") || "";
-
+  const [userToken] = useState(() => {
+    const current = localStorage.getItem("token") || "";
+    return JSON.parse(current);
+  });
   useEffect(() => {
-    getUserAddress(userId, usrToken);
+    getUserAddress(userId, userToken);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

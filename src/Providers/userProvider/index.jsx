@@ -101,12 +101,11 @@ export const UserProvider = ({ children }) => {
     setIsOpen(false);
   };
   const getUserAddress = (usrID, usrToken) => {
-    const token = JSON.parse(usrToken);
     if (usrID !== "") {
       api
         .get(`userAddress?userId=${usrID}`, {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${usrToken}`,
           },
         })
         .then((res) => {

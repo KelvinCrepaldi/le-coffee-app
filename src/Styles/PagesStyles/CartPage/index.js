@@ -7,11 +7,11 @@ export const Page = styled.div`
   justify-content: flex-start;
 
   min-height: 100vh;
-  
-#close {
-  color: red;
-  width: 100px;
-}
+
+  #close {
+    color: red;
+    width: 100px;
+  }
   .navBar {
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@ export const Page = styled.div`
     height: 200px;
     width: 94vw;
     margin-bottom: 26px;
-   
+
     border-radius: 15px;
     text-align: center;
     button {
@@ -48,10 +48,10 @@ export const Page = styled.div`
       height: 60px;
     }
 
-    p{
+    p {
       width: 100%;
       display: flex;
-      justify-content:space-between;
+      justify-content: space-between;
       border-bottom: 1px solid var(--gray-100);
       padding: 10px;
     }
@@ -59,7 +59,7 @@ export const Page = styled.div`
     div {
       margin-top: 20px;
       margin-bottom: -30px;
-      background:rgba(161, 253, 208, 0.21);
+      background: rgba(161, 253, 208, 0.21);
       padding: 15px;
       font-weight: bold;
       width: 100%;
@@ -75,22 +75,31 @@ export const Page = styled.div`
     }
   }
   .totalPrice {
-    display:flex;
+    display: flex;
     background: green;
     margin: 0 auto;
-    flex-direction:column;
+    flex-direction: column;
     width: 60%;
-
 
     span {
       font-size: 20px;
     }
-  
   }
 
   .card--address {
-        margin-top: 200px;
-      }
+    margin-top: 200px;
+    height: 220px;
+    border: 1px solid var(--brown-light);
+    .addressList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 150px;
+      padding: 5px 10px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+  }
   @media (min-width: 768px) {
     .content {
       display: flex;
@@ -128,12 +137,9 @@ export const CartContainer = styled.section`
   margin-top: 150px;
   border-radius: 15px;
 
-  
-  
-@media (min-width: 1024px) {
-  margin-top: 0px;
-  
-}
+  @media (min-width: 1024px) {
+    margin-top: 0px;
+  }
   .listContainer {
     display: flex;
     overflow: hidden;
@@ -161,7 +167,6 @@ export const CartContainer = styled.section`
       background: var(--brown-xlight);
       border-radius: 10px;
     }
-
   }
 
   @media (min-width: 768px) {
@@ -191,4 +196,3 @@ export const CardTop = styled.div`
     font-weight: var(--font-w-bold);
   }
 `;
-
