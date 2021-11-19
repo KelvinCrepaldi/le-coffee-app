@@ -5,7 +5,6 @@ import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
 import Navbar from "../../Components/Navbar";
 import { ButtonComponent } from "../../Components/Button";
-
 const User = () => {
   const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
@@ -13,7 +12,7 @@ const User = () => {
   });
 
   const usrToken = localStorage.getItem("token") || "";
-  
+
   const history = useHistory();
 
   const { logout } = useContext(LoginContext);
@@ -22,6 +21,7 @@ const User = () => {
 
   useEffect(() => {
     getUser(userId, usrToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -42,7 +42,11 @@ const User = () => {
         <div className="CardContent">
           <div>Nome: {user.name}</div>
           <div>Email: {user.email}</div>
-          <ButtonComponent variant="unfill" text="Alterar Dados" onClick={() => history.push("/user/change")}/>
+          <ButtonComponent
+            variant="unfill"
+            text="Alterar Dados"
+            onClick={() => history.push("/user/change")}
+          />
         </div>
       </div>
 
