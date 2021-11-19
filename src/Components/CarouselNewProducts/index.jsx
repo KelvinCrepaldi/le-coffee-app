@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Carousel,
-  onChange,
-  onClickItem,
-  onClickThumb,
-} from "react-responsive-carousel";
+import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import { CatalogueContext } from "../../Providers/catalogue";

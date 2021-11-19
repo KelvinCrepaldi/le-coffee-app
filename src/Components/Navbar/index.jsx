@@ -1,13 +1,10 @@
-import React, { createContext } from "react";
+import React from "react";
 import logoNavbar from "../../assets/logo.png";
 import {
   Nav,
   NavLink,
   Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-  Content,
+  NavMenu
 } from "../../Styles/ComponentsStyle/Navbar/index";
 import { useState } from "react";
 import { MdOutlineLogout } from "react-icons/md";
