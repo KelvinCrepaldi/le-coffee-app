@@ -18,6 +18,7 @@ export const ShowAddress = () => {
 
   useEffect(() => {
     getUserAddress(userId, usrToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -41,7 +42,11 @@ export const ShowAddress = () => {
           </div>
         </div>
       ))}
-      <ButtonComponent variant="brown" text="Voltar" onClick={() => history.push("/user")} />
+      <ButtonComponent
+        variant="brown"
+        text="Voltar"
+        onClick={() => history.push("/user")}
+      />
     </Page>
   );
 };

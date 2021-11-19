@@ -9,8 +9,7 @@ import logoNavbar from "../../assets/Logo-main-black 4.png";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapContext } from "../../Providers/mapProvider";
 import { SelectionContainer } from "../../Styles/PagesStyles/MapPage";
-
-import { useContext, useEffect, useState } from "react";
+import { useContext, , useState } from "react";
 import { CatalogueContext } from "../../Providers/catalogue";
 
 export const RegionMapComponent = () => {

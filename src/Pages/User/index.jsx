@@ -10,13 +10,9 @@ const User = () => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
-
   const usrToken = localStorage.getItem("token") || "";
-
   const history = useHistory();
-
   const { logout } = useContext(LoginContext);
-
   const { user, getUser } = useContext(UserContext);
 
   useEffect(() => {
@@ -34,7 +30,6 @@ const User = () => {
       <button type="submit" onClick={() => logout(history)} className="Logout">
         Logout
       </button>
-
       <div className="Card Account">
         <CardTop>
           <div>Detalhes da Conta</div>
@@ -49,7 +44,6 @@ const User = () => {
           />
         </div>
       </div>
-
       <div className="Card Orders">
         <CardTop>
           <div>Endereços</div>

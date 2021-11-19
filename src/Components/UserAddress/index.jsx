@@ -2,7 +2,7 @@ import { UserAddressContainer } from "../../Styles/ComponentsStyle/UserAddress";
 import { ButtonComponent } from "../Button";
 
 import { UserContext } from "../../Providers/userProvider";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -22,13 +22,28 @@ const UserAddress = () => {
   const history = useHistory();
 
   const registerSchema = yup.object({
-    street: yup.string().max(150, "Campo obrigatório. Máximo de 150 caracteres.").required("Endereço é obrigatório"),
+    street: yup
+      .string()
+      .max(150, "Campo obrigatório. Máximo de 150 caracteres.")
+      .required("Endereço é obrigatório"),
     number: yup.number().required("Número é obrigatório"),
-    state: yup.string().max(40, "Campo obrigatório. Máximo de 40 caracteres.").required("Estado é obrigatório"),
-    city: yup.string().max(40, "Campo obrigatório. Máximo de 50 caracteres.").required("Cidade é obrigatório"),
-    country: yup.string().max(50, "Campo obrigatório. Máximo de 50 caracteres.").required("País é obrigatório"),
+    state: yup
+      .string()
+      .max(40, "Campo obrigatório. Máximo de 40 caracteres.")
+      .required("Estado é obrigatório"),
+    city: yup
+      .string()
+      .max(40, "Campo obrigatório. Máximo de 50 caracteres.")
+      .required("Cidade é obrigatório"),
+    country: yup
+      .string()
+      .max(50, "Campo obrigatório. Máximo de 50 caracteres.")
+      .required("País é obrigatório"),
     district: yup.string(),
-    postalcode: yup.string().max(9, "Campo obrigatório. Máximo de 50 caracteres.").required("CEP é obrigatório"),
+    postalcode: yup
+      .string()
+      .max(9, "Campo obrigatório. Máximo de 50 caracteres.")
+      .required("CEP é obrigatório"),
   });
 
   const {
@@ -42,10 +57,6 @@ const UserAddress = () => {
   const handleRegisterSubmit = (e) => {
     console.log(e);
     addUserAddress(userId, usrToken, e);
-    history.push("/user");
-  };
-
-  const handleBackToUserPage = () => {
     history.push("/user");
   };
 
@@ -97,7 +108,11 @@ const UserAddress = () => {
       </div>
       <div className="button-container">
         <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
-        <ButtonComponent variant="unfill" text="Voltar" onClick={() => history.push("/user")}  />
+        <ButtonComponent
+          variant="unfill"
+          text="Voltar"
+          onClick={() => history.push("/user")}
+        />
       </div>
     </UserAddressContainer>
   );

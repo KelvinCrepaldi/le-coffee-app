@@ -7,7 +7,6 @@ const ShowAddressPage = () => {
       <div className="navBar">
         <Navbar />
       </div>
-
       <ShowAddress />
     </Page>
   );

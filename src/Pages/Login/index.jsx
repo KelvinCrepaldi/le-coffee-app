@@ -36,7 +36,6 @@ const LoginPage = () => {
           className="bttnRegister"
           onClick={() => history.push("/register")}
         />
-
         <p style={{ marginTop: "10px", fontSize: "12px" }}>
           Voltar para o{" "}
           <Link style={{ color: "#AA6655" }} to="/home">

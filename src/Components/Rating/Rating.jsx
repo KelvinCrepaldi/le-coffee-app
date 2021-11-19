@@ -3,7 +3,6 @@ import { ButtonComponent } from "../Button";
 import { RatingContext } from "../../Providers/rating";
 import { RatingButton } from "../RatingButton";
 import ReactStars from "react-rating-stars-component";
-
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 

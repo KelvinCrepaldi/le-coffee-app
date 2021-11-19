@@ -21,6 +21,7 @@ const UserForm = () => {
 
   useEffect(() => {
     getUser(userId, usrToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const history = useHistory();
@@ -28,8 +29,14 @@ const UserForm = () => {
   console.log(user);
 
   const registerSchema = yup.object({
-    name: yup.string().max(48, "Campo obrigatório. Máximo de 48 dígitos.").required("Nome é obrigatório"),
-    email: yup.string().email("E-mail inválido").required("E-mail é obrigatório"),
+    name: yup
+      .string()
+      .max(48, "Campo obrigatório. Máximo de 48 dígitos.")
+      .required("Nome é obrigatório"),
+    email: yup
+      .string()
+      .email("E-mail inválido")
+      .required("E-mail é obrigatório"),
     password: yup.string().min(6, "Campo obrigatório. Mínimo de 6 dígitos"),
     secondPassword: yup
       .string()
@@ -48,10 +55,6 @@ const UserForm = () => {
   const handleRegisterSubmit = (e) => {
     console.log(e);
     changeUserData(userId, usrToken, e);
-    history.push("/user");
-  };
-
-  const handleBackToUserPage = () => {
     history.push("/user");
   };
 
@@ -92,7 +95,12 @@ const UserForm = () => {
       </div>
       <div className="button-container">
         <ButtonComponent type="submit" variant="brown" text="Alterar" />
-        <ButtonComponent type="submit" variant="unfill" text="Voltar" onClick={() => history.push("/user")} />
+        <ButtonComponent
+          type="submit"
+          variant="unfill"
+          text="Voltar"
+          onClick={() => history.push("/user")}
+        />
       </div>
     </UserFormContainer>
   );

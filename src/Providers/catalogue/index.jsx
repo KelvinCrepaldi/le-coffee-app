@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import api from "../../Services";
 
 export const CatalogueContext = createContext();
@@ -14,11 +14,9 @@ export const CatalogueProvider = ({ children }) => {
     getProductsCatalogue();
   }, []);
 
-  //Aqui viria a função de filtro
-
   return (
-      <CatalogueContext.Provider value = {{catalogue}}>
-          {children}
-      </CatalogueContext.Provider>
-  )
+    <CatalogueContext.Provider value={{ catalogue }}>
+      {children}
+    </CatalogueContext.Provider>
+  );
 };
