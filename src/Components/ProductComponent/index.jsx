@@ -9,8 +9,10 @@ import { Counter } from "../Counter";
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
 import { CartContext } from "../../Providers/cartProvider";
+import { SampleContainer } from "../SampleContainer";
 
 export const ProductComponent = ({ product, setActive }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounter] = useState(1);
   const [rateMedia, setRateMedia] = useState();
   const token = JSON.parse(localStorage.getItem("token"));
@@ -36,16 +38,7 @@ export const ProductComponent = ({ product, setActive }) => {
   };
 
   const handleRequestSample = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      sample: true,
-      quantity: 1,
-      image: product.image,
-      price: product.price,
-      name: product.name,
-    };
-    addToCart(obj, token);
+    setIsOpen(true);
   };
 
   const handleBuyNow = () => {
@@ -56,6 +49,7 @@ export const ProductComponent = ({ product, setActive }) => {
     <>
       <BackgroundTransparent></BackgroundTransparent>
       <ProductContainer>
+        {isOpen && <SampleContainer isOpen={isOpen} setIsOpen={setIsOpen} />}
         <div className="close-button">
           <button onClick={handleCloseWindow}>X</button>
         </div>
