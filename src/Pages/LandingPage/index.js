@@ -4,15 +4,12 @@ import {
   SectionThree,
   SectionFour,
   Footer,
-  Member,
   DivGrand,
 } from "../../Styles/PagesStyles/LandingPage";
 
 import { useHistory } from "react-router-dom";
 
-import cafe from "../../assets/cafe-7.png";
 import cup from "../../assets/cup-of-coffee.png";
-import beans from "../../assets/coffee-beans.png";
 import logo from "../../assets/logo-main-white.png";
 import main from "../../assets/main-desktop.png";
 
@@ -24,7 +21,6 @@ import roberto from "../../assets/roberto.png";
 
 import { ButtonComponent } from "../../Components/Button";
 import { CarouselNewProducts } from "../../Components/CarouselNewProducts";
-import { Carousel } from "react-responsive-carousel";
 
 const LandingPage = () => {
   const history = useHistory();

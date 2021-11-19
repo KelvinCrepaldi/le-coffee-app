@@ -46,10 +46,11 @@ const AboutUsComponent = () => {
               <a
                 href="https://www.linkedin.com/in/leonam-rodrigues/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/Leonam1212" target="_blank">
+              <a href="https://github.com/Leonam1212" target="_blank" rel="noreferrer">
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -66,10 +67,11 @@ const AboutUsComponent = () => {
               <a
                 href="https://www.linkedin.com/in/kelvincrepaldi/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/KelvinCrepaldi" target="_blank">
+              <a href="https://github.com/KelvinCrepaldi" target="_blank" rel="noreferrer">
                 <FaGithubSquare />
               </a>
               <FaLinkedin />
@@ -88,10 +90,11 @@ const AboutUsComponent = () => {
               <a
                 href="https://www.linkedin.com/in/kelvincrepaldi/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/KelvinCrepaldi" target="_blank">
+              <a href="https://github.com/KelvinCrepaldi" target="_blank" rel="noreferrer">
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -108,10 +111,11 @@ const AboutUsComponent = () => {
               <a
                 href="https://www.linkedin.com/in/luanferreira02/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/luan-ferreir4" target="_blank">
+              <a href="https://github.com/luan-ferreir4" target="_blank" rel="noreferrer">
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -120,7 +124,7 @@ const AboutUsComponent = () => {
       </Content>
 
       <Footer>
-        <img src={logoNavbar}></img>
+        <img src={logoNavbar} alt="navLogo"/>
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>
