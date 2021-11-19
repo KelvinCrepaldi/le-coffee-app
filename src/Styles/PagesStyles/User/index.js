@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import backgroundTop from "../../../assets/coverTop.png";
 
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
 
   min-height: 100vh;
 
@@ -15,6 +15,16 @@ export const Page = styled.div`
 
   button {
     margin-top: 15px;
+    padding: 10px;
+  }
+
+  .Cover {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width:100%;
+    //backdrop-filter: brightness(60%);
+    filter: grayscale(70%);
   }
 
   .NavBar {
@@ -39,8 +49,10 @@ export const Page = styled.div`
     height: 200px;
     width: 94vw;
     margin: 26px 0 26px 0;
-    border: 1px solid var(--brown-light);
+    // border: 1px solid var(--brown-light);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 
     .Top {
       background: var(--brow-light);
@@ -79,7 +91,6 @@ export const ImageTop = styled.div`
   align-items: center;
   width: 100%;
   height: 75vh;
-  background: url(${backgroundTop});
   background-position: center;
   background-size: cover;
 
