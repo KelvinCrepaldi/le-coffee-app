@@ -22,7 +22,7 @@ export const RegionMapComponent = () => {
   const regionsCoodinates = {
     Norte: [-4.1980208, -64.339829],
     Nordeste: [-5.8649465, -40.5746692],
-    CentroOeste: [-16.7181934, -53.2924268],
+    "Centro-Oeste": [-16.7181934, -53.2924268],
     Sudeste: [-21.0378141, -45.7110132],
     Sul: [-27.2944101, -51.4119555, 8],
   };
@@ -52,7 +52,7 @@ export const RegionMapComponent = () => {
             <button onClick={() => setRegion("all")}>Todas as regiões</button>
             <button onClick={() => setRegion("Norte")}>Norte</button>
             <button onClick={() => setRegion("Nordeste")}>Nordeste</button>
-            <button onClick={() => setRegion("CentroOeste")}>
+            <button onClick={() => setRegion("Centro-Oeste")}>
               Centro-Oeste
             </button>
             <button onClick={() => setRegion("Sudeste")}>Sudeste</button>
@@ -70,7 +70,7 @@ export const RegionMapComponent = () => {
               <option value="all">Todas as regiões</option>
               <option value="Norte">Norte</option>
               <option value="Nordeste">Nordeste</option>
-              <option value="CentroOeste">Centro-Oeste</option>
+              <option value="Centro-Oeste">Centro-Oeste</option>
               <option value="Sudeste">Sudeste</option>
               <option value="Sul">Sul</option>
             </select>
@@ -96,7 +96,7 @@ export const RegionMapComponent = () => {
             {onMap.map((e) => (
               <Marker position={e.position}>
                 <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  {e.name}
                 </Popup>
               </Marker>
             ))}
