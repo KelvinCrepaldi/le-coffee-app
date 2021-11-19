@@ -10,7 +10,6 @@ export const RatingProvider = ({ children }) => {
     api
       .get("ratingProducts")
       .then((response) => {
-        console.log(response.data);
         setRating(response.data);
       })
       .catch((error) => console.log(error));
@@ -32,9 +31,7 @@ export const RatingProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((response) => {
-        console.log(response.data);
-      })
+      .then((response) => {})
       .catch((error) => console.log(error));
   };
 

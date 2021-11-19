@@ -83,7 +83,7 @@ export const UserProvider = ({ children }) => {
             },
           }
         )
-        .then((res) =>  SuccessAlert("Endereço cadastrado", "center"))
+        .then((res) => SuccessAlert("Endereço cadastrado", "center"))
         .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
@@ -131,7 +131,7 @@ export const UserProvider = ({ children }) => {
         closeModal,
         addUserAddress,
         getUserAddress,
-        userAddress
+        userAddress,
       }}
     >
       {children}

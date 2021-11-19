@@ -73,7 +73,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
 
         <div className="rate-button">
           <RatingButton setRatingValue={setRatingValue} />
-          <div class="mobile-500px">
+          <div className="mobile-500px">
             <ButtonComponent
               className="buttonCancel brown "
               variant="brown"
@@ -91,7 +91,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
       </div>
       <div>
         {rating.map((e) => (
-          <RateCard>
+          <RateCard key={e.id}>
             <h2>{e.name}</h2>
             <ReactStars
               count={5}
