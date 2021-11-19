@@ -12,7 +12,7 @@ import { CartContext } from "../../Providers/cartProvider";
 
 export const ProductComponent = ({ product, setActive }) => {
   const [counter, setCounter] = useState(1);
-  const [rateMedia, setRateMedia] = useState(0);
+  const [rateMedia, setRateMedia] = useState();
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
   const { addToCart } = useContext(CartContext);

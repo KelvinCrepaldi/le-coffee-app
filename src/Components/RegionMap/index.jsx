@@ -32,7 +32,6 @@ export const RegionMapComponent = () => {
       const filterList = catalogue.filter((e) => e.region === selectedRegion);
       setOnMap(filterList);
       setOnRegion(regionsCoodinates[selectedRegion]);
-      console.log(regionsCoodinates[selectedRegion]);
     }
   };
 
@@ -91,7 +90,7 @@ export const RegionMapComponent = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {onMap.map((e) => (
-              <Marker position={e.position}>
+              <Marker position={e.position} key={e.id}>
                 <Popup>{e.name}</Popup>
               </Marker>
             ))}
@@ -99,7 +98,7 @@ export const RegionMapComponent = () => {
         </LeafletContainer>
       </Content>
       <Footer>
-        <img src={logoNavbar} alt="navLogo"/>
+        <img src={logoNavbar} alt="navLogo" />
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>

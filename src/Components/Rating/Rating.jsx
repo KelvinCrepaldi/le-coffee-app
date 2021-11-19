@@ -10,7 +10,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const userId = parseInt(localStorage.getItem("userId"));
   const userName = JSON.parse(localStorage.getItem("username"));
-  const [ratingValue, setRatingValue] = useState();
+  const [ratingValue, setRatingValue] = useState(1);
   const { rating, getRatingByProductId, handleRating } =
     useContext(RatingContext);
   const [inputText, setInputText] = useState("");
@@ -72,7 +72,10 @@ export const RatingComponent = ({ product, setRateMedia }) => {
         </div>
 
         <div className="rate-button">
-          <RatingButton setRatingValue={setRatingValue} />
+          <RatingButton
+            ratingValue={ratingValue}
+            setRatingValue={setRatingValue}
+          />
           <div className="mobile-500px">
             <ButtonComponent
               className="buttonCancel brown "

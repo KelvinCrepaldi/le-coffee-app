@@ -2,7 +2,7 @@ import { GiCoffeeBeans } from "react-icons/gi";
 import { ButtonContainer } from "../../Styles/ComponentsStyle/RatingButton";
 import ReactStars from "react-rating-stars-component";
 
-export const RatingButton = ({ setRatingValue }) => {
+export const RatingButton = ({ ratingValue, setRatingValue }) => {
   const ratingChanged = (value) => {
     setRatingValue(value);
   };
@@ -12,7 +12,7 @@ export const RatingButton = ({ setRatingValue }) => {
       <ReactStars
         count={5}
         onChange={ratingChanged}
-        value={1}
+        value={ratingValue}
         size={30}
         emptyIcon={<GiCoffeeBeans />}
         fullIcon={<GiCoffeeBeans />}
