@@ -36,7 +36,7 @@ const HomeComponent = () => {
 
       </Content>
 
-        <SectionMap to = "region">
+        <SectionMap to = "regionmap">
           <h3>
             MAPA <br /> <span>Ver mais</span>
           </h3>
