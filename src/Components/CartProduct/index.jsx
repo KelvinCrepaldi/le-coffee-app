@@ -5,7 +5,7 @@ import { CartContext } from "../../Providers/cartProvider";
 import { AddRemovePdt } from "../../Styles/ComponentsStyle/CartProduct";
 import api from "../../Services";
 
-export const CartProduct = ({ product }) => {
+export const CartProduct = ({ product, index }) => {
   const [userToken] = useState(() => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
@@ -14,7 +14,7 @@ export const CartProduct = ({ product }) => {
   const { removeFromCart, removeIDLocal } = useContext(CartContext);
 
   const handleRemove = () => {
-    removeIDLocal(product.productsId)
+    removeIDLocal(product.productsId);
     removeFromCart(product.id, userToken);
   };
 
@@ -50,7 +50,7 @@ export const CartProduct = ({ product }) => {
 
   return (
     <CartCard>
-      <img src={product.image} alt="coffee" />
+      <img src={`/coffe/${index}.png`} alt="coffee" />
       <div className="info">
         <p>{product.name}</p>
         <p className="price">R$: {product.price}</p>
