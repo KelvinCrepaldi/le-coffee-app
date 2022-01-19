@@ -16,9 +16,11 @@ const CatalogueComponent = () => {
   const { catalogue } = useContext(CatalogueContext);
   const [selectedProduct, setSelectedProduct] = useState();
   const [active, setActive] = useState(false);
+  const [indexProduct, setIndexProduct] = useState();
 
-  const handleOpenModal = (product) => {
+  const handleOpenModal = (product, index) => {
     setSelectedProduct(product);
+    setIndexProduct(index);
     setActive(true);
   };
 
@@ -29,6 +31,7 @@ const CatalogueComponent = () => {
           product={selectedProduct}
           active={active}
           setActive={setActive}
+          indexProduct={indexProduct}
         ></ProductComponent>
       )}
       <ImageTop>
@@ -39,7 +42,7 @@ const CatalogueComponent = () => {
       <Content>
         {catalogue.map((product, index) => (
           <BoxCard key={index}>
-            <img src={product.image} alt="Coffee" />
+            <img src={`/coffe/${index}.png`} alt="Coffee" />
             <div>
               <h3>{product.name}</h3>
               <span>{product.category}</span>
@@ -47,7 +50,7 @@ const CatalogueComponent = () => {
               <ButtonComponent
                 variant="white"
                 text="Vizualizar"
-                onClick={() => handleOpenModal(product)}
+                onClick={() => handleOpenModal(product, index)}
               ></ButtonComponent>
             </div>
           </BoxCard>

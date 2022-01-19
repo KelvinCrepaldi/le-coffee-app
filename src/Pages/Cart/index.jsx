@@ -20,8 +20,7 @@ const CartPage = () => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
   });
-  const { getCartList, cartList } =
-    useContext(CartContext);
+  const { getCartList, cartList } = useContext(CartContext);
   const { modalIsOpen, openModal, closeModal, getUserAddress, userAddress } =
     useContext(UserContext);
 
@@ -31,7 +30,7 @@ const CartPage = () => {
 
   useEffect(() => {
     getUserAddress(userId, userToken);
-}, [getUserAddress, userId, userToken]);
+  }, [getUserAddress, userId, userToken]);
 
   const total = cartList.reduce(
     (acc, pdt) => pdt.price * pdt.quantity + acc,
@@ -77,10 +76,10 @@ const CartPage = () => {
               <p>Selecionar endereço</p>
             </CardTop>
 
-            <div className="addressList"> 
-            {userAddress.map((item) => (
-              <AddresCard key={item.id} address={item}/>
-            ))}
+            <div className="addressList">
+              {userAddress.map((item) => (
+                <AddresCard key={item.id} address={item} />
+              ))}
             </div>
           </div>
         </div>
@@ -89,8 +88,8 @@ const CartPage = () => {
             <h3>Seu carrinho:</h3>
           </CardTop>
           <div className="listContainer">
-            {cartList.map((item) => (
-              <CartProduct key={item.id} product={item} />
+            {cartList.map((item, index) => (
+              <CartProduct key={item.id} product={item} index={index} />
             ))}
           </div>
         </CartContainer>
