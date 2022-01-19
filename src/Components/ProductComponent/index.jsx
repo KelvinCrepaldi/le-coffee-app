@@ -11,7 +11,7 @@ import { useHistory } from "react-router";
 import { CartContext } from "../../Providers/cartProvider";
 import { SampleContainer } from "../SampleContainer";
 
-export const ProductComponent = ({ product, setActive }) => {
+export const ProductComponent = ({ product, setActive, indexProduct }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounter] = useState(1);
   const [rateMedia, setRateMedia] = useState();
@@ -55,7 +55,7 @@ export const ProductComponent = ({ product, setActive }) => {
         </div>
         <div className="item-content">
           <div className="image-container">
-            <img src={product.image} alt="product" />
+            <img src={`/coffe/${indexProduct}.png`} alt="product" />
           </div>
           <div className="content-container">
             <div className="titleContainer">
