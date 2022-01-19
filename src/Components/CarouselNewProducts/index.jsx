@@ -10,11 +10,17 @@ export const CarouselNewProducts = ({ percentage, showThumbs }) => {
   return (
     catalogue && (
       <div>
-        <Carousel autoPlay centerMode centerSlidePercentage={percentage} infiniteLoop showThumbs={showThumbs}> 
-          {catalogue.map((product) => (
+        <Carousel
+          autoPlay
+          centerMode
+          centerSlidePercentage={percentage}
+          infiniteLoop
+          showThumbs={showThumbs}
+        >
+          {catalogue.map((product, index) => (
             <img
               key={product.id}
-              src={product.image}
+              src={`/coffe/${index}.png`}
               alt={product.name}
               className="Carousel Images"
             />
