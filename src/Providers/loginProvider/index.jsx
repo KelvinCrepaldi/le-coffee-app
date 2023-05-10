@@ -27,7 +27,12 @@ export const LoginProvider = ({ children }) => {
         history.push("/home");
       })
       .catch((err) => {
-        ErrorAlert("Usuário não encontrado!", "top-center");
+        ErrorAlert(
+          "Servidor desativado, mas ainda é possivel visitar as páginas!",
+          "top-center"
+        );
+        //ErrorAlert("Usuário não encontrado!", "top-center");
+        history.push("/home");
       });
   };
   const logout = (history) => {

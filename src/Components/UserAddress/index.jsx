@@ -10,13 +10,13 @@ import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 
 const UserAddress = () => {
-  const [userId] = useState(() => {
+  /*  const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
 
   const usrToken = localStorage.getItem("token") || "";
-
+ */
   const { addUserAddress } = useContext(UserContext);
 
   const history = useHistory();
@@ -56,7 +56,7 @@ const UserAddress = () => {
 
   const handleRegisterSubmit = (e) => {
     console.log(e);
-    addUserAddress(userId, usrToken, e);
+    addUserAddress("userId", "usrToken", e);
     history.push("/user");
   };
 
@@ -107,11 +107,11 @@ const UserAddress = () => {
         </div>
 
         <div className="button-container">
-          <ButtonComponent type="submit" variant="brown" text="Cadastrar" />
+          <ButtonComponent type="none" variant="brown" text="Cadastrar" />
           <ButtonComponent
             variant="unfill"
             text="Voltar"
-            onClick={() => history.push("/user")}
+            onClick={() => history.push("/home")}
           />
         </div>
       </div>

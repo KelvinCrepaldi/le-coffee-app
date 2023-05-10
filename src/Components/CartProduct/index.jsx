@@ -6,29 +6,29 @@ import { AddRemovePdt } from "../../Styles/ComponentsStyle/CartProduct";
 import api from "../../Services";
 
 export const CartProduct = ({ product, index }) => {
-  const [userToken] = useState(() => {
+  /* const [userToken] = useState(() => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
-  });
+  }); */
 
   const { removeFromCart, removeIDLocal } = useContext(CartContext);
 
   const handleRemove = () => {
     removeIDLocal(product.productsId);
-    removeFromCart(product.id, userToken);
+    removeFromCart(product.id, "userToken");
   };
 
   const removeOnePdt = () => {
     const newQtd = product.quantity - 1;
     if (newQtd < 1) {
-      removeFromCart(product.id, userToken);
+      removeFromCart(product.id, "userToken");
     } else {
       api.patch(
         `userCart/${product.id}`,
         { quantity: newQtd },
         {
           headers: {
-            Authorization: `Bearer ${userToken}`,
+            Authorization: `Bearer ${"userToken"}`,
           },
         }
       );
@@ -42,7 +42,7 @@ export const CartProduct = ({ product, index }) => {
       { quantity: newQtd },
       {
         headers: {
-          Authorization: `Bearer ${userToken}`,
+          Authorization: `Bearer ${"userToken"}`,
         },
       }
     );

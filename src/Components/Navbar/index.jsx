@@ -4,7 +4,7 @@ import {
   Nav,
   NavLink,
   Bars,
-  NavMenu
+  NavMenu,
 } from "../../Styles/ComponentsStyle/Navbar/index";
 import { useState } from "react";
 import { MdOutlineLogout } from "react-icons/md";
@@ -17,17 +17,13 @@ import { BiUser } from "react-icons/bi";
 const Navbar = () => {
   const history = useHistory();
 
-  const [userToken] = useState(() => {
-    const current = localStorage.getItem("token") || "";
-    return JSON.parse(current);
-  });
   const [open, setOpen] = useState(false);
 
   const { logout } = useContext(LoginContext);
   const { clearCart } = useContext(CartContext);
 
   const handleLogout = () => {
-    clearCart(userToken);
+    clearCart("userToken");
     logout(history);
   };
 
@@ -64,8 +60,8 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li onClick={handleLogout}>
-        <NavLink to="/">
-          <MdOutlineLogout />
+          <NavLink to="/">
+            <MdOutlineLogout />
           </NavLink>
         </li>
       </ul>

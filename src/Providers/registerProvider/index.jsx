@@ -7,7 +7,10 @@ export const RegisterContext = createContext();
 export const RegisterProvider = ({ children }) => {
   const sucessToast = () =>
     toast.success("Conta de usuário criada com sucesso!");
-  const errorToast = () => toast.error("Erro ao criar conta de usuário!");
+  const errorToast = () =>
+    toast.error(
+      "Servidor desativado, mas ainda é possível visualizar as páginas!"
+    );
 
   const handleRegister = (data) => {
     const { email, password, name } = data;

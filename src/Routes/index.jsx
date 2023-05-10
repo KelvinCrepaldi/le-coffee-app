@@ -20,15 +20,23 @@ const RoutesPatchs = () => {
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={Register} />
 
-      <Route path="/home" component={Home} isPrivate={true} />
-      <Route path="/catalogue" component={Catalogue} isPrivate={true} />
-      <Route path="/cart" component={CartPage} isPrivate={true} />
-      <Route path="/aboutus" component={AboutUs} isPrivate={true} />
-      <Route path="/regionmap" component={RegionMap} isPrivate={true} />
-      <Route path="/user/change" component={ChangeUserData} isPrivate={true} />
-      <Route path="/user/address" component={UserAddressPage} isPrivate={true} />
-      <Route path="/user/showAddress" component={ShowAddressPage} isPrivate={true} />
-      <Route path="/user" component={User} isPrivate={true} />
+      <Route path="/home" component={Home} isPrivate={false} />
+      <Route path="/catalogue" component={Catalogue} isPrivate={false} />
+      <Route path="/cart" component={CartPage} isPrivate={false} />
+      <Route path="/aboutus" component={AboutUs} isPrivate={false} />
+      <Route path="/regionmap" component={RegionMap} isPrivate={false} />
+      <Route path="/user/change" component={ChangeUserData} isPrivate={false} />
+      <Route
+        path="/user/address"
+        component={UserAddressPage}
+        isPrivate={false}
+      />
+      <Route
+        path="/user/showAddress"
+        component={ShowAddressPage}
+        isPrivate={false}
+      />
+      <Route path="/user" component={User} isPrivate={false} />
     </Switch>
   );
 };

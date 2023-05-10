@@ -5,9 +5,8 @@ import api from "../../Services";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-
   const [cartList, setCartList] = useState([]);
-  
+
   const getCartList = (usrID) => {
     if (usrID !== "") {
       api
@@ -17,32 +16,36 @@ export const CartProvider = ({ children }) => {
         })
         .catch((err) => console.log(err));
     }
-  }
+  };
 
-  const findRepeated = (id) =>{
+  const findRepeated = (id) => {
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
 
-    if(!idList.includes(id)){
-      idList.push(id)
-    }
-    else{
-      return true
+    if (!idList.includes(id)) {
+      idList.push(id);
+    } else {
+      return true;
     }
 
-    localStorage.setItem("idList",JSON.stringify([...idList]))
-    return false
-  }
+    localStorage.setItem("idList", JSON.stringify([...idList]));
+    return false;
+  };
 
   const removeIDLocal = (id) => {
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
 
-   const newList = idList.filter((item)=> item !== id);
-   localStorage.setItem("idList",JSON.stringify([...newList]))
-  }
+    const newList = idList.filter((item) => item !== id);
+    localStorage.setItem("idList", JSON.stringify([...newList]));
+  };
 
   const addToCart = (newPdt, usrToken) => {
     const isRepeated = findRepeated(newPdt.productsId);
-    if(!isRepeated){
+    setCartList([...cartList, newPdt]);
+    ErrorAlert(
+      "Servidor desativado, o carrinho não funciona corretamente, mas ainda é possivel visualizar como demonstração",
+      "top-right"
+    );
+    /* if(!isRepeated){
       api
         .post("userCart", newPdt, {
           headers: {
@@ -56,12 +59,11 @@ export const CartProvider = ({ children }) => {
     }
     else{
       ErrorAlert("Produto já adicionado", "top-right")
-    }
+    } */
   };
 
   const removeFromCart = (pdtID, usrToken) => {
-    
-    api
+    /* api
       .delete(`userCart/${pdtID}`, {
         headers: {
           Authorization: `Bearer ${usrToken}`,
@@ -69,15 +71,20 @@ export const CartProvider = ({ children }) => {
       })
       .catch(() =>
         ErrorAlert("Não foi possível remover o produto", "top-right")
-      );
+      ); */
+    const removefromcartList = cartList.filter((item) => item.id !== pdtID);
+    setCartList(removefromcartList);
+    ErrorAlert(
+      "Servidor desativado, o carrinho não funciona corretamente, mas ainda é possivel visualizar como demonstração",
+      "top-right"
+    );
   };
 
   const clearCart = (usrToken) => {
-    cartList.forEach(element => {
-      removeFromCart(element.id,usrToken)
+    cartList.forEach((element) => {
+      removeFromCart(element.id, usrToken);
     });
   };
-  
 
   return (
     <CartContext.Provider

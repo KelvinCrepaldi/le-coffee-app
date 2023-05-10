@@ -12,25 +12,25 @@ import { UserContext } from "../../Providers/userProvider";
 import { AddresCard } from "../../Components/AddresCard";
 
 const CartPage = () => {
-  const [userId] = useState(() => {
+  /* const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
-  });
-  const [userToken] = useState(() => {
+  }); */
+  /* const [userToken] = useState(() => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
-  });
+  }); */
   const { getCartList, cartList } = useContext(CartContext);
   const { modalIsOpen, openModal, closeModal, getUserAddress, userAddress } =
     useContext(UserContext);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     getCartList(userId);
   }, [getCartList, userId]);
 
   useEffect(() => {
     getUserAddress(userId, userToken);
-  }, [getUserAddress, userId, userToken]);
+  }, [getUserAddress, userId, userToken]); */
 
   const total = cartList.reduce(
     (acc, pdt) => pdt.price * pdt.quantity + acc,

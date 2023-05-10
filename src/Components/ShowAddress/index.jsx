@@ -9,7 +9,7 @@ export const ShowAddress = () => {
 
   const history = useHistory();
 
-  const [userId] = useState(() => {
+  /* const [userId] = useState(() => {
     const current = localStorage.getItem("userId") || "";
     return parseInt(current);
   });
@@ -21,7 +21,7 @@ export const ShowAddress = () => {
   useEffect(() => {
     getUserAddress(userId, userToken);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); */
 
   return (
     <Page>
