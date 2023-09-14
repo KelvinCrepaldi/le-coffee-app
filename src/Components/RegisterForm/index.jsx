@@ -1,7 +1,6 @@
 import { RegisterFormContainer } from "../../Styles/ComponentsStyle/RegisterForm";
 import { ButtonComponent } from "../../Components/Button";
-import { RegisterContext } from "../../Providers/registerProvider/index";
-import { useContext } from "react";
+
 import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,7 +9,6 @@ import { Input } from "../Input";
 import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
-  const { handleRegister } = useContext(RegisterContext);
   const history = useHistory();
 
   const registerSchema = yup.object({
@@ -38,7 +36,6 @@ const RegisterForm = () => {
   });
 
   const handleRegisterSubmit = (e) => {
-    handleRegister(e);
     history.push("/login");
   };
 

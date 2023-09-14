@@ -6,40 +6,24 @@ import { GiCoffeeBeans } from "react-icons/gi";
 import { RatingComponent } from "../Rating/Rating";
 import { ButtonComponent } from "../Button";
 import { Counter } from "../Counter";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router";
-import { CartContext } from "../../Providers/cartProvider";
+
 import { SampleContainer } from "../SampleContainer";
 
 export const ProductComponent = ({ product, setActive, indexProduct }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounter] = useState(1);
   const [rateMedia, setRateMedia] = useState();
-  const token = JSON.parse(localStorage.getItem("token"));
-  const userId = parseInt(localStorage.getItem("userId"));
-  const { addToCart } = useContext(CartContext);
   const history = useHistory();
 
   const handleCloseWindow = () => {
     setActive(false);
   };
 
-  const handleAddToCart = () => {
-    const obj = {
-      userId: userId,
-      productsId: product.id,
-      sample: false,
-      quantity: counter,
-      image: product.image,
-      price: product.price,
-      name: product.name,
-    };
-    addToCart(obj, token);
-  };
+  const handleAddToCart = () => {};
 
-  const handleRequestSample = () => {
-    setIsOpen(true);
-  };
+  const handleRequestSample = () => {};
 
   const handleBuyNow = () => {
     history.push("/cart");

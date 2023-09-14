@@ -1,8 +1,5 @@
 import { UserAddressContainer } from "../../Styles/ComponentsStyle/UserAddress";
 import { ButtonComponent } from "../Button";
-
-import { UserContext } from "../../Providers/userProvider";
-import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,7 +14,6 @@ const UserAddress = () => {
 
   const usrToken = localStorage.getItem("token") || "";
  */
-  const { addUserAddress } = useContext(UserContext);
 
   const history = useHistory();
 
@@ -55,8 +51,6 @@ const UserAddress = () => {
   });
 
   const handleRegisterSubmit = (e) => {
-    console.log(e);
-    addUserAddress("userId", "usrToken", e);
     history.push("/user");
   };
 
