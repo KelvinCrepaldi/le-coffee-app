@@ -50,7 +50,11 @@ const AboutUsComponent = () => {
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/Leonam1212" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/Leonam1212"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -71,16 +75,18 @@ const AboutUsComponent = () => {
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/KelvinCrepaldi" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/KelvinCrepaldi"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithubSquare />
               </a>
-              <FaLinkedin />
-              <FaGithubSquare />
             </Icons>
           </BoxMembers>
 
           <BoxMembers>
-            <MemberPhoto src = {Roberto}></MemberPhoto>
+            <MemberPhoto src={Roberto}></MemberPhoto>
             <h4>Roberto Rocha - Quality Assurance</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit
@@ -94,7 +100,11 @@ const AboutUsComponent = () => {
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/KelvinCrepaldi" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/KelvinCrepaldi"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -115,7 +125,11 @@ const AboutUsComponent = () => {
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/luan-ferreir4" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/luan-ferreir4"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithubSquare />
               </a>
             </Icons>
@@ -124,7 +138,7 @@ const AboutUsComponent = () => {
       </Content>
 
       <Footer>
-        <img src={logoNavbar} alt="navLogo"/>
+        <img src={logoNavbar} alt="navLogo" />
         <p>
           © Copyright 2021 Todos os direitos reservados <br /> Le Coffe 2021{" "}
         </p>

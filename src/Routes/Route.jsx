@@ -11,7 +11,7 @@ export const Route = ({
 }) => {
   const { isLoged } = useContext(LoginContext);
 
-  return (
+  /*  return (
     <ReactRoute
       {...rest}
       render={() =>
@@ -25,5 +25,12 @@ export const Route = ({
         )
       }
     />
+  ); */
+
+  return (
+    <>
+      <GlobalStyles />
+      <Component {...rest} />
+    </>
   );
 };
