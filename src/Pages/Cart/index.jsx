@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { ButtonComponent } from "../../Components/Button";
 import { CartContext } from "../../Providers/cartProvider";
 import { CardTop } from "../../Styles/PagesStyles/CartPage";
@@ -20,8 +20,8 @@ const CartPage = () => {
     const current = localStorage.getItem("token") || "";
     return JSON.parse(current);
   }); */
-  const { getCartList, cartList } = useContext(CartContext);
-  const { modalIsOpen, openModal, closeModal, getUserAddress, userAddress } =
+  const { cartList } = useContext(CartContext);
+  const { modalIsOpen, openModal, closeModal, userAddress } =
     useContext(UserContext);
 
   /*   useEffect(() => {

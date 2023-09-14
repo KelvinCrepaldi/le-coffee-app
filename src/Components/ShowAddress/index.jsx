@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../Providers/userProvider";
 import { CardTop, Page } from "../../Styles/ComponentsStyle/ShowAddress";
 import { ButtonComponent } from "../Button";
 
 export const ShowAddress = () => {
-  const { getUserAddress, userAddress } = useContext(UserContext);
+  const { userAddress } = useContext(UserContext);
 
   const history = useHistory();
 

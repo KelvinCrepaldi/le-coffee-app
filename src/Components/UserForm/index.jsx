@@ -2,7 +2,7 @@ import { UserFormContainer } from "../../Styles/ComponentsStyle/UserForm";
 import { ButtonComponent } from "../../Components/Button";
 
 import { UserContext } from "../../Providers/userProvider";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,16 +17,9 @@ const UserForm = () => {
 
   const usrToken = localStorage.getItem("token") || "";
 
-  const { user, getUser, changeUserData } = useContext(UserContext);
-
-  useEffect(() => {
-    getUser(userId, usrToken);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { user, changeUserData } = useContext(UserContext);
 
   const history = useHistory();
-
-  console.log(user);
 
   const registerSchema = yup.object({
     name: yup

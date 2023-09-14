@@ -75,11 +75,6 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
     }, 10000);
   };
 
-  const [username] = useState(() => {
-    const user = localStorage.getItem("username") || "";
-    return user;
-  });
-
   const total = cartList.reduce(
     (acc, pdt) => pdt.price * pdt.quantity + acc,
     0
@@ -194,7 +189,7 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
               >
                 <MenuItem value="1">
                   À vista até 10% de desconto - R$
-                  {(total - (total * 0.1)).toFixed(2)}
+                  {(total - total * 0.1).toFixed(2)}
                 </MenuItem>
                 <MenuItem value="2">
                   2x sem juros - R$ {(total / 2).toFixed(2)}
@@ -208,7 +203,7 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
               </TextField>
             </FormControl>
           </div>
-  
+
           <ButtonComponent
             variant="white"
             style={{ background: "#61db61" }}
@@ -222,8 +217,8 @@ const ModalOrder = ({ modalIsOpen, closeModal }) => {
           <div>
             <GiCoffeeBeans />
             <p>
-              {username}, seu pagamento foi aprovado. Para que seja realizada a
-              entrega com sucesso, tenha o comprovante da compra em mãos.
+              Seu pagamento foi aprovado. Para que seja realizada a entrega com
+              sucesso, tenha o comprovante da compra em mãos.
             </p>
           </div>
         </OrderSuccess>

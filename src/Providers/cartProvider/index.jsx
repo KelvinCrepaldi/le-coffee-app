@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { ErrorAlert, SuccessAlert } from "../../Components/Alerts";
+import { ErrorAlert } from "../../Components/Alerts";
 import api from "../../Services";
 
 export const CartContext = createContext();
@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const findRepeated = (id) => {
+  /*   const findRepeated = (id) => {
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
 
     if (!idList.includes(id)) {
@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
 
     localStorage.setItem("idList", JSON.stringify([...idList]));
     return false;
-  };
+  }; */
 
   const removeIDLocal = (id) => {
     const idList = JSON.parse(localStorage.getItem("idList")) || [];
@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (newPdt, usrToken) => {
-    const isRepeated = findRepeated(newPdt.productsId);
+    /*    const isRepeated = findRepeated(newPdt.productsId); */
     setCartList([...cartList, newPdt]);
     ErrorAlert(
       "Servidor desativado, o carrinho não funciona corretamente, mas ainda é possivel visualizar como demonstração",

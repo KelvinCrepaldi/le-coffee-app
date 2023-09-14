@@ -1,5 +1,5 @@
 import { CardTop, Page } from "../../Styles/PagesStyles/User";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { LoginContext } from "../../Providers/loginProvider";
 import { UserContext } from "../../Providers/userProvider";
@@ -9,19 +9,14 @@ import { ButtonComponent } from "../../Components/Button";
 import Cover from "../../assets/cover-user.png";
 
 const User = () => {
-  const [userId] = useState(() => {
-    const current = localStorage.getItem("userId") || "";
-    return parseInt(current);
-  });
-  const usrToken = localStorage.getItem("token") || "";
   const history = useHistory();
   const { logout } = useContext(LoginContext);
-  const { user, getUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     getUser(userId, usrToken);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); */
 
   return (
     <Page>
@@ -31,8 +26,12 @@ const User = () => {
       </div>
       <div className="Title">Minha Conta</div>
       <p>Bem-vindo, {user.name}</p>
-      <ButtonComponent variant="brown" text="Logout" onClick={() => logout(history)} />
-       
+      <ButtonComponent
+        variant="brown"
+        text="Logout"
+        onClick={() => logout(history)}
+      />
+
       <div className="Card Account">
         <CardTop>
           <div>Detalhes da Conta</div>

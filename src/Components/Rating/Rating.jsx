@@ -7,12 +7,8 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 
 export const RatingComponent = ({ product, setRateMedia }) => {
-  const token = JSON.parse(localStorage.getItem("token"));
-  const userId = parseInt(localStorage.getItem("userId"));
-  const userName = JSON.parse(localStorage.getItem("username"));
   const [ratingValue, setRatingValue] = useState(1);
-  const { rating, getRatingByProductId, handleRating } =
-    useContext(RatingContext);
+  const { rating, getRatingByProductId } = useContext(RatingContext);
   const [inputText, setInputText] = useState("");
 
   useEffect(() => {
@@ -23,17 +19,7 @@ export const RatingComponent = ({ product, setRateMedia }) => {
     setInputText(e);
   };
 
-  const handleSendRate = () => {
-    const data = {
-      userId: userId,
-      productsId: product.id,
-      text: inputText,
-      rating: ratingValue,
-      name: userName,
-    };
-    handleRating(data, token);
-    setInputText("");
-  };
+  const handleSendRate = () => {};
   const handleCancelSendRate = () => {
     setInputText("");
   };
@@ -63,7 +49,6 @@ export const RatingComponent = ({ product, setRateMedia }) => {
     <RatingContainer>
       <div className="rate-container">
         <div className="rate-input">
-          <span>{userName}:</span>
           <input
             value={inputText}
             onChange={(e) => changeInputText(e.target.value)}

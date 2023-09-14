@@ -9,22 +9,15 @@ import {
 import { useState } from "react";
 import { MdOutlineLogout } from "react-icons/md";
 import { CgShoppingBag } from "react-icons/cg";
-import { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { LoginContext } from "../../Providers/loginProvider/index";
-import { CartContext } from "../../Providers/cartProvider";
 import { BiUser } from "react-icons/bi";
 const Navbar = () => {
   const history = useHistory();
 
   const [open, setOpen] = useState(false);
 
-  const { logout } = useContext(LoginContext);
-  const { clearCart } = useContext(CartContext);
-
   const handleLogout = () => {
-    clearCart("userToken");
-    logout(history);
+    history.push("/");
   };
 
   return (
